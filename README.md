@@ -8,13 +8,15 @@
 - モックサーバ： `yarn mock-server`
 
 ## 命名規則
-- プロジェクト直下のフォルダは Lower Camel Case
-- srcの1つ下に位置するフォルダは Lower Camel Case
-- ↑より下の階層に位置するフォルダやファイルは Upper Camel Case
-- ただし、indexとつくファイル名のみ Lower Camel Case
-- React Componentは Upper Camel Case
-- 関数名（React Componentを除く）は Lower Camel Case
-- typeやenumの名前は Upper Camel Case
+### Lower Camel Case
+- プロジェクト直下のフォルダ名
+- src直下のRedux Wayに関するフォルダ名
+- indexとつくファイル名
+- 関数名（React Componentを除く）
+### Upper Camel Case
+- フォルダやファイル名(プロジェクト直下、src直下、indexを除く)
+- React Component
+- typeやenum
 
 ## フォルダの記述内容（Redux）
 - states: アプリにて管理したい情報の型を定義(例:ユーザ名)
