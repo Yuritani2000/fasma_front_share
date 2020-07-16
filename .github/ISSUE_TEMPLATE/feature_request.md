@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-<!-projectsやmilestoneの設定は各自でやること -->
+<!-- projectsやmilestoneの設定は各自でやること -->
 ## 要求する機能の説明(Describe the ideal solution or feature request)
 <!--A clear and concise description of what the customer wants to happen. -->
 
