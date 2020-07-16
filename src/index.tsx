@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 const composeEnhancers = composeWithDevTools({});
 const logger = createLogger();
@@ -20,7 +21,9 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
