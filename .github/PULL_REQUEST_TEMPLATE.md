@@ -9,7 +9,7 @@ reviewer: tekoneko1997
 ## 関連URL
 
 ↓issueのURL  
-#oo
+closed #oo
 
 他関連するissueやbranchあれば共有
 
