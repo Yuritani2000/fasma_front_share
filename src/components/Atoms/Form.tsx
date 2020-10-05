@@ -16,6 +16,7 @@ type FormProps = {
     maxLength?: number;
     onChange: (e: React.FormEvent<HTMLInputElement>) => void;   // 必須
     placeholder?: string;
+    borderRadius?: string;
 }
 
 const Form: React.FC<FormProps> = (props) => {
@@ -30,7 +31,8 @@ const Form: React.FC<FormProps> = (props) => {
             fontFamily = FontFamily.Roboto,
             maxLength = 30,
             onChange,
-            placeholder = ''} = props;
+            placeholder = '', 
+            borderRadius = '0px' } = props;
     return (
         <StyledForm type={type} 
                     onChange={onChange} 
@@ -44,6 +46,7 @@ const Form: React.FC<FormProps> = (props) => {
                     maxLength={maxLength}
                     size={size}
                     placeholder={placeholder}
+                    borderRadius={borderRadius}
         />
 
     );
@@ -58,6 +61,7 @@ type StyledFormProps = {
     value: string;
     fontSize: FontSize;
     fontFamily: FontFamily;
+    borderRadius: string;
 }
 
 const StyledForm = styled.input<StyledFormProps>(props => `
@@ -66,4 +70,5 @@ const StyledForm = styled.input<StyledFormProps>(props => `
     font-size: ${props.fontSize}px;
     font-family: ${props.fontFamily};
     background-color: ${props.color};
+    border-radius: ${props.borderRadius};
 `);
