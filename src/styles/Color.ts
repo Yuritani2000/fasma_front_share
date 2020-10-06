@@ -7,7 +7,15 @@ enum Color {
   Gray = '#424242',
   RoyalBlue = 'royalblue',
   LightGray = '#70757a',
-  WhiteSmoke = 'whitesmoke'
+  Black = '#101820',
+  White = '#fefefe',
+  WhiteSmoke = 'whitesmoke',
+  Primary = '#FF7B40',
+  Success = '#2185d0',
+  Danger = '#FF3D00',
+  Warn = '#FFB800',
+  Inactive = '#8c96a9',
+  Disabled = '#C6CBD5',
 }
 
 export default Color
