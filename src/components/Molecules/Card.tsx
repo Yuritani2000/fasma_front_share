@@ -40,7 +40,7 @@ export const StyledCard = styled.div<StyledCardProps>(props => `
     height:${props.cardHeightSize ? props.cardHeightSize : "auto"};    
     border-radius: ${props.radiusSize};
 
-    box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.25);
 `)
 
 const StyledCenteringDiv = styled.div`
