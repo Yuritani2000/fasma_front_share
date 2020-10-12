@@ -1,7 +1,8 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Button, { ButtonPropsMap, ButtonType } from "./index";
-
+import Button, { ButtonPropsMap, ButtonTypes } from "./index";
+import { FontSize } from "../../../styles/Font";
+import Color from "../../../styles/Color";
 
 export default {
   title: 'Atoms/Buttons',
@@ -11,13 +12,24 @@ export default {
     size: {
       control: {
         type: 'select',
-        options: ['Tiny','Small','Medium','Large','H4','H3','H2','H1'],
+        options: FontSize,
       },
     },
-    type: {
+    buttonType: {
       control: {
         type: 'select',
-        options: ButtonType,
+        options: ButtonTypes,
+      },
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: Color,
+      },
+    },
+    width: {
+      control: {
+        type: 'number',
       },
     },
   },
@@ -27,7 +39,7 @@ const Template: Story<ButtonPropsMap> = (args) => <Button {...args} />;
 
 export const Buttons = Template.bind({});
 Buttons.args = {
-  size: 'Small',
-  type: ButtonType.primary,
+  size: FontSize.Small,
+  buttonType: ButtonTypes.primary,
   label: 'test',
 };

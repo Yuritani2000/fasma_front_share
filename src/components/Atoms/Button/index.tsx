@@ -16,9 +16,9 @@ import { FontSize } from "../../../styles/Font";
 
 export type ButtonPropsMap = {
   label?: string;
-  size?: string;
+  size?: FontSize;
   width?: string;
-  type?: string;
+  buttonType?: ButtonTypes;
   specClass?: string;
   color?: Color;
   disabled?: boolean;
@@ -26,7 +26,7 @@ export type ButtonPropsMap = {
   handleClick?: () => void;
 };
 
-export enum ButtonType {
+export enum ButtonTypes {
   primary = 'primary',
   warning = 'warning',
   danger = 'danger',
@@ -34,7 +34,7 @@ export enum ButtonType {
   text = 'text',
 };
 
-const StyledButton = styled.button<any>`
+const StyledButton = styled.button<ButtonPropsMap>`
   flex-flow: row nowrap;
   align-self: center;
   align-items: center;
@@ -53,51 +53,40 @@ const StyledButton = styled.button<any>`
 
   border-radius: ${(props) => (props.rounded ? "100px" : "3px")};
   padding: ${(props) =>
-    props.size === "Tiny" ? `${Space.TINY} ${Space.TINY}` : ""};
+    props.size === FontSize.Tiny ? `${Space.TINY} ${Space.TINY}` : ""};
   padding: ${(props) =>
-    props.size === "Small" ? `${Space.TINY} ${Space.SMALL}` : ""};
+    props.size === FontSize.Small ? `${Space.TINY} ${Space.SMALL}` : ""};
   padding: ${(props) =>
-    props.size === "Medium" || props.size === "h3"
+    props.size === FontSize.Medium || props.size === FontSize.H3
       ? `${Space.SMALL} ${Space.BASE}`
       : ""};
   padding: ${(props) =>
-    props.size === "Large" || props.size === "h2"
+    props.size === FontSize.Large || props.size === FontSize.H2
       ? `${Space.BASE} ${Space.LARGE}`
       : ""};
-  padding: ${(props) => (props.type === ButtonType.text ? "0" : "")};
+  padding: ${(props) => (props.buttonType === ButtonTypes.text ? "0" : "")};
 
-  background: ${(props) => (props.type === ButtonType.primary ? Color.Primary : "")};
-  background: ${(props) => (props.type === ButtonType.warning ? Color.Warn : "")};
-  background: ${(props) => (props.type === ButtonType.danger ? Color.Danger : "")};
-  background: ${(props) => (props.type === ButtonType.info ? Color.White : "")};
-  background: ${(props) => (props.type === ButtonType.text ? "none" : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.primary ? Color.Primary : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.warning ? Color.Warn : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.danger ? Color.Danger : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.info ? Color.White : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.text ? "none" : "")};
 
-  color: ${(props) => (props.type === ButtonType.info ? Color.Gray : "white")};
-  color: ${(props) => (props.type === ButtonType.text ? Color.Black : "")};
+  color: ${(props) => (props.buttonType === ButtonTypes.info ? Color.Gray : "white")};
+  color: ${(props) => (props.buttonType === ButtonTypes.text ? Color.Black : "")};
 
-  border: ${(props) => (props.type === ButtonType.info ? `1px solid ${Color.LightGray}` : "")};
+  border: ${(props) => (props.buttonType === ButtonTypes.info ? `1px solid ${Color.LightGray}` : "")};
 
-  font-size: ${(props) => (props.size === "Tiny" ? FontSize.Tiny : "")};
-  font-size: ${(props) => (props.size === "Small" ? FontSize.Small : "")};
-  font-size: ${(props) => (props.size === "Medium" ? FontSize.Medium : "")};
-  font-size: ${(props) => (props.size === "Large" ? FontSize.Large : "")};
-  font-size: ${(props) => (props.size === "H4" || props.size === "body" ? FontSize.H4 : "")};
-  font-size: ${(props) => (props.size === "H3" ? FontSize.H3 : "")};
-  font-size: ${(props) => (props.size === "H2" ? FontSize.H2 : "")};
-  font-size: ${(props) => (props.size === "H1" ? FontSize.H1 : "")};
-
-  line-height: ${(props) => (props.size === "H4" || props.size === "body" ? FontSize.H4 : "")};
-  line-height: ${(props) => (props.size === "H3" ? FontSize.H3 : "")};
-  line-height: ${(props) => (props.size === "H3" ? FontSize.H2 : "")};
-  line-height: ${(props) => (props.size === "H3" ? FontSize.H1 : "")};
+  font-size: ${(props) => (props.size)};
+  line-height: ${(props) => (props.size)};
 
   /* type */
-  background: ${(props) => (props.type === ButtonType.text ? "none" : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.text ? "none" : "")};
 
   /* color */
-  color: ${(props) => (props.color === "success" && props.type === ButtonType.text ? Color.White : "")};
-  color: ${(props) => (props.color === "danger" && props.type === ButtonType.text ? Color.White : "")};
-  color: ${(props) => (props.color === "inactive" && props.type === ButtonType.text ? Color.White : "")};
+  color: ${(props) => (props.color === Color.Success && props.buttonType === ButtonTypes.text ? Color.Success : "")};
+  color: ${(props) => (props.color === Color.Danger && props.buttonType === ButtonTypes.text ? Color.Danger : "")};
+  color: ${(props) => (props.color === Color.Inactive && props.buttonType === ButtonTypes.text ? Color.Inactive : "")};
 
   /* size */
 
@@ -107,9 +96,9 @@ const StyledButton = styled.button<any>`
 
   &:disabled {
     background-color: ${(props) =>
-    props.type !== ButtonType.text && props.disabled ? Color.Disabled : ""};
+    props.buttonType !== ButtonTypes.text && props.disabled ? Color.Disabled : ""};
     color: ${(props) =>
-    props.type === ButtonType.text && props.disabled ? Color.White : ""};
+    props.buttonType === ButtonTypes.text && props.disabled ? Color.White : ""};
     cursor: not-allowed;
   }
 `;
@@ -118,7 +107,7 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
   const {
     specClass,
     size,
-    type,
+    buttonType,
     color,
     width,
     handleClick,
@@ -132,7 +121,7 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
       onClick={handleClick}
       disabled={disabled}
       size={size}
-      type={type}
+      buttonType={buttonType}
       width={width}
       rounded={rounded}
       color={color}
@@ -144,7 +133,7 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
 
 Button.defaultProps = {
   size: FontSize.Medium,
-  type: ButtonType.primary,
+  buttonType: ButtonTypes.primary,
   disabled: false,
   rounded: false,
 };
