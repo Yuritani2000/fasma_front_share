@@ -34,6 +34,7 @@ export default Card;
 export const StyledCard = styled.div<StyledCardProps>(props => `
     display: inline-block;
     background:${props.backgroundColor};
+    overflow:hidden;
 
     width:${props.cardWidthSize ? props.cardWidthSize : "auto"};
     height:${props.cardHeightSize ? props.cardHeightSize : "auto"};    
