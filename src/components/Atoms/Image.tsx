@@ -14,6 +14,14 @@ const Image: React.FC<Props> = (props) => {
 
 export default Image;
 
+export enum ImageSize {
+    SMALL = '160px',
+    MEDIUM = '180px',
+    NOMAL = '177px',
+    BIGGER = '240px',
+    LARGE = '300px',
+}
+
 type ImageProps = {
     size?: string,
 }
