@@ -9,7 +9,12 @@ export enum FontFamily {
 }
 
 export enum FontSize {
-  Small = 13,
-  Medium = 16,
-  Large = 20
+  Tiny = '0.8rem',
+  Small = '1.4rem',
+  Medium = '1.7rem',
+  Large = '1.9rem',
+  H4 = '1.4rem',
+  H3 = '2.0rem',
+  H2 = '2.4rem',
+  H1 = '3.2rem',
 }

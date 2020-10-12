@@ -20,7 +20,6 @@ function App() {
       <Route path="/purchase" component={PurchasePage} />
       <Route path="/purchaseCompleted" component={PurchaseCompletedPage} />
     </Switch>
-
   );
 }
 
