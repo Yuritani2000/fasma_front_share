@@ -6,7 +6,7 @@ import Color from '../../styles/Color';
 type FormProps = {
     width?: string;
     height?: string;
-    color?: Color;
+    backgroundColor?: Color;
     type?: string;
     name?: string;
     value: string;  // 必須
@@ -22,7 +22,7 @@ type FormProps = {
 const Form: React.FC<FormProps> = (props) => {
     const { width = '100%',
             height = '100%',
-            color = Color.WhiteSmoke,
+            backgroundColor = Color.White,
             type = 'text',
             name = '',
             value,
@@ -41,7 +41,7 @@ const Form: React.FC<FormProps> = (props) => {
                     fontFamily={fontFamily}
                     width={width}
                     height={height}
-                    color={color}
+                    backgroundColor={backgroundColor}
                     name={name}
                     maxLength={maxLength}
                     size={size}
@@ -57,7 +57,7 @@ export default Form;
 type StyledFormProps = {
     width: string;
     height: string;
-    color: Color;
+    backgroundColor: Color;
     value: string;
     fontSize: FontSize;
     fontFamily: FontFamily;
@@ -69,6 +69,6 @@ const StyledForm = styled.input<StyledFormProps>(props => `
     height: ${props.height};
     font-size: ${props.fontSize}px;
     font-family: ${props.fontFamily};
-    background-color: ${props.color};
+    background-color: ${props.backgroundColor};
     border-radius: ${props.borderRadius};
 `);
