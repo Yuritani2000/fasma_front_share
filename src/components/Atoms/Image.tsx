@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export type ImageProps = {
     url: string,
     size?: string,
-    sizeTypes?: string,
+    sizeTypes?: ImageSize,
 }
 
 const Image: React.FC<ImageProps> = (props) => {
