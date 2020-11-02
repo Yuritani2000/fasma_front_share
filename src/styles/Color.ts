@@ -6,7 +6,7 @@
 enum Color {
   Gray = '#424242',
   RoyalBlue = 'royalblue',
-  LightGray = '#70757a',
+  LightGray = '#707070',
   Black = '#101820',
   White = '#fefefe',
   WhiteSmoke = 'whitesmoke',
