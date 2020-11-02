@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components'
 
-type Props = {
+export type ImageProps = {
     url: string,
     size?: string,
+    sizeTypes?: string,
 }
 
-const Image: React.FC<Props> = (props) => {
+const Image: React.FC<ImageProps> = (props) => {
     return (
-        <StyledButtons src={props.url} size={props.size} />
+        <StyledButtons src={props.url} size={props.size} sizeTypes={props.sizeTypes} />
     );
 }
 
@@ -22,12 +23,13 @@ export enum ImageSize {
     LARGE = '300px',
 }
 
-type ImageProps = {
+export type ImageStyleProps = {
     size?: string,
+    sizeTypes?: string,
 }
 
-export const StyledButtons = styled.img<ImageProps>(props => `
+export const StyledButtons = styled.img<ImageStyleProps>(props => `
   object-fit: cover;
-  width: ${props.size ? props.size : "100%"};
-  height: ${props.size ? props.size : "100%"};
+  width: ${props.size ? props.size : props.sizeTypes ? props.sizeTypes : "100%"};
+  height: ${props.size ? props.size : props.sizeTypes ? props.sizeTypes : "100%"};
 `)
