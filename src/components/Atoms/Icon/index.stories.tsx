@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import Icon, { IconProps } from "./index";
-import { FontSize }  from "../../../styles/Font";
+import { FontSize } from "../../../styles/Font";
 import Color from "../../../styles/Color";
 import IconType from "./icon";
 
@@ -19,7 +19,7 @@ export default {
     size: {
       control: {
         type: "select",
-        options: FontSize,
+        options: Object.keys(FontSize).filter(k => typeof FontSize[k as keyof typeof FontSize] === "string"),
       },
     },
     color: {
@@ -39,9 +39,14 @@ export default {
 
 const Template: Story<IconProps> = (args) => <Icon {...args} />;
 
+const testFunc = () => {
+  console.log("test");
+};
+
 export const Icons = Template.bind({});
 Icons.args = {
-  size: FontSize.Small,
+  size: 'Medium',
   color: Color.Gray,
-  type: "Fa500Px",
+  type: "MdAccountCircle",
+  handleClick: testFunc,
 };

@@ -2,20 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import Color from "../../../styles/Color";
 import { FontSize, FontFamily } from "../../../styles/Font";
-import * as Icons from "react-icons/fa";
+import * as Icons from "react-icons/md";
 
 export type IconProps = {
   type: keyof typeof Icons;
-  size?: string;
+  size?: keyof typeof FontSize;
   color?: Color;
   handleClick?: () => void;
 };
 
 const Icon: React.FC<IconProps> = (props) => {
-  const { size, color, handleClick, type} = props;
+  const { size = 'Medium', color = Color.Gray, handleClick, type } = props;
   const Icon = Icons[type];
   return (
-    <StyledIcon size={size} color= {color} handleClick={handleClick}>
+    <StyledIcon size={size} color={color} onClick={handleClick}>
       <Icon />
     </StyledIcon>
   );
@@ -23,9 +23,7 @@ const Icon: React.FC<IconProps> = (props) => {
 
 export default Icon;
 
-const StyledIcon = styled.div<{size?: string, color?: Color, handleClick?: () => void;}>`
-  size: ${(props) => props.size};
-  color: ${(props) => props.color};
-  font-size: ${FontSize.Medium}px;
-  font-family: ${FontFamily.Roboto};
-`;
+const StyledIcon = styled.div<{ size: keyof typeof FontSize, color?: Color }>(props => `
+  color: ${props.color};
+  font-size: ${FontSize[props.size]};
+`);

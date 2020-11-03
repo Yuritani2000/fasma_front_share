@@ -1,6 +1,6 @@
 enum Icons {
-    Fa500Px = "Fa500Px", 
-    FaAccessibleIcon = "FaAccessibleIcon",
+    MdNotifications = "MdNotifications",
+    MdAccountCircle = "MdAccountCircle",
 }
 
 export default Icons;
