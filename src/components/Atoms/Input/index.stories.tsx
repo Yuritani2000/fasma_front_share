@@ -80,6 +80,6 @@ const Template: Story<InputProps> = (args) => {
 export const Inputs = Template.bind({});
 Inputs.args = {
     placeholder: 'test',
-    fontSize: FontSize.Medium,
-    borderColor: Color.LightGray,
+    fontSize: 'Medium',
+    borderColor: 'LightGray',
 };
