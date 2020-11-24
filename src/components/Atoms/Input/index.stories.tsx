@@ -7,7 +7,7 @@ import Color from '../../../styles/Color';
 export default {
     title: 'Atoms/Inputs',
     component: Input,
-    decorators: [(Story) => <div style={{ fontSize: '62.5%', width: '200px' }}><Story /></div>],
+    decorators: [(Story) => <div style={{ width: '200px' }}><Story /></div>],
     argTypes: {
         fontSize: {
             control: {

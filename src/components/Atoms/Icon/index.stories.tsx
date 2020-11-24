@@ -9,10 +9,7 @@ export default {
   title: "Atoms/Icon",
   component: Icon,
   decorators: [
-    (Story) => (
-      <div style={{ fontSize: "62.5%" }}>
-        <Story />
-      </div>
+    (Story) => (<Story />
     ),
   ],
   argTypes: {
