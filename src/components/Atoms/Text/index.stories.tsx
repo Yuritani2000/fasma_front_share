@@ -1,8 +1,7 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { FontSize } from "../../../styles/Font";
-import Text, { TextProps, TextTypes } from "./index"
-import Color from "../../../styles/Color";
+import Text, { TextProps } from "./index";
 
 export default {
   title: 'Atoms/Text',
@@ -12,19 +11,13 @@ export default {
     size: {
       control: {
         type: 'select',
-        options: FontSize,
+        options: Object.keys(FontSize).filter(k => typeof FontSize[k as keyof typeof FontSize] === "string"),
       },
     },
     textType: {
       control: {
         type: 'select',
-        options: TextTypes,
-      },
-    },
-    color: {
-      control: {
-        type: 'select',
-        options: Color,
+        options: [ 'Default', 'Primary', 'Warning', 'Danger'],
       },
     },
     width: {
@@ -39,7 +32,7 @@ const Template: Story<TextProps> = (args) => <Text {...args} />;
 
 export const Texts = Template.bind({});
 Texts.args = {
-  size: FontSize.Small,
-  textType: TextTypes.primary,
+  size: 'Small',
+  textType: 'Default',
   children: 'test',
 };

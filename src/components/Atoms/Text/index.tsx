@@ -3,46 +3,30 @@ import styled from 'styled-components';
 import Color from '../../../styles/Color';
 import { FontFamily, FontSize } from '../../../styles/Font';
 
+export enum TextTypes {
+    Default = Color.Black,
+    Primary = Color.Primary,
+    Warning = Color.Warn,
+    Danger = Color.Danger,
+};
 
 export type TextProps = {
     children?: ReactText;
-    textType?: TextTypes;
-    size?: FontSize;
+    textType?: keyof typeof TextTypes;
+    size?: keyof typeof FontSize;
     disabled?: boolean;
     handleClick?: () => void;
     link?: boolean;
     textAlign?: "left" | "center" | "right";
-    fontFamily?: FontFamily;
+    fontFamily?: keyof typeof FontFamily;
 };
 
-export enum TextTypes {
-    primary = 'primary',
-    warning = 'warning',
-    danger = 'danger',
-};
-
-const StyledText = styled.div<TextProps>`
-  font-size: ${(props) => props.size};
-  font-family: ${(props) => props.fontFamily};
-  text-align: ${(props) => props.textAlign};
-
-  /* color */
-  color: ${(props) => props.textType === TextTypes.primary ? Color.Black : ""};
-  color: ${(props) => props.textType === TextTypes.warning ? Color.Warn : ""};
-  color: ${(props) => props.textType === TextTypes.danger ? Color.Danger : ""};
-
-  &:disabled {
-    color: ${(props) => props.disabled ? Color.White : ""};
-    cursor: not-allowed;
-  }
-`;
-
-const Text: React.FC<TextProps> = (props) => {
+const Text: React.FC<TextProps> = function (props){
     const {
         children,
         fontFamily,
-        textType,
-        size,
+        textType = 'Default',
+        size = 'Medium',
         handleClick,
         disabled,
         textAlign,
@@ -62,12 +46,41 @@ const Text: React.FC<TextProps> = (props) => {
 }
 
 Text.defaultProps = {
-    size: FontSize.Medium,
+    size: 'Medium',
     fontFamily: FontFamily.Roboto,
-    textAlign: "left",
-    textType: TextTypes.primary,
+    textAlign: 'left',
+    textType: 'Default',
     disabled: false,
+    link: false,
 };
 
 export default Text;
 
+export type StyledTextProps = {
+    children?: ReactText;
+    handleClick?: () => void;
+    textType: keyof typeof TextTypes;
+    size: keyof typeof FontSize;
+    disabled?: boolean;
+    link?: boolean;
+    textAlign?: "left" | "center" | "right";
+    fontFamily?: keyof typeof FontFamily;
+};
+
+const StyledText = styled.div<StyledTextProps>(props => `
+  font-size: ${FontSize[props.size]};
+  font-family: ${props.fontFamily};
+  text-align: ${props.textAlign};
+  cursor: pointer;
+  /* color */
+  color: ${TextTypes[props.textType]};
+  &:hover {
+    text-decoration: ${props.link ? "underline" : "none"};
+    cursor: ${props.link ? "pointer" : "default"};
+  }
+  &:disabled {
+    background-color: ${props.disabled ? Color.Disabled : ""};
+    color: ${props.disabled ? Color.White : ""};
+    cursor: not-allowed;
+  }
+`);
