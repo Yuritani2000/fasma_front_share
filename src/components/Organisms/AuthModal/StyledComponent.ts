@@ -28,7 +28,7 @@ type ButtonAreaProps = {
 }
 
 export const ButtonArea = styled.div<ButtonAreaProps>(props => `
-    width: calc(420px*0.80);
+    width: 80%;
     height: ${props.height};
 `)
 

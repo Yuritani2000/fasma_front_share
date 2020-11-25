@@ -4,14 +4,14 @@ import Color from '../../styles/Color';
 
 // ここに、Modalの器を作るよ。つまり、外側の
 // 四角をここに実装するよ！
+
 type ModalBaseProps = {
 
 }
 
-
 export const ModalBase = styled.div<ModalBaseProps>(props => `
-    width: 420px;
-    height: 550px;
+    width: calc(420px - (${window.parent.screen.width}px - 100vw)*0.1);
+    height: calc(550px - (${window.parent.screen.height}px - 100vh)*0.1);
     background: #fefefe;
     border-width: 5px;
     margin-left: auto;

@@ -7,8 +7,7 @@ import ConfigPage from './Pages/ConfigPage';
 import SkillListPage from './Pages/SkillListPage';
 import PurchasePage from './Pages/PurchasePage';
 import PurchaseCompletedPage from './Pages/PurchaseCompletedPage';
-import LogIn from './Organisms/AuthModal/LogIn';
-import SignUp from './Organisms/AuthModal/SignUp';
+
 // ログインの画面処理や画面遷移などを記述
 function App() {
   return (
