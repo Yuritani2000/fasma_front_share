@@ -10,8 +10,8 @@ type ModalBaseProps = {
 }
 
 export const ModalBase = styled.div<ModalBaseProps>(props => `
-    width: calc(420px - (${window.parent.screen.width}px - 100vw)*0.1);
-    height: calc(550px - (${window.parent.screen.height}px - 100vh)*0.1);
+    width: calc(11cm - (${window.parent.screen.width}px - 100vw)*0.1);
+    height: calc(15cm - (${window.parent.screen.height}px - 100vh)*0.1);
     background: #fefefe;
     border-width: 5px;
     margin-left: auto;
