@@ -23,7 +23,7 @@ const AuthModal: React.FC = (props) => {
                             <StyledButton fontColor='#fff' backgroundColor='#ff8c50' onClick={()=>{}} width='100%' height='100%' borderRadius='50px'>アカウントを作成</StyledButton>
                         </Link>
                     </ButtonElement>
-                    <ButtonElement marginTop='15%' height='54px' width='100%'>
+                    <ButtonElement marginTop='15%' height='1.4cm' width='100%'>
                         <Link to="/auth/login">
                             <StyledButton fontColor='#000' backgroundColor='#ccc' onClick={()=>{}} width='100%' height='100%' borderRadius='50px'>ログイン</StyledButton>
                         </Link>

@@ -24,7 +24,7 @@ const SignUp: React.FC = (props) => {
                 </FormElement>
             </FormArea>
             <ButtonArea height='28%'>
-                <ButtonElement marginTop='20%' height='54px' width='100%'>
+                <ButtonElement marginTop='20%' height='1.4cm' width='100%'>
                     <Link to="/home">
                         <StyledButton fontColor='#fff' backgroundColor='#ff8c50' onClick={()=>{}} width='100%' height='100%' borderRadius='50px'>アカウントを作成</StyledButton>
                     </Link>
