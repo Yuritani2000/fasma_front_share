@@ -7,12 +7,12 @@ import Space from "../../../styles/Space";
 export type InputProps = {
     width?: number;
     height?: number;
-    backgroundColor?: Color;
-    borderColor?: Color;
+    backgroundColor?: keyof typeof Color;
+    borderColor?: keyof typeof Color;
     type?: string;
     name?: string;
     value: string;  // 必須
-    fontSize?: FontSize;
+    fontSize?: keyof typeof FontSize;
     fontFamily?: FontFamily;
     maxLength?: number;
     rounded?: boolean;
@@ -24,12 +24,12 @@ const Input: React.FC<InputProps> = function(props) {
     const {
         width,
         height,
-        backgroundColor,
-        borderColor,
+        backgroundColor = 'White',
+        borderColor = 'LightGray',
         type,
         name,
         value,
-        fontSize,
+        fontSize = 'Medium',
         fontFamily,
         maxLength,
         rounded,
@@ -58,11 +58,11 @@ const Input: React.FC<InputProps> = function(props) {
 };
 
 Input.defaultProps = {
-    backgroundColor: Color.White,
-    borderColor: Color.LightGray,
+    backgroundColor: 'White',
+    borderColor: 'LightGray',
     type: 'text',
     name: '',
-    fontSize: FontSize.Medium,
+    fontSize: 'Medium',
     fontFamily: FontFamily.Roboto,
     maxLength: 30,
     rounded: false,
@@ -72,10 +72,10 @@ Input.defaultProps = {
 type StyledInputProps = {
     width?: number;
     height?: number;
-    backgroundColor?: Color;
-    borderColor?: Color;
+    backgroundColor: keyof typeof Color;
+    borderColor: keyof typeof Color;
     value?: string;
-    fontSize?: FontSize;
+    fontSize: keyof typeof FontSize;
     fontFamily?: FontFamily;
     borderRadius?: string;
     rounded?: boolean;
@@ -84,12 +84,15 @@ type StyledInputProps = {
 const StyledInput = styled.input<StyledInputProps>(props => `
     width: ${props.width?props.width+'px':'100%'};
     height: ${props.height?props.height+'px':'100%'};
-    font-size: ${props.fontSize};
+    font-size: ${FontSize[props.fontSize]};
     font-family: ${props.fontFamily};
-    background-color: ${props.backgroundColor};
-    border-color: ${props.borderColor};
+    background-color: ${Color[props.backgroundColor]};
+    border: 1px solid ${Color[props.borderColor]};
+    &:focus {
+      border: 1px solid ${Color[props.backgroundColor]};
+    }
     padding: ${Space.TINY} ${Space.SMALL};
-    border-radius: ${props.rounded ? "100px" : "3px"};
+    border-radius: ${props.rounded ? "100px" : "4px"};
 `);
 
 export default Input;

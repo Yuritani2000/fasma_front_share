@@ -7,7 +7,7 @@ import Color from "../../../styles/Color";
 export default {
   title: 'Atoms/Buttons',
   component: Button,
-  decorators:  [(Story) => <div style={{ fontSize: '62.5%' }}><Story/></div>],
+  decorators:  [(Story) => <Story/>],
   argTypes: {
     size: {
       control: {

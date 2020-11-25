@@ -7,7 +7,7 @@ import Color from '../../../styles/Color';
 export default {
     title: 'Atoms/Inputs',
     component: Input,
-    decorators: [(Story) => <div style={{ fontSize: '62.5%', width: '200px' }}><Story /></div>],
+    decorators: [(Story) => <div style={{ width: '200px' }}><Story /></div>],
     argTypes: {
         fontSize: {
             control: {
@@ -80,6 +80,6 @@ const Template: Story<InputProps> = (args) => {
 export const Inputs = Template.bind({});
 Inputs.args = {
     placeholder: 'test',
-    fontSize: FontSize.Medium,
-    borderColor: Color.LightGray,
+    fontSize: 'Medium',
+    borderColor: 'LightGray',
 };

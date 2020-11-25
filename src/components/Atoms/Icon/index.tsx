@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Color from "../../../styles/Color";
-import { FontSize, FontFamily } from "../../../styles/Font";
+import { FontSize } from "../../../styles/Font";
 import * as Icons from "react-icons/md";
 
 export type IconProps = {
@@ -26,4 +26,10 @@ export default Icon;
 const StyledIcon = styled.div<{ size: keyof typeof FontSize, color?: Color }>(props => `
   color: ${props.color};
   font-size: ${FontSize[props.size]};
+  cursor: pointer;
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
 `);
