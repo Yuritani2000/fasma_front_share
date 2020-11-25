@@ -6,17 +6,13 @@ export default {
   title: "Organisms/Header",
   component: Header,
   decorators: [
-    (Story) => (
-      <div style={{ fontSize: "62.5%" }}>
-        <Story />
-      </div>
-    ),
+    (Story) => (<Story/>),
   ],
   argTypes: {
   },
 } as Meta;
 
-const Template: Story<Props>= (args) => <Header {...args}/>;
+const Template: Story<Props> = (args) => <Header {...args} />;
 
 export const _Header = Template.bind({});
 _Header.args = {

@@ -6,11 +6,7 @@ export default {
     title: "Molecules/SearchBox",
     component: SearchBox,
     decorators: [
-        (Story) => (
-            <div style={{ fontSize: "62.5%" }}>
-                <Story />
-            </div>
-        ),
+        (Story) => (<Story />),
     ],
     argTypes: {
         value: {

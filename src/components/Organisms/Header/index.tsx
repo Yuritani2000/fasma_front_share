@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Atoms
 import Icon from '../../Atoms/Icon';
 import Logo from '../../Atoms/Logo';
@@ -13,23 +13,22 @@ import {
 } from './styledComponents';
 
 export type Props = {
-  searchValue: string;
-  handleSearchValue: (value: string) => void;
   isSerchBox: boolean;
 }
 
 const Header: React.FC<Props> = (props) => {
-  const { searchValue, handleSearchValue, isSerchBox } = props;
+  const { isSerchBox } = props;
+  const [searchValue, setSearchValue] = useState('');
   return (
     <Wrapper>
       <LogoWrapper>
         <Logo />
       </LogoWrapper>
-      <SearchBox handleSearchValue={() => handleSearchValue} value={searchValue} disable={!isSerchBox} />
+      <SearchBox handleSearchValue={(_) => { setSearchValue(_) }} value={searchValue} disable={!isSerchBox} />
       <RightWrapper>
-        <Icon type="MdAccountCircle" handleClick={() => console.log("ここをクリックするとアカウント作成")} />
+        <Icon type="MdAccountCircle" size="H2" handleClick={() => console.log("ここをクリックするとアカウント作成")} />
         <AlertWrapper>
-          <Icon type="MdNotifications" handleClick={() => console.log("ここをクリックするとお知らせ表示")} />
+          <Icon type="MdNotifications" size="H2" handleClick={() => console.log("ここをクリックするとお知らせ表示")} />
         </AlertWrapper>
       </RightWrapper>
     </Wrapper>
