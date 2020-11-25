@@ -10,18 +10,36 @@ export enum TextTypes {
     Danger = Color.Danger,
 };
 
-export type TextProps = {
+export type StyledTextProps = {
     children?: ReactText;
-    textType?: keyof typeof TextTypes;
-    size?: keyof typeof FontSize;
-    disabled?: boolean;
     handleClick?: () => void;
+    textType: keyof typeof TextTypes;
+    size: keyof typeof FontSize;
+    disabled?: boolean;
     link?: boolean;
     textAlign?: "left" | "center" | "right";
     fontFamily?: keyof typeof FontFamily;
 };
 
-const Text: React.FC<TextProps> = function (props){
+const StyledText = styled.div<StyledTextProps>(props => `
+  font-size: ${FontSize[props.size]};
+  font-family: ${props.fontFamily};
+  text-align: ${props.textAlign};
+  cursor: pointer;
+  /* color */
+  color: ${TextTypes[props.textType]};
+  &:hover {
+    text-decoration: ${props.link ? "underline" : "none"};
+    cursor: ${props.link ? "pointer" : "default"};
+  }
+  &:disabled {
+    background-color: ${props.disabled ? Color.Disabled : ""};
+    color: ${props.disabled ? Color.White : ""};
+    cursor: not-allowed;
+  }
+`);
+
+const Text: React.FC<StyledTextProps> = function (props){
     const {
         children,
         fontFamily,
@@ -55,32 +73,3 @@ Text.defaultProps = {
 };
 
 export default Text;
-
-export type StyledTextProps = {
-    children?: ReactText;
-    handleClick?: () => void;
-    textType: keyof typeof TextTypes;
-    size: keyof typeof FontSize;
-    disabled?: boolean;
-    link?: boolean;
-    textAlign?: "left" | "center" | "right";
-    fontFamily?: keyof typeof FontFamily;
-};
-
-const StyledText = styled.div<StyledTextProps>(props => `
-  font-size: ${FontSize[props.size]};
-  font-family: ${props.fontFamily};
-  text-align: ${props.textAlign};
-  cursor: pointer;
-  /* color */
-  color: ${TextTypes[props.textType]};
-  &:hover {
-    text-decoration: ${props.link ? "underline" : "none"};
-    cursor: ${props.link ? "pointer" : "default"};
-  }
-  &:disabled {
-    background-color: ${props.disabled ? Color.Disabled : ""};
-    color: ${props.disabled ? Color.White : ""};
-    cursor: not-allowed;
-  }
-`);
