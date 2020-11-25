@@ -24,7 +24,7 @@ const Header: React.FC<Props> = (props) => {
       <LogoWrapper>
         <Logo />
       </LogoWrapper>
-      <SearchBox handleSearchValue={(_) => { setSearchValue(_) }} value={searchValue} disable={!isSerchBox} />
+      <SearchBox handleSearchValue={(_) => { setSearchValue(_) }} value={searchValue} disable={!isSerchBox} placeholder={"探しているスキルは何ですか?"}/>
       <RightWrapper>
         <Icon type="MdAccountCircle" size="H2" handleClick={() => console.log("ここをクリックするとアカウント作成")} />
         <AlertWrapper>
