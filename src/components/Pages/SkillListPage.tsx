@@ -1,9 +1,9 @@
 import React from 'react'
-
+import SkillListTemplate from '../Templates/SkillListTemplate'
 const SkillListPage: React.FC = () => {
   return (
     <div>
-      SkillList
+      <SkillListTemplate/>
     </div>
   )
 }
