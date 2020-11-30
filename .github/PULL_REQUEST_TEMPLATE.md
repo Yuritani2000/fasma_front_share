@@ -1,11 +1,3 @@
----
-
-title: "[Feature]"
-labels: enhancement
-assignees: ''
-reviewer: tekoneko1997
----
-
 ## 関連URL
 
 ↓issueのURL  
