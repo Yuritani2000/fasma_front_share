@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import Color from '../../styles/Color';
 
 // ここに、Modalの器を作るよ。つまり、外側の
 // 四角をここに実装するよ！

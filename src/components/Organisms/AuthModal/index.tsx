@@ -1,16 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import Color from '../../../styles/Color';
-import { FontFamily, FontSize } from '../../../styles/Font';
 import {ModalBase} from '../../Molecules/ModalBase';
-import {StyledForm, StyledButton } from './MockAtoms';
-import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from './StyledComponent';
+import { StyledButton } from './MockAtoms';
+import {TitleArea, ButtonArea, LogoSpace, ButtonElement} from './StyledComponent';
 import Logomark from './Logo_tmp/logomark.png';
 import {Link} from 'react-router-dom';
 
 const AuthModal: React.FC = (props) => {
     return (
-        <div>
             <ModalBase>
                 <TitleArea height='42%'>
                     <LogoSpace>
@@ -30,7 +26,6 @@ const AuthModal: React.FC = (props) => {
                     </ButtonElement>
                 </ButtonArea>
             </ModalBase>
-        </div>
     );
 }
 

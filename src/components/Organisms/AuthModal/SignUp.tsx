@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {ModalBase} from '../../Molecules/ModalBase';
 import {StyledForm, StyledButton } from './MockAtoms';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from './StyledComponent';

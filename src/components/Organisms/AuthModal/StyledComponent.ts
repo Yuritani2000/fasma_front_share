@@ -1,12 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import Color from '../../../styles/Color';
 
-type TitleAreaProps = {
-    height: string;
-}
-
-export const TitleArea = styled.div<TitleAreaProps>(props => `
+export const TitleArea = styled.div<{height: string;}>(props => `
     height: ${props.height};
     padding: auto;
     text-align: center;
@@ -32,10 +26,7 @@ export const ButtonArea = styled.div<ButtonAreaProps>(props => `
     height: ${props.height};
 `)
 
-type LogoSpaceProps = {
-}
-
-export const LogoSpace = styled.div<LogoSpaceProps>(props => `
+export const LogoSpace = styled.div( () => `
     width: 60%;
     margin: auto;
     margin-top: 20%;

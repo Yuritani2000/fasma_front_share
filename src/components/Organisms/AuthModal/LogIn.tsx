@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {ModalBase} from '../../Molecules/ModalBase';
 import {StyledForm, StyledButton } from './MockAtoms';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from './StyledComponent';
@@ -7,7 +6,6 @@ import Logomark from './Logo_tmp/logomark.png';
 import {Link} from 'react-router-dom';
 
 const LogIn: React.FC = (props) => {
-
     return (
         <ModalBase>
             <TitleArea height='42%'>
@@ -29,7 +27,6 @@ const LogIn: React.FC = (props) => {
                         <StyledButton fontColor='#fff' backgroundColor='#ff8c50' onClick={()=>{}} width='100%' height='100%' borderRadius='50px'>ログイン</StyledButton>
                     </Link>
                 </ButtonElement>
-                
             </ButtonArea>
         </ModalBase>
     );
