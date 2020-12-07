@@ -4,12 +4,14 @@ import styled from 'styled-components'
 export type ImageProps = {
     url: string,
     size?: string,
-    sizeTypes?: ImageSize,
+    sizeTypes?: keyof typeof ImageSize,
 }
 
 const Image: React.FC<ImageProps> = (props) => {
+    var size = props.size? props.size: props.sizeTypes ? ImageSize[props.sizeTypes] : '100px' 
+    console.log(size) 
     return (
-        <StyledButtons src={props.url} size={props.size} sizeTypes={props.sizeTypes} />
+        <StyledButtons src={props.url} size={size} />
     );
 }
 
@@ -24,12 +26,11 @@ export enum ImageSize {
 }
 
 export type ImageStyleProps = {
-    size?: string,
-    sizeTypes?: string,
+    size: string
 }
 
 export const StyledButtons = styled.img<ImageStyleProps>(props => `
   object-fit: cover;
-  width: ${props.size ? props.size : props.sizeTypes ? props.sizeTypes : "100%"};
-  height: ${props.size ? props.size : props.sizeTypes ? props.sizeTypes : "100%"};
+  width: ${props.size};
+  height: ${props.size};
 `)

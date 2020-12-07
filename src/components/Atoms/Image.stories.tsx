@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Image, { ImageSize, ImageProps } from "./Image";
+import Image, { ImageProps } from "./Image";
 
 export default {
   title: 'Atoms/Images',
@@ -9,12 +9,7 @@ export default {
   argTypes: {
     url: {},
     size: {},
-    sizeTypes: {
-      control: {
-        type: 'select',
-        options: ImageSize,
-      },
-    }
+    sizeTypes: {}
   },
 } as Meta;
 
@@ -23,6 +18,6 @@ const Template: Story<ImageProps> = (args) => <Image {...args} />;
 export const Images = Template.bind({});
 Images.args = {
   size: "",
-  sizeTypes: ImageSize.SMALL,
+  sizeTypes:'SMALL',
   url: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small",
 };
