@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
-import SkillCard, { Props } from './index'
+import SkillCard, { SkillCardProps } from './index'
 
 export default {
     title: "Molecules/SkillCard",
@@ -18,7 +18,7 @@ export default {
     },
 } as Meta;
 
-const Template: Story<Props> = (args) => {
+const Template: Story<SkillCardProps> = (args) => {
     return <SkillCard {...args}/>
 }
 

@@ -5,7 +5,7 @@ import {
   Wrapper, DescriptionBox
 } from './styledComponents';
 
-export type Props = {
+export type SkillCardProps = {
   skillName: string
   skillCategory: string
   tags?: string[]
@@ -14,7 +14,7 @@ export type Props = {
   imgUrl: string
 }
 
-const SkillCard: React.FC<Props> = (props) => {
+const SkillCard: React.FC<SkillCardProps> = (props) => {
   const { skillName, skillCategory, tags, skillDescription, price, imgUrl } = props
   return (
     <Wrapper>
