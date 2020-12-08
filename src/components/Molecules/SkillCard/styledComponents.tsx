@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Color from '../../../styles/Color';
-import Space from '../../../styles/Space';
 
 export const Wrapper = styled.div`
   width: 659px;
