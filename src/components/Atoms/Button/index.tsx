@@ -49,7 +49,7 @@ const StyledButton = styled.button<ButtonPropsMap>`
     margin-right: ${Space.SMALL};
   }
 
-  width: ${(props) => (props).width}px;
+  width: ${(props) => (props.width ? props.width + "px" : "100%")};
 
   border-radius: ${(props) => (props.rounded ? "100px" : "3px")};
   padding: ${(props) =>
