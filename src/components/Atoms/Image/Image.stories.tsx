@@ -17,7 +17,6 @@ const Template: Story<ImageProps> = (args) => <Image {...args} />;
 
 export const Images = Template.bind({});
 Images.args = {
-  size: undefined,
   sizeTypes:'SMALL',
   url: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small",
 };
