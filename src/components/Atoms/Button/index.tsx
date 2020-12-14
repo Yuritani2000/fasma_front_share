@@ -17,7 +17,7 @@ import { FontSize } from "../../../styles/Font";
 export type ButtonPropsMap = {
   label?: string;
   size?: FontSize;
-  width?: string;
+  width?: number;
   buttonType?: ButtonTypes;
   specClass?: string;
   color?: Color;
@@ -32,6 +32,7 @@ export enum ButtonTypes {
   danger = 'danger',
   info = 'info',
   text = 'text',
+  secondary = 'secondary',
 };
 
 const StyledButton = styled.button<ButtonPropsMap>`
@@ -49,7 +50,7 @@ const StyledButton = styled.button<ButtonPropsMap>`
     margin-right: ${Space.SMALL};
   }
 
-  width: ${(props) => (props).width}px;
+  width: ${(props) => (props.width ? props.width + "px" : "100%")};
 
   border-radius: ${(props) => (props.rounded ? "100px" : "3px")};
   padding: ${(props) =>
@@ -71,9 +72,11 @@ const StyledButton = styled.button<ButtonPropsMap>`
   background: ${(props) => (props.buttonType === ButtonTypes.danger ? Color.Danger : "")};
   background: ${(props) => (props.buttonType === ButtonTypes.info ? Color.White : "")};
   background: ${(props) => (props.buttonType === ButtonTypes.text ? "none" : "")};
+  background: ${(props) => (props.buttonType === ButtonTypes.secondary ? Color.Secondary : "")};
 
   color: ${(props) => (props.buttonType === ButtonTypes.info ? Color.Gray : "white")};
   color: ${(props) => (props.buttonType === ButtonTypes.text ? Color.Black : "")};
+  color: ${(props) => (props.buttonType === ButtonTypes.secondary ? Color.Black : "")};
 
   border: ${(props) => (props.buttonType === ButtonTypes.info ? `1px solid ${Color.LightGray}` : "")};
 
