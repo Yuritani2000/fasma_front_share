@@ -15,9 +15,10 @@ enum Color {
   Danger = '#FF3D00',
   Warn = '#FFB800',
   Inactive = '#8c96a9',
-  Disabled = '#C6CBD5',
+  Disabled = '#7A7A7A',
   SerchBox = '#F5F5F5',
   Border = '#8E8E8E',
+  Secondary = '2D2D2D'
 }
 
 export default Color
