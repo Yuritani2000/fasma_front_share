@@ -1,6 +1,8 @@
 const express = require('express');
-const user = require('./jsons/user_Temple.json')
-const tasks = require('./jsons/tasks_Temple.json')
+const user = require('./jsons/user.json')
+const skills_programming = require('./jsons/skills_programming.json')
+const skills_design = require('./jsons/skills_design.json')
+const skills_math = require('./jsons/skills_math.json')
 
 const app = express();
 const port_number = 3001;
@@ -12,23 +14,24 @@ app.use((_, res, next) => {
   next();
 });
 
-app.get('/', (_, res) => res.send('React Redux Example Mock Server'));
+app.get('/', (_, res) => res.send('Fasma Mock Server'));
 
-app.get('/user', (req, res) => {
-  const id = req.query.id
-  if (id == "user01") {
-    res.status(200).json(user)
-  } else {
-    res.status(400).send('id is not exist')
-  }
+app.get('/user', (_, res) => {
+  res.status(200).json(user)
 });
 
-app.get('/tasks', (req, res) => {
-  const id = req.query.id
-  if (id == "user01") {
-    res.status(200).json(tasks)
+app.get('/skills', (req, res) => {
+  const category = req.query.category
+  if (category == "programming") {
+    res.status(200).json(skills_programming)
+  } else if (category == "design") {
+    res.status(200).json(skills_design)
+  } else if (category == "math") {
+    res.status(200).json(skills_math)
+  } else if (category == "search") {
+    res.status(200).json(skills_programming)
   } else {
-    res.status(400).send('id is not exist')
+    res.status(200).send(category + ' is not exist')
   }
 })
 
