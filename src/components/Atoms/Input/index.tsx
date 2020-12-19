@@ -93,6 +93,7 @@ const StyledInput = styled.input<StyledInputProps>(props => `
     }
     padding: ${Space.TINY} ${Space.SMALL};
     border-radius: ${props.rounded ? "100px" : "4px"};
+    box-sizing: border-box;
 `);
 
 export default Input;
