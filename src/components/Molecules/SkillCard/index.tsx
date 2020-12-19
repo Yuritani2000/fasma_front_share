@@ -5,6 +5,9 @@ import {
   Wrapper, DescriptionBox
 } from './styledComponents';
 
+import Image from '../../Atoms/Image/Image'
+import Text from '../../Atoms/Text'
+
 export type SkillCardProps = {
   skillName: string
   skillCategory: string
@@ -14,18 +17,26 @@ export type SkillCardProps = {
   imgUrl: string
 }
 
+const tagList = (tagListData: string[]) => {
+  var num = 0
+  return tagListData.map( tagData => {
+    return tagData ? <Text children={tagData} textType="Default" size="Small" key={num}/> : <div />
+  })
+}
+
 const SkillCard: React.FC<SkillCardProps> = (props) => {
   const { skillName, skillCategory, tags, skillDescription, price, imgUrl } = props
   return (
     <Wrapper>
         <DescriptionBox>
-          <div>skill:{skillName}</div>
-          <div>category:{skillCategory}</div>
-          <div>tags:{tags}</div>
+          <Text children={skillName} textType="Default" size="Medium" />
+          <Text children={skillCategory} textType="Default" size="Small" />
+          <Text children={skillCategory} textType="Default" size="Small" />
+          <div>{tags ? tagList(tags): <div />}</div>
           <div>desc:{skillDescription}</div>
-          <div>price:{price}</div>
+          <Text children={price} textType="Default" size="Small" textAlign="right"/>
         </DescriptionBox>
-        <img src={imgUrl} alt="画像を読み込めませんでした"/>
+        <Image url={imgUrl} size={200}/>
     </Wrapper>
   );
 }
