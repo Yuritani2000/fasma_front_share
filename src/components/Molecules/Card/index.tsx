@@ -51,9 +51,9 @@ const Card: React.FC<Props> = props => {
         backgroundColor
     } = props.cardProps
 
-    if (props.rotation) styledCardSize.cardHeightSize = props.cardProps.styledCardSize.cardWidthSize 
+    if (props.rotation) styledCardSize.cardHeightSize = props.cardProps.styledCardSize.cardWidthSize
     if (props.rotation) styledCardSize.cardWidthSize = props.cardProps.styledCardSize.cardHeightSize
-    
+
     return (
         <StyledCard styledCardSize={styledCardSize} backgroundColor={backgroundColor}>
             <StyledCenteringDiv>

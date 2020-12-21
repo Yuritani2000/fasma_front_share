@@ -8,6 +8,7 @@ export enum TextTypes {
     Primary = Color.Primary,
     Warning = Color.Warn,
     Danger = Color.Danger,
+    Tag = Color.Ashen,
 };
 
 export type TextProps = {
@@ -39,7 +40,7 @@ const StyledText = styled.div<TextProps>(props => `
   }
 `);
 
-const Text: React.FC<TextProps> = function (props){
+const Text: React.FC<TextProps> = function (props) {
     const {
         children,
         fontFamily,
