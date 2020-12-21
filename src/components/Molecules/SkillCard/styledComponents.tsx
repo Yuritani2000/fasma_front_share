@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 import Color from '../../../styles/Color';
+<<<<<<< HEAD
+=======
+import Space from '../../../styles/Space';
+>>>>>>> [add] スキルカードのおおよその見た目を作成
 
 export const Wrapper = styled.div`
   width: 659px;
   height: 200px;
+<<<<<<< HEAD
   background: ${Color.Gray};
+=======
+  background: ${Color.White};
+>>>>>>> [add] スキルカードのおおよその見た目を作成
   padding: 10px;
   display: grid;
   grid-template-columns: 469px 190px;
@@ -16,7 +24,10 @@ export const DescriptionBox = styled.div`
   height: 200x;
   background: ${Color.White};
   padding-right:10px;
+<<<<<<< HEAD
   box-sizing: border-box;
+=======
+>>>>>>> [add] スキルカードのおおよその見た目を作成
   display: grid;
   grid-template-rows: 27px 20px 25px 108px 20px;
   overflow: hidden;

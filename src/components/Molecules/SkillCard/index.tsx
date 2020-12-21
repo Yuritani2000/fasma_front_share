@@ -19,8 +19,8 @@ export type SkillCardProps = {
 
 const tagList = (tagListData: string[]) => {
   var num = 0
-  return tagListData.map( tagData => {
-    return tagData ? <Text children={tagData} textType="Default" size="Small" key={num}/> : <div />
+  return tagListData.map(tagData => {
+    return tagData ? <Text children={tagData} textType="Default" size="Small" key={num} /> : <div />
   })
 }
 
@@ -28,15 +28,15 @@ const SkillCard: React.FC<SkillCardProps> = (props) => {
   const { skillName, skillCategory, tags, skillDescription, price, imgUrl } = props
   return (
     <Wrapper>
-        <DescriptionBox>
-          <Text children={skillName} textType="Default" size="Medium" />
-          <Text children={skillCategory} textType="Default" size="Small" />
-          <Text children={skillCategory} textType="Default" size="Small" />
-          <div>{tags ? tagList(tags): <div />}</div>
-          <div>desc:{skillDescription}</div>
-          <Text children={price} textType="Default" size="Small" textAlign="right"/>
-        </DescriptionBox>
-        <Image url={imgUrl} size={200}/>
+      <DescriptionBox>
+        <Text children={skillName} textType="Default" size="Medium" />
+        <Text children={skillCategory} textType="Default" size="Small" />
+        <Text children={skillCategory} textType="Default" size="Small" />
+        <div>{tags ? tagList(tags) : <div />}</div>
+        <div>desc:{skillDescription}</div>
+        <Text children={price} textType="Default" size="Small" textAlign="right" />
+      </DescriptionBox>
+      <Image url={imgUrl} size={200} />
     </Wrapper>
   );
 }

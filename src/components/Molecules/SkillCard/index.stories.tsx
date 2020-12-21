@@ -19,15 +19,15 @@ export default {
 } as Meta;
 
 const Template: Story<SkillCardProps> = (args) => {
-    return <SkillCard {...args}/>
+    return <SkillCard {...args} />
 }
 
 export const _SkillCard = Template.bind({});
 _SkillCard.args = {
-    skillName:"",
+    skillName: "",
     skillCategory: "",
     tags: [],
     skillDescription: "",
     price: undefined,
-    imgUrl:"https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
+    imgUrl: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
 };
