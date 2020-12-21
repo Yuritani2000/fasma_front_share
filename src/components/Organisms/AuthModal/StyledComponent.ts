@@ -35,11 +35,13 @@ export const LogoSpace = styled.div( () => `
 type FormElementProps = {
     height: string;
     width: string;
+    marginBottom?: string;
 }
 
 export const FormElement = styled.div<FormElementProps>(props => `
     height: ${props.height};
     width: ${props.width};
+    margin-bottom: ${props.marginBottom};
 `);
 
 type ButtonElementProps = {

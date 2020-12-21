@@ -1,5 +1,7 @@
 import React from 'react';
+import { FontSize } from '../../../styles/Font';
 import {ModalBase} from '../../Molecules/ModalBase';
+import Input from '../../Atoms/Input/index';
 import {StyledForm, StyledButton } from './MockAtoms';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from './StyledComponent';
 import Logomark from './Logo_tmp/logomark.png';
@@ -15,11 +17,11 @@ const SignUp: React.FC = (props) => {
                 </LogoSpace>
             </TitleArea>
             <FormArea height='30%'>
-                <FormElement height='50%' width='100%'>
-                    <StyledForm type='text' placeholder='学籍番号' width='100%' height='70%' borderRadius='4px' fontSize='1.2em'/>
+                <FormElement marginBottom='15%' height='35%' width='100%'>
+                    <Input value='' onChange={()=>{}} type='text' placeholder='学籍番号' fontSize='Large'/>
                 </FormElement>
-                <FormElement height='50%' width='100%'>
-                    <StyledForm type='password' placeholder='パスワード' width='100%' height='70%' borderRadius='4px' fontSize='1.2em'/>
+                <FormElement marginBottom='15%' height='35%' width='100%'>
+                    <Input value='' onChange={()=>{}} type='password' placeholder='パスワード' fontSize='Large'/>
                 </FormElement>
             </FormArea>
             <ButtonArea height='28%'>
