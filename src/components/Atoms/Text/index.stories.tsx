@@ -6,7 +6,7 @@ import Text, { TextProps } from "./index";
 export default {
   title: 'Atoms/Text',
   component: Text,
-  decorators:  [(Story) => <div style={{ fontSize: '62.5%' }}><Story/></div>],
+  decorators: [(Story) => <div style={{ fontSize: '62.5%' }}><Story /></div>],
   argTypes: {
     size: {
       control: {
@@ -17,7 +17,7 @@ export default {
     textType: {
       control: {
         type: 'select',
-        options: [ 'Default', 'Primary', 'Warning', 'Danger'],
+        options: ['Default', 'Primary', 'Warning', 'Danger', 'Tag'],
       },
     },
     width: {

@@ -18,7 +18,8 @@ enum Color {
   Disabled = '#7A7A7A',
   SerchBox = '#F5F5F5',
   Border = '#8E8E8E',
-  Secondary = '2D2D2D'
+  Secondary = '2D2D2D',
+  Ashen = '#A4A4A4',
 }
 
 export default Color
