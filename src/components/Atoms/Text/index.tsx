@@ -10,7 +10,7 @@ export enum TextTypes {
     Danger = Color.Danger,
 };
 
-export type StyledTextProps = {
+export type TextProps = {
     children?: ReactText;
     handleClick?: () => void;
     textType: keyof typeof TextTypes;
@@ -21,7 +21,7 @@ export type StyledTextProps = {
     fontFamily?: keyof typeof FontFamily;
 };
 
-const StyledText = styled.div<StyledTextProps>(props => `
+const StyledText = styled.div<TextProps>(props => `
   font-size: ${FontSize[props.size]};
   font-family: ${props.fontFamily};
   text-align: ${props.textAlign};
@@ -39,7 +39,7 @@ const StyledText = styled.div<StyledTextProps>(props => `
   }
 `);
 
-const Text: React.FC<StyledTextProps> = function (props){
+const Text: React.FC<TextProps> = function (props){
     const {
         children,
         fontFamily,
