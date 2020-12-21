@@ -22,7 +22,7 @@ const AuthModal: React.FC = (props) => {
                     </ButtonElement>
                     <ButtonElement marginTop='15%' height='1.4cm' width='100%'>
                         <Link to="/auth/login">
-                            <Button />
+                        <Button label='ログイン' size={FontSize.Large} buttonType={ButtonTypes.secondary} rounded={true} handleClick={()=>{}}/>
                         </Link>
                     </ButtonElement>
                 </ButtonArea>
