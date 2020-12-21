@@ -1,34 +1,36 @@
 import styled from 'styled-components';
 import Color from '../../../styles/Color';
-<<<<<<< HEAD
-=======
-import Space from '../../../styles/Space';
->>>>>>> [add] スキルカードのおおよその見た目を作成
 
 export const Wrapper = styled.div`
   width: 659px;
   height: 200px;
-<<<<<<< HEAD
-  background: ${Color.Gray};
-=======
   background: ${Color.White};
->>>>>>> [add] スキルカードのおおよその見た目を作成
+  margin-bottom: 20px;
   padding: 10px;
   display: grid;
-  grid-template-columns: 469px 190px;
+  grid-template-columns: 459px 180px;
+  box-sizing: border-box;
   overflow: hidden;
 `
 
 export const DescriptionBox = styled.div`
-  width: 469px;
-  height: 200x;
+  width: 459px;
+  height: 180px;
   background: ${Color.White};
   padding-right:10px;
-<<<<<<< HEAD
   box-sizing: border-box;
-=======
->>>>>>> [add] スキルカードのおおよその見た目を作成
   display: grid;
-  grid-template-rows: 27px 20px 25px 108px 20px;
+  grid-template-rows: 27px 20px 26px 87px 20px;
+  overflow: hidden;
+`
+export const TagWrapper = styled.div`
+  width: fit-content;
+  overflow: hidden;
+  padding-right: 5px;
+`
+
+export const ListWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
   overflow: hidden;
 `

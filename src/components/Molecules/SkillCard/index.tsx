@@ -2,7 +2,7 @@ import React from 'react';
 
 // Styled Components
 import {
-  Wrapper, DescriptionBox
+  Wrapper, DescriptionBox, ListWrapper, TagWrapper
 } from './styledComponents';
 
 import Image from '../../Atoms/Image/Image'
@@ -16,11 +16,11 @@ export type SkillCardProps = {
   price: number
   imgUrl: string
 }
+var num = 0
 
 const tagList = (tagListData: string[]) => {
-  var num = 0
   return tagListData.map(tagData => {
-    return tagData ? <Text children={tagData} textType="Default" size="Small" key={num} /> : <div />
+    return tagData ? <TagWrapper key={num++}><Text link={true} children={"#" + tagData} textType="Default" size='Tiny' key={num++} /> </TagWrapper> : <div />
   })
 }
 
@@ -31,12 +31,11 @@ const SkillCard: React.FC<SkillCardProps> = (props) => {
       <DescriptionBox>
         <Text children={skillName} textType="Default" size="Medium" />
         <Text children={skillCategory} textType="Default" size="Small" />
-        <Text children={skillCategory} textType="Default" size="Small" />
-        <div>{tags ? tagList(tags) : <div />}</div>
-        <div>desc:{skillDescription}</div>
-        <Text children={price} textType="Default" size="Small" textAlign="right" />
+        <ListWrapper>{tags ? tagList(tags) : <div />}</ListWrapper>
+        <Text children={skillDescription} textType="Default" size="Small" />
+        <Text children={price + " Funny"} textType="Default" size="Small" textAlign="right" />
       </DescriptionBox>
-      <Image url={imgUrl} size={200} />
+      <Image url={imgUrl} size={180} />
     </Wrapper>
   );
 }
