@@ -6,6 +6,7 @@
 export enum FontFamily {
   Mairyo = 'Mairyo',
   Roboto = 'Roboto',
+  Noto = 'Noto Sans CJK JP',
 }
 
 export enum FontSize {
