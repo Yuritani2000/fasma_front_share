@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUp from '../../Organisms/AuthModal/SignUp';
+import SignUp from '../../Organisms/AuthModals/SignUpModal';
 
 const SignUpTemplate: React.FC = () => {
     return (

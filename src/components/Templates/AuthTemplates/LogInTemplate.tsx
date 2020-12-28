@@ -1,5 +1,5 @@
 import React from 'react';
-import LogIn from '../../Organisms/AuthModal/LogIn'
+import LogIn from '../../Organisms/AuthModals/LogInModal'
 
 const LogInTemplate: React.FC = () => {
     return (

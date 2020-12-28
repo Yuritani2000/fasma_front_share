@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthModal from '../../Organisms/AuthModal/index'
+import AuthModal from '../../Organisms/AuthModals/AuthModal/index'
 
 const AuthTemplate: React.FC = () => {
     return (

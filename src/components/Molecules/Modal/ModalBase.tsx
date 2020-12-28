@@ -1,20 +1,17 @@
 import styled from 'styled-components';
+import Color from '../../../styles/Color';
 
-// ここに、Modalの器を作るよ。つまり、外側の
-// 四角をここに実装するよ！
+// ログイン画面、スキル投稿画面などで使用するModalの枠
+// 他のコンポーネントをこれで囲み、Organismsなどに実装して使用する。
 
-type ModalBaseProps = {
-
-}
-
-export const ModalBase = styled.div<ModalBaseProps>(props => `
+export const ModalBase = styled.div(props => `
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 9cm;
     height: 12cm;
-    background: #fefefe;
+    background: ${Color.White};
     display: flex;
     flex-direction: column;
     align-items: center;
