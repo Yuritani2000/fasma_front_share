@@ -7,27 +7,14 @@ export type FloatingActionButtonProps = {
     width?: number;
     height?: number;
     label: string;
-    Color?: keyof typeof Color;
-    backgroundColor?: keyof typeof Color;
-    borderColor?: keyof typeof Color;
-    fontSize?: keyof typeof FontSize;
-    fontFamily?: keyof typeof FontFamily;
+    color?: Color;
+    backgroundColor?: Color;
+    fontSize?: FontSize;
+    fontFamily?: FontFamily;
     handleClick?: () => void;
 }
 
-export type StyledFloatingActionButtonProps = {
-    width?: number;
-    height?: number;
-    label: string;
-    Color?: keyof typeof Color;
-    backgroundColor?: keyof typeof Color;
-    borderColor?: keyof typeof Color;
-    fontSize?: keyof typeof FontSize;
-    fontFamily?: keyof typeof FontFamily;
-    handleClick?: () => void;
-}
-
-const StyledFloatingActionButton = styled.button<StyledFloatingActionButtonProps>(props => `
+const StyledFloatingActionButton = styled.button<FloatingActionButtonProps>(props => `
     position: fixed;
     top:auto;
     bottom:20px;
@@ -39,8 +26,8 @@ const StyledFloatingActionButton = styled.button<StyledFloatingActionButtonProps
     font-family: ${props.fontFamily};
     border-radius:50%;
     border:none;
-    color:white;
-    background-color:${Color.Primary};
+    color:${props.color};
+    background-color:${props.backgroundColor};
     background-position: center;
     transition: background 0.9s;
     &:hover {
@@ -58,9 +45,8 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
         width,
         height,
         label,
-        Color,
+        color,
         backgroundColor,
-        borderColor,
         fontSize,
         fontFamily,
         handleClick,
@@ -70,10 +56,9 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
         <StyledFloatingActionButton
             width={width}
             height={height}
-            Color={Color}
+            color={color}
             label={label}
             backgroundColor={backgroundColor}
-            borderColor={borderColor}
             fontSize={fontSize}
             fontFamily={fontFamily}
             onClick={handleClick}
@@ -86,11 +71,10 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
 FloatingActionButton.defaultProps = {
     width: 100,
     height: 100,
-    Color: 'White',
-    backgroundColor: 'White',
-    borderColor: 'LightGray',
-    fontSize: 'Large',
-    fontFamily: 'Roboto',
+    color: Color.White,
+    backgroundColor: Color.Primary,
+    fontSize: FontSize.Large,
+    fontFamily: FontFamily.Roboto,
 }
 
 export default FloatingActionButton
