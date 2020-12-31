@@ -1,17 +1,17 @@
-// 1エンドポイントごとにフォルダを分ける
-// その中にCRUD1つ1つのフォルダを作成する
-// 命名規則は CRUD + State + Api
-
 import Axios from "../Axios";
 import UserModel from "./Model";
 
 export type GetUserParam = {
   id: string
+  token: string
 }
 
-export async function getUserApi({ id }: GetUserParam) {
+export async function getUserApi({ id, token }: GetUserParam) {
   try {
     return await Axios.get<UserModel>('/user', {
+      headers: {
+        authorization: token
+      },
       params: {
         id
       }
