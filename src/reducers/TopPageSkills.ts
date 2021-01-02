@@ -1,6 +1,6 @@
 import SkillsAction from "../actions/Skills/Action"
 import SkillsActionType from "../actions/Skills/ActionType"
-import TopPageSkillsState from "../states/TopPageSkills"
+import { TopPageSkillsState } from "../states/Skills"
 
 const initialState: TopPageSkillsState = {
   programming: [],
