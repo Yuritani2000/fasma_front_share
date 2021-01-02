@@ -1,16 +1,16 @@
 import { createAsyncAction } from "typesafe-actions"
 import SkillsActionType from "./ActionType"
-import { GetSkillsParam } from "../../apis/Skills/GetSkills";
-import { Skills } from "../../states/TopPageSkills";
+import { GetSkillsParam } from "../../apis/Skills/GetSkillsApi";
+import { Skill } from "../../states/Skills";
 
 export const getTopPageSkills = createAsyncAction(
   SkillsActionType.GET_TOP_PAGE_SKILLS_REQUEST,
   SkillsActionType.GET_TOP_PAGE_SKILLS_SUCCESS,
   SkillsActionType.GET_TOP_PAGE_SKILLS_FAIL
-)<GetSkillsParam, Skills, Error>();
+)<GetSkillsParam, Skill[], Error>();
 
-export const getSearchSkills = createAsyncAction(
-  SkillsActionType.GET_SEARCH_SKILLS_REQUEST,
-  SkillsActionType.GET_SEARCH_SKILLS_SUCCESS,
-  SkillsActionType.GET_SEARCH_SKILLS_FAIL
-)<GetSkillsParam, Skills, Error>();
+export const getSkills = createAsyncAction(
+  SkillsActionType.GET_SKILLS_REQUEST,
+  SkillsActionType.GET_SKILLS_SUCCESS,
+  SkillsActionType.GET_SKILLS_FAIL
+)<GetSkillsParam, Skill[], Error>();
