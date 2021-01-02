@@ -1,6 +1,6 @@
 import { getTopPageSkills } from "../../actions/Skills/ActionCreator";
 import { PromiseGenericType } from "../PromiseGenericType";
-import { getSkillsApi } from "../../apis/Skills/GetSkills";
+import { getSkillsApi } from "../../apis/Skills/GetSkillsApi";
 import { call, put } from "redux-saga/effects";
 
 
