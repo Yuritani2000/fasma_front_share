@@ -10,7 +10,7 @@ const port_number = 3001;
 // CORS対策
 app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   next();
 });
 
@@ -31,7 +31,7 @@ app.get('/skills', (req, res) => {
   } else if (category == "search") {
     res.status(200).json(skills_programming)
   } else {
-    res.status(200).send(category + ' is not exist')
+    res.status(200).json(skills_programming)
   }
 })
 
