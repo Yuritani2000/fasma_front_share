@@ -4,13 +4,12 @@ import { FontSize, FontFamily } from '../../../styles/Font';
 import styled from "styled-components";
 
 export type FloatingActionButtonProps = {
-    width?: number;
-    height?: number;
+    size?: number;
     label: string;
-    color?: Color;
-    backgroundColor?: Color;
-    fontSize?: FontSize;
-    fontFamily?: FontFamily;
+    color?: keyof typeof Color;
+    backgroundColor?: keyof typeof Color;
+    fontSize?: keyof typeof FontSize;
+    fontFamily?: keyof typeof FontFamily;
     handleClick?: () => void;
 }
 
@@ -20,8 +19,8 @@ const StyledFloatingActionButton = styled.button<FloatingActionButtonProps>(prop
     bottom:20px;
     right:20px;
     left:auto;
-    width: ${props.width ? props.width + 'px' : '100%'};
-    height: ${props.height ? props.height + 'px' : '100%'};
+    width: ${props.size ? props.size + 'px' : '100%'};
+    height: ${props.size ? props.size + 'px' : '100%'};
     font-size: ${props.fontSize};
     font-family: ${props.fontFamily};
     border-radius:50%;
@@ -38,12 +37,14 @@ const StyledFloatingActionButton = styled.button<FloatingActionButtonProps>(prop
         background-size: 50%;
         transition: background 0s;
     }
+    &:focus {
+    outline: none;
+}
 `);
 
 const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (props) {
     const {
-        width,
-        height,
+        size,
         label,
         color,
         backgroundColor,
@@ -54,8 +55,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
 
     return (
         <StyledFloatingActionButton
-            width={width}
-            height={height}
+            size={size}
             color={color}
             label={label}
             backgroundColor={backgroundColor}
@@ -69,12 +69,11 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
 }
 
 FloatingActionButton.defaultProps = {
-    width: 100,
-    height: 100,
-    color: Color.White,
-    backgroundColor: Color.Primary,
-    fontSize: FontSize.Large,
-    fontFamily: FontFamily.Roboto,
+    size: 100,
+    color: 'White',
+    backgroundColor: 'Primary',
+    fontSize: 'Large',
+    fontFamily: 'Roboto',
 }
 
 export default FloatingActionButton

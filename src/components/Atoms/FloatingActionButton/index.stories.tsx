@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
-import FloatingActionButton, { FloatingActionButtonProps} from "./index";
-import { FontSize,FontFamily } from "../../../styles/Font";
+import FloatingActionButton, { FloatingActionButtonProps } from "./index";
+import { FontSize, FontFamily } from "../../../styles/Font";
 import Color from "../../../styles/Color";
 
 export default {
@@ -18,7 +18,7 @@ export default {
         fontFamily: {
             control: {
 
-                type:'select',
+                type: 'select',
                 options: FontFamily,
             }
         },
@@ -55,10 +55,10 @@ const testFunc = () => {
 
 export const Buttons = Template.bind({});
 Buttons.args = {
-    color: Color.White,
-    backgroundColor: Color.Primary,
-    fontSize: FontSize.Large,
-    fontFamily: FontFamily.Roboto,
+    color: 'White',
+    backgroundColor: 'Primary',
+    fontSize: 'Large',
+    fontFamily: 'Roboto',
     label: '出品',
     handleClick: testFunc
 };
