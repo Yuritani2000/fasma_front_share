@@ -18,7 +18,7 @@ const SearchBox: React.FC<Props> = (props) => {
   return (
     disable ? <></>
       : <Wrapper>
-        <Input onChange={handleSearchValue} value={value} fontSize='Small' maxLength={60} backgroundColor='SerchBox' borderColor='Border' placeholder={placeholder}/>
+        <Input onChange={handleSearchValue} value={value} fontSize='Small' maxLength={60} backgroundColor='SerchBox' borderColor='Border' placeholder={placeholder} />
       </Wrapper>
   );
 }
