@@ -15,19 +15,20 @@ export type SkillCardProps = {
   skillDescription: string
   price: number
   imgUrl: string
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 var num = 0
 
 const tagList = (tagListData: string[]) => {
   return tagListData.map(tagData => {
-    return tagData ? <TagWrapper key={num++}><Text link={true} children={"#" + tagData} textType="Default" size='Tiny' key={num++} /> </TagWrapper> : <div />
+    return <TagWrapper key={num++}><Text link={true} children={"#" + tagData} textType="Default" size='Tiny' key={num++} /> </TagWrapper>
   })
 }
 
 const SkillCard: React.FC<SkillCardProps> = (props) => {
-  const { skillName, skillCategory, tags, skillDescription, price, imgUrl } = props
+  const { skillName, skillCategory, tags, skillDescription, price, imgUrl, onClick } = props
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <DescriptionBox>
         <Text children={skillName} textType="Default" size="Medium" />
         <Text children={skillCategory} textType="Default" size="Small" />
