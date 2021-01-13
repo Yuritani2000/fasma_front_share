@@ -9,6 +9,7 @@ export default {
         (Story) => (<Story />),
     ],
     argTypes: {
+        id: {},
         skillName: {},
         skillCategory: {},
         tags: [],
@@ -22,6 +23,7 @@ const Template: Story<SkillCardProps> = (args) => <SkillCard {...args} />;
 
 export const _SkillCard = Template.bind({});
 _SkillCard.args = {
+    id: 1,
     skillName: "Proccesing",
     skillCategory: "Programing",
     tags: ["programing", "proccessing", "1st grade"],

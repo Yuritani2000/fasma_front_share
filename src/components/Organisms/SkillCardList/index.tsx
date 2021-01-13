@@ -13,9 +13,8 @@ export type SkillCardListProps = {
 const SkillCardList: React.FC<SkillCardListProps> = (props) => {
   const { skillData } = props;
   const skillCardList = (skillDatas: SkillCardProps[]) => {
-    var num = 0
     return skillDatas.map(skillData => {
-      return skillData ? <SkillCard {...skillData} key={++num}/> :<div />
+      return skillData ? <SkillCard {...skillData} key={skillData.id} /> : <div />
     })
   }
   return (

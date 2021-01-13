@@ -9,6 +9,7 @@ import Image from '../../Atoms/Image/Image'
 import Text from '../../Atoms/Text'
 
 export type SkillCardProps = {
+  id: number
   skillName: string
   skillCategory: string
   tags?: string[]
