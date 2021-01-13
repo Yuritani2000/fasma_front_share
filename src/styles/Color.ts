@@ -18,7 +18,7 @@ enum Color {
   Disabled = '#7A7A7A',
   SerchBox = '#F5F5F5',
   Border = '#8E8E8E',
-  Secondary = '2D2D2D',
+  Secondary = '#D2D2D2',
   Ashen = '#A4A4A4',
 }
 
