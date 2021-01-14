@@ -11,11 +11,11 @@ export default {
   argTypes: {
     skillData: [
       {
-        skillName: {},
-        skillCategory: {},
+        name: {},
+        category: {},
         tags: [],
-        skillDescription: {},
-        imgUrl: {},
+        description: {},
+        thumbnail: {},
         price: {}
       }
     ]
@@ -29,21 +29,21 @@ _SkillCardList.args = {
   skillData: [
     {
       id: 1,
-      skillName: "Proccesing",
-      skillCategory: "Programing",
+      name: "Proccesing",
+      category: "Programing",
       tags: ["programing", "proccessing", "1st grade"],
-      skillDescription: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
+      description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
-      imgUrl: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
+      thumbnail: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
     },
     {
       id: 2,
-      skillName: "Proccesing",
-      skillCategory: "Programing",
+      name: "Proccesing",
+      category: "Programing",
       tags: ["programing", "proccessing", "1st grade"],
-      skillDescription: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
+      description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
-      imgUrl: "https://pbs.twimg.com/media/Edo3SPCUcAEY7Z6?format=jpg&name=small"
+      thumbnail: "https://pbs.twimg.com/media/Edo3SPCUcAEY7Z6?format=jpg&name=small"
     }
   ]
 };
