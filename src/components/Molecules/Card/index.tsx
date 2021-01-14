@@ -69,6 +69,7 @@ export const StyledCard = styled.div<StyledCardProps>(props => `
     display: inline-block;
     background:${props.backgroundColor};
     overflow:hidden;
+    position: relative;
 
     width:${props.styledCardSize.cardWidthSize + "px" ? props.styledCardSize.cardWidthSize + "px" : "100px"};
     height:${props.styledCardSize.cardHeightSize + "px" ? props.styledCardSize.cardHeightSize + "px" : "100px"};    
