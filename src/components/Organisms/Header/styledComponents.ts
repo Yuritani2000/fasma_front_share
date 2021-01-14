@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
   flex-flow: row nowrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background: ${Color.White};
-  z-index: 11;
   padding-right: ${Space.LARGE};
 `;
 
