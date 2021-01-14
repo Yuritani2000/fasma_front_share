@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 type Props = {
-    childComponent?: React.ReactNode,
+    children?: React.ReactNode,
     cardProps: StyledCardProps,
     rotation?: boolean // 横長指定にする場合trueを指定する
 }
@@ -57,7 +57,7 @@ const Card: React.FC<Props> = props => {
     return (
         <StyledCard styledCardSize={styledCardSize} backgroundColor={backgroundColor}>
             <StyledCenteringDiv>
-                {props.childComponent ? props.childComponent : <div />}
+                {props.children ? props.children : <div />}
             </StyledCenteringDiv>
         </StyledCard >
     )
