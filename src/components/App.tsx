@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
+import TopPage from './Pages/TopPage';
 import SignInPage from './Pages/SignInPage';
 import PostPage from './Pages/PostPage';
 import ConfigPage from './Pages/ConfigPage';
@@ -12,7 +12,7 @@ import PurchaseCompletedPage from './Pages/PurchaseCompletedPage';
 function App() {
   return (
     <Switch>
-      <Route path="/home" component={HomePage} />
+      <Route path="/home" component={TopPage} />
       <Route path="/signIn" component={SignInPage} />
       <Route path="/post" component={PostPage} />
       <Route path="/config" component={ConfigPage} />
