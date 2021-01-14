@@ -5,11 +5,11 @@
 
 enum Color {
   Gray = '#424242',
-  RoyalBlue = 'royalblue',
+  RoyalBlue = '#002366',
   LightGray = '#707070',
   Black = '#101820',
   White = '#fefefe',
-  WhiteSmoke = 'whitesmoke',
+  WhiteSmoke = ' #f5f5f5 ',
   Primary = '#FF7B40',
   Success = '#2185d0',
   Danger = '#FF3D00',
@@ -20,6 +20,7 @@ enum Color {
   Border = '#8E8E8E',
   Secondary = '#D2D2D2',
   Ashen = '#A4A4A4',
+  Hover = 'rgba(0,0,0,.05)',
 }
 
 export default Color
