@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -13,12 +13,20 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-size: 62.5%;
         font-family: 'Roboto','Noto Sans CJK JP';
+        height: 100%;
+        width: 100%;
+}
     }
     body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        background: #F5F5F5;
+    }
+    #root {
         height: 100%;
         width: 100%;
     }
 `;
 //TODO: ここのfontFamilyあとで変更
 export default GlobalStyle;
-

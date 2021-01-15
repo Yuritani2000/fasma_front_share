@@ -2,11 +2,12 @@ import Axios from "../Axios";
 import SkillModel from "../Models/SkillModel";
 
 export type GetSkillsParam = {
-  category: string
-  number: number
-  quantity: number
-  sort: string
-  token: string
+  category?: string;
+  number?: number;
+  quantity?: number;
+  sort?: string;
+  tag?: string;
+  token: string;
 }
 
 export async function getSkillsApi(params: GetSkillsParam) {
@@ -19,7 +20,8 @@ export async function getSkillsApi(params: GetSkillsParam) {
         category: params.category,
         number: params.number,
         quantity: params.quantity,
-        sort: params.sort
+        sort: params.sort,
+        tag: params.tag
       }
     })
   } catch (e) {

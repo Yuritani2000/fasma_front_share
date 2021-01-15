@@ -23,10 +23,12 @@ export type Props = {
     height?: number;
     fontSize?: keyof typeof FontSize;
     fontFamily?: FontFamily;
+    isBoxShadow?: boolean;
+    placeholder?: string;
 }
 
 const DropDownList: React.FC<Props> = (props) => {
-    const { items, onChangedSelectItem, selectItem, width, height } = props;
+    const { items, onChangedSelectItem, selectItem, width, height, isBoxShadow = true, placeholder= '' } = props;
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const toggleDropdownOpen = useCallback(() => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -45,11 +47,14 @@ const DropDownList: React.FC<Props> = (props) => {
         </ItemWrapper>
         )
     });
-
+    let selectedText: string = '';
+    if (selectItem) {
+        selectedText = selectItem.label === '' ? placeholder: selectItem.label;
+    }
     return (
-        <Wrapper onClick={isDropdownOpen?toggleDropdownOpen:()=>{}}  isDropdownOpen={isDropdownOpen}>
-            <DropDownButton onClick={toggleDropdownOpen} className="ui dropdown" isDropdownOpen={isDropdownOpen}>
-                <SelectedText>{selectItem ? selectItem.label : "選択してください"}</SelectedText>
+        <Wrapper onClick={isDropdownOpen ? toggleDropdownOpen : () => { }} isDropdownOpen={isDropdownOpen}>
+            <DropDownButton onClick={toggleDropdownOpen} className="ui dropdown" isDropdownOpen={isDropdownOpen} isBoxShadow={isBoxShadow}>
+                <SelectedText>{selectedText}</SelectedText>
                 <ItemsWrapper isDropdownOpen={isDropdownOpen}>
                     {isDropdownOpen ? ItemList : <></>}
                 </ItemsWrapper>
