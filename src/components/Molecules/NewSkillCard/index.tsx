@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Color from "../../../styles/Color";
 import { FontSize } from "../../../styles/Font";
 import Space from "../../../styles/Space";
 
@@ -42,6 +43,10 @@ const StyledPrice = styled.div`
   right: 0;
   margin-right: 10px;
   font-size: 1.2rem;
+  background-color: ${Color.White};
+  padding-left: ${Space.TINY};
+  padding-right: ${Space.TINY};
+  border-radius: 5px;
 `
 
 const StyledSkillName = styled.div`
@@ -49,4 +54,8 @@ const StyledSkillName = styled.div`
   font-size: ${FontSize.Small}; 
   left: ${Space.SMALL};
   bottom: ${Space.SMALL};
+  background-color: ${Color.White};
+  padding-left: ${Space.TINY};
+  padding-right: ${Space.TINY};
+  border-radius: 5px;
 `
