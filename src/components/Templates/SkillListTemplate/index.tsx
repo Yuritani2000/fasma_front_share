@@ -1,11 +1,43 @@
 import React from 'react'
-import Header from '../../Organisms/Header'
+// Organisms
+import Header from '../../Organisms/Header';
+import DetailedSearchBox from '../../Organisms/DetailedSearchBox';
+import SkillCardList from '../../Organisms/SkillCardList';
+import SkillListResultSetting from '../../Organisms/SkillListResultSetting'
+// Molecules
+import { Items } from '../../Molecules/DropdownList'; //TODO: これちょっとどうにかしたいわ
+// State
+import { SkillsState } from '../../../states/Skills';
+import {
+  Wrapper,
+  HeaderWrapper,
+  SkillListResultSettingWrapper,
+  DetailedSearchBoxWrapper,
+  SkillCardListWrapper,
+} from './styeldComponent';
 
-const SkillListTemplate: React.FC = () => {
+export type Props = {
+  Category: Items[];
+  skills: SkillsState;
+}
+
+const SkillListTemplate: React.FC<Props> = (props) => {
+  const { Category, skills } = props;
   return (
-    <div>
-      <Header isSerchBox={true}/>
-    </div>
+    <Wrapper>
+      <HeaderWrapper>
+        <Header isSerchBox={true} />
+      </HeaderWrapper>
+      <SkillListResultSettingWrapper>
+        <SkillListResultSetting />
+      </SkillListResultSettingWrapper>
+      <DetailedSearchBoxWrapper>
+        <DetailedSearchBox Category={Category} />
+      </DetailedSearchBoxWrapper>
+      <SkillCardListWrapper>
+        <SkillCardList skillData={skills} />
+      </SkillCardListWrapper>
+    </Wrapper>
   )
 }
 

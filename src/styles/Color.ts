@@ -20,7 +20,7 @@ enum Color {
   Border = '#8E8E8E',
   Secondary = '#D2D2D2',
   Ashen = '#A4A4A4',
-  Hover = 'rgba(0,0,0,.05)',
+  Hover = '#F7F7F7',
 }
 
 export default Color
