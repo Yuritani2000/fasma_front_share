@@ -18,6 +18,7 @@ export type InputProps = {
     rounded?: boolean;
     onChange: (value: string) => void;   // 必須
     placeholder?: string;
+    isReadOnly?: boolean;
 };
 
 const Input: React.FC<InputProps> = function(props) {
@@ -35,6 +36,7 @@ const Input: React.FC<InputProps> = function(props) {
         rounded,
         onChange,
         placeholder,
+        isReadOnly,
     } = props;
     return (
         <StyledInput
@@ -67,6 +69,7 @@ Input.defaultProps = {
     maxLength: 30,
     rounded: false,
     placeholder:'',
+    isReadOnly: false,
 }
 
 type StyledInputProps = {
@@ -79,6 +82,7 @@ type StyledInputProps = {
     fontFamily?: FontFamily;
     borderRadius?: string;
     rounded?: boolean;
+    isReadOnly?: boolean;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => `
