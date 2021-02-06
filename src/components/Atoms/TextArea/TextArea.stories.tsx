@@ -22,12 +22,12 @@ export default {
                 options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
             },
         },
-        // borderColor: {
-        //     control: {
-        //         type: 'select',
-        //         options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
-        //     },
-        // },
+        borderColor: {
+            control: {
+                type: 'select',
+                options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
+            },
+        },
         width: {
             control: {
                 type: 'number',

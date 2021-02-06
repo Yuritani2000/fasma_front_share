@@ -15,6 +15,7 @@ export type TextAreaProps = {
     borderRadius?: number;
     borderState?: number;               // borderState: 境界線の表示に関する状態 0: 上下左右すべて表示  1: 下の境界線のみ表示  2: 上下左右すべて非表示  それ以外: すべて表示
     borderWidth?: number;
+    borderColor?: keyof typeof Color;
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -29,6 +30,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            borderRadius,
            borderState,
            borderWidth,
+           borderColor,
         } = props;
     return (
         <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
@@ -40,7 +42,8 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         readOnly={isReadOnly}
                         borderRadius={borderRadius}
                         borderState={borderState}
-                        borderWidth={borderWidth}>{value}</StyledTextArea>
+                        borderWidth={borderWidth}
+                        borderColor={borderColor}>{value}</StyledTextArea>
     );
 }
 
@@ -56,6 +59,7 @@ type StyledTextAreaProps = {
     borderRadius?: number;
     borderState?: number;
     borderWidth?: number;
+    borderColor?: keyof typeof Color;
 }
 
 const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
@@ -71,6 +75,7 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     border-left: ${(props.borderState == 1 || props.borderState == 2) ?  'none' : 'solid'};
     border-bottom: ${(props.borderState == 2 ) ?  'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
+    border-color: ${(props.borderColor) ? Color[props.borderColor] : Color.Black};
 `);
 
 export default TextArea;
