@@ -11,6 +11,7 @@ export type TextAreaProps = {
     value?: string;
     backgroundColor?: keyof typeof Color;
     fontSize?: keyof typeof FontSize;
+    isReadOnly?: boolean;
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -21,6 +22,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            value,
            backgroundColor,
            fontSize,
+           isReadOnly,
         } = props;
     return (
         <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
@@ -28,7 +30,8 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         width={width} 
                         height={height} 
                         backgroundColor={backgroundColor} 
-                        fontSize={fontSize}>{value}</StyledTextArea>
+                        fontSize={fontSize}
+                        readOnly={isReadOnly}>{value}</StyledTextArea>
     );
 }
 
