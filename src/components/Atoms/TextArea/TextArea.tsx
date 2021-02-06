@@ -37,13 +37,14 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         disabled={disabled} 
                         width={width} 
                         height={height} 
+                        value={value}
                         backgroundColor={backgroundColor} 
                         fontSize={fontSize}
                         readOnly={isReadOnly}
                         borderRadius={borderRadius}
                         borderState={borderState}
                         borderWidth={borderWidth}
-                        borderColor={borderColor}>{value}</StyledTextArea>
+                        borderColor={borderColor}/>
     );
 }
 
