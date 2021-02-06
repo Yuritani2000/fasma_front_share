@@ -13,6 +13,9 @@ export type TextAreaProps = {
     fontSize?: keyof typeof FontSize;
     isReadOnly?: boolean;
     borderRadius?: number;
+    shouldShowOnlyBottomBorder?: boolean;
+    shouldHideAllBorders?: boolean;
+    borderWidth?: number;
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -25,6 +28,9 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            fontSize,
            isReadOnly,
            borderRadius,
+           shouldShowOnlyBottomBorder,
+           shouldHideAllBorders,
+           borderWidth
         } = props;
     return (
         <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
@@ -34,7 +40,10 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         backgroundColor={backgroundColor} 
                         fontSize={fontSize}
                         readOnly={isReadOnly}
-                        borderRadius={borderRadius}>{value}</StyledTextArea>
+                        borderRadius={borderRadius}
+                        shouldShowOnlyBottomBorder={shouldShowOnlyBottomBorder}
+                        shouldHideAllBorders={shouldHideAllBorders}
+                        borderWidth={borderWidth}>{value}</StyledTextArea>
     );
 }
 
@@ -48,6 +57,9 @@ type StyledTextAreaProps = {
     shouldShowBorderBottom?: boolean;
     shouldShowBorderLeft?: boolean;
     borderRadius?: number;
+    shouldShowOnlyBottomBorder?: boolean;
+    shouldHideAllBorders?: boolean;
+    borderWidth?: number;
 }
 
 const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
@@ -58,6 +70,11 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     font-size: ${(props.fontSize) ? FontSize[props.fontSize] : FontSize.Medium};
     box-sizing: border-box;
     border-radius: ${(props.borderRadius) ? props.borderRadius + 'px' : '4px'};
+    border: ${(props.shouldHideAllBorders) ? 'none' : 'solid'};
+    border-top: ${(props.shouldShowOnlyBottomBorder) ?  'none' : 'solid'};
+    border-right: ${(props.shouldShowOnlyBottomBorder) ? 'none' : 'solid'};
+    border-left: ${(props.shouldShowOnlyBottomBorder) ?  'none' : 'solid'};
+    border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
 `);
 
 export default TextArea;
