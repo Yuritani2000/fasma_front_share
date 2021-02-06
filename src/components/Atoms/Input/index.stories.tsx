@@ -24,7 +24,7 @@ export default {
         borderColor: {
             control: {
                 type: 'select',
-                options: Color,
+                options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
             },
         },
         width: {
