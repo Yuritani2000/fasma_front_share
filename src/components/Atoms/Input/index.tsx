@@ -20,6 +20,7 @@ export type InputProps = {
     placeholder?: string;
     isReadOnly?: boolean;
     shouldShowOnlyBottomBorder?: boolean;
+    borderWidth?: number;
 };
 
 const Input: React.FC<InputProps> = function(props) {
@@ -39,6 +40,7 @@ const Input: React.FC<InputProps> = function(props) {
         placeholder,
         isReadOnly,
         shouldShowOnlyBottomBorder,
+        borderWidth,
     } = props;
     return (
         <StyledInput
@@ -58,7 +60,8 @@ const Input: React.FC<InputProps> = function(props) {
             rounded={rounded}
             placeholder={placeholder}
             readOnly={isReadOnly}
-            shouldShowOnlyBottomBorder={shouldShowOnlyBottomBorder}/>
+            shouldShowOnlyBottomBorder={shouldShowOnlyBottomBorder}
+            borderWidth={borderWidth}/>
     );
 };
 
@@ -87,6 +90,7 @@ type StyledInputProps = {
     borderRadius?: string;
     rounded?: boolean;
     shouldShowOnlyBottomBorder?: boolean;
+    borderWidth?: number;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => `
@@ -106,6 +110,7 @@ const StyledInput = styled.input<StyledInputProps>(props => `
     border-right-style: ${(props.shouldShowOnlyBottomBorder) ? (props.shouldShowOnlyBottomBorder == true) ? 'none' : 'solid' : 'solid'};
     border-left-style: ${(props.shouldShowOnlyBottomBorder) ? (props.shouldShowOnlyBottomBorder == true) ? 'none' : 'solid' : 'solid'};
     border-bottom-style: solid;
+    border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
 `);
 
 export default Input;
