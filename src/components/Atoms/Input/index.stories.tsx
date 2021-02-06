@@ -12,13 +12,13 @@ export default {
         fontSize: {
             control: {
                 type: 'select',
-                options: FontSize,
+                options: Object.keys(FontSize).filter(k => typeof FontSize[k as keyof typeof FontSize] === "string"),
             },
         },
         backgroundColor: {
             control: {
                 type: 'select',
-                options: Color,
+                options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
             },
         },
         borderColor: {
