@@ -12,6 +12,7 @@ export type TextAreaProps = {
     backgroundColor?: keyof typeof Color;
     fontSize?: keyof typeof FontSize;
     isReadOnly?: boolean;
+    borderRadius?: number;
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -23,6 +24,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            backgroundColor,
            fontSize,
            isReadOnly,
+           borderRadius,
         } = props;
     return (
         <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
@@ -31,7 +33,8 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         height={height} 
                         backgroundColor={backgroundColor} 
                         fontSize={fontSize}
-                        readOnly={isReadOnly}>{value}</StyledTextArea>
+                        readOnly={isReadOnly}
+                        borderRadius={borderRadius}>{value}</StyledTextArea>
     );
 }
 
@@ -44,6 +47,7 @@ type StyledTextAreaProps = {
     shouldShowBorderRight?: boolean;
     shouldShowBorderBottom?: boolean;
     shouldShowBorderLeft?: boolean;
+    borderRadius?: number;
 }
 
 const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
@@ -53,6 +57,7 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     background-color: ${(props.backgroundColor) ? Color[props.backgroundColor] : Color.WhiteSmoke};
     font-size: ${(props.fontSize) ? FontSize[props.fontSize] : FontSize.Medium};
     box-sizing: border-box;
+    border-radius: ${(props.borderRadius) ? props.borderRadius + 'px' : '4px'};
 `);
 
 export default TextArea;
