@@ -54,8 +54,8 @@ const Input: React.FC<InputProps> = function(props) {
             name={name}
             maxLength={maxLength}
             rounded={rounded}
-            placeholder={placeholder}/>
-
+            placeholder={placeholder}
+            readOnly={isReadOnly}/>
     );
 };
 
@@ -82,7 +82,6 @@ type StyledInputProps = {
     fontFamily?: FontFamily;
     borderRadius?: string;
     rounded?: boolean;
-    isReadOnly?: boolean;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => `
