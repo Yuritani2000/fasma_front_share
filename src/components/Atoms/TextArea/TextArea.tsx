@@ -13,8 +13,7 @@ export type TextAreaProps = {
     fontSize?: keyof typeof FontSize;
     isReadOnly?: boolean;
     borderRadius?: number;
-    shouldShowOnlyBottomBorder?: boolean;
-    shouldHideAllBorders?: boolean;
+    borderState?: number;               // borderState: 境界線の表示に関する状態 0: 上下左右すべて表示  1: 下の境界線のみ表示  2: 上下左右すべて非表示  それ以外: すべて表示
     borderWidth?: number;
 }
 
@@ -28,9 +27,8 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            fontSize,
            isReadOnly,
            borderRadius,
-           shouldShowOnlyBottomBorder,
-           shouldHideAllBorders,
-           borderWidth
+           borderState,
+           borderWidth,
         } = props;
     return (
         <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
@@ -41,8 +39,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
                         fontSize={fontSize}
                         readOnly={isReadOnly}
                         borderRadius={borderRadius}
-                        shouldShowOnlyBottomBorder={shouldShowOnlyBottomBorder}
-                        shouldHideAllBorders={shouldHideAllBorders}
+                        borderState={borderState}
                         borderWidth={borderWidth}>{value}</StyledTextArea>
     );
 }
@@ -57,8 +54,7 @@ type StyledTextAreaProps = {
     shouldShowBorderBottom?: boolean;
     shouldShowBorderLeft?: boolean;
     borderRadius?: number;
-    shouldShowOnlyBottomBorder?: boolean;
-    shouldHideAllBorders?: boolean;
+    borderState?: number;
     borderWidth?: number;
 }
 
@@ -70,10 +66,10 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     font-size: ${(props.fontSize) ? FontSize[props.fontSize] : FontSize.Medium};
     box-sizing: border-box;
     border-radius: ${(props.borderRadius) ? props.borderRadius + 'px' : '4px'};
-    border: ${(props.shouldHideAllBorders) ? 'none' : 'solid'};
-    border-top: ${(props.shouldShowOnlyBottomBorder) ?  'none' : 'solid'};
-    border-right: ${(props.shouldShowOnlyBottomBorder) ? 'none' : 'solid'};
-    border-left: ${(props.shouldShowOnlyBottomBorder) ?  'none' : 'solid'};
+    border-top: ${(props.borderState == 1 || props.borderState == 2) ?  'none' : 'solid'};
+    border-right: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
+    border-left: ${(props.borderState == 1 || props.borderState == 2) ?  'none' : 'solid'};
+    border-bottom: ${(props.borderState == 2 ) ?  'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
 `);
 
