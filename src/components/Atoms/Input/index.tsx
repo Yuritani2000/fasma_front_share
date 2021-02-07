@@ -116,7 +116,7 @@ const StyledInput = styled.input<StyledInputProps>(props => `
     border-color: ${Color[props.borderColor]};
     &:focus {
         border: 1px solid ${Color[props.backgroundColor]};
-      }
+    }
 `);
 
 export default Input;
