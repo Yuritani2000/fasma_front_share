@@ -16,11 +16,12 @@ export type InputProps = {
     fontFamily?: FontFamily;
     maxLength?: number;
     rounded?: boolean;
+    customizedBorderRadius?: number;           // roundedが無効のときのみ有効。入力フォームに任意の丸みをもたせる。
     onChange: (value: string) => void;   // 必須
     placeholder?: string;
     isReadOnly?: boolean;
-    shouldShowOnlyBottomBorder?: boolean;
     borderWidth?: number;
+    borderState?: number;                   // 境界線の状態を決めるprops. 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
 };
 
 const Input: React.FC<InputProps> = function(props) {
@@ -36,11 +37,12 @@ const Input: React.FC<InputProps> = function(props) {
         fontFamily,
         maxLength,
         rounded,
+        customizedBorderRadius,
         onChange,
         placeholder,
         isReadOnly,
-        shouldShowOnlyBottomBorder,
         borderWidth,
+        borderState,
     } = props;
     return (
         <StyledInput
@@ -58,10 +60,11 @@ const Input: React.FC<InputProps> = function(props) {
             name={name}
             maxLength={maxLength}
             rounded={rounded}
+            customizedBorderRadius={customizedBorderRadius}
             placeholder={placeholder}
             readOnly={isReadOnly}
-            shouldShowOnlyBottomBorder={shouldShowOnlyBottomBorder}
-            borderWidth={borderWidth}/>
+            borderWidth={borderWidth}
+            borderState={borderState}/>
     );
 };
 
@@ -74,9 +77,11 @@ Input.defaultProps = {
     fontFamily: FontFamily.Roboto,
     maxLength: 30,
     rounded: false,
+    customizedBorderRadius: 4,
     placeholder:'',
     isReadOnly: false,
-    shouldShowOnlyBottomBorder: false,
+    borderWidth: 1,
+    borderState: 0,
 }
 
 type StyledInputProps = {
@@ -89,8 +94,9 @@ type StyledInputProps = {
     fontFamily?: FontFamily;
     borderRadius?: string;
     rounded?: boolean;
-    shouldShowOnlyBottomBorder?: boolean;
+    customizedBorderRadius?: number;
     borderWidth?: number;
+    borderState?: number;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => `
@@ -104,12 +110,12 @@ const StyledInput = styled.input<StyledInputProps>(props => `
       border: 1px solid ${Color[props.backgroundColor]};
     }
     padding: ${Space.TINY} ${Space.SMALL};
-    border-radius: ${props.rounded ? "100px" : "4px"};
+    border-radius: ${props.rounded ? "100px" : (props.customizedBorderRadius) ? props.customizedBorderRadius + "px" : "4px"};
     box-sizing: border-box;
-    border-top-style: ${(props.shouldShowOnlyBottomBorder) ? (props.shouldShowOnlyBottomBorder == true) ? 'none' : 'solid' : 'solid'};
-    border-right-style: ${(props.shouldShowOnlyBottomBorder) ? (props.shouldShowOnlyBottomBorder == true) ? 'none' : 'solid' : 'solid'};
-    border-left-style: ${(props.shouldShowOnlyBottomBorder) ? (props.shouldShowOnlyBottomBorder == true) ? 'none' : 'solid' : 'solid'};
-    border-bottom-style: solid;
+    border-top: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
+    border-right: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
+    border-left: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
+    border-bottom: ${(props.borderState == 2) ? 'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
 `);
 
