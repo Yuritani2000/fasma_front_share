@@ -105,10 +105,6 @@ const StyledInput = styled.input<StyledInputProps>(props => `
     font-size: ${FontSize[props.fontSize]};
     font-family: ${props.fontFamily};
     background-color: ${Color[props.backgroundColor]};
-    border: 1px solid ${Color[props.borderColor]};
-    &:focus {
-      border: 1px solid ${Color[props.backgroundColor]};
-    }
     padding: ${Space.TINY} ${Space.SMALL};
     border-radius: ${props.rounded ? "100px" : (props.customizedBorderRadius) ? props.customizedBorderRadius + "px" : "4px"};
     box-sizing: border-box;
@@ -117,6 +113,10 @@ const StyledInput = styled.input<StyledInputProps>(props => `
     border-left: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
     border-bottom: ${(props.borderState == 2) ? 'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
+    border-color: ${Color[props.borderColor]};
+    &:focus {
+        border: 1px solid ${Color[props.backgroundColor]};
+      }
 `);
 
 export default Input;
