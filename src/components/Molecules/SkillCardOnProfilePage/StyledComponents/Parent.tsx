@@ -16,3 +16,4 @@ const Parent = styled.div<ParentProps>((props) => `
     border-color: transparent transparent #bbb transparent;
 `);
 
+export default Parent;
