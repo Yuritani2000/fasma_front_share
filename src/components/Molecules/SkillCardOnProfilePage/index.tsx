@@ -3,11 +3,13 @@ import AboutSkill from './StyledComponents/AboutSkill';
 import Parent from './StyledComponents/Parent';
 import RowContainer from './StyledComponents/RowContainer';
 import TextParent from './StyledComponents/TextParent';
+import Triangle from './MockAtoms/Triangle';
 import TriangleParent from './StyledComponents/TriangleParent';
+import TrianglePosition from './StyledComponents/TrianglePosition';
 import Image from '../../Atoms/Image/Image';
 import Text from '../../Atoms/Text/index';
 
-type SkillCardOnProfilePageProps = {
+export type SkillCardOnProfilePageProps = {
     skillName?: string;
     skillExplanation?: string;
     imageUrl: string;
@@ -25,14 +27,17 @@ const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) =>
                 <AboutSkill>
                     <Text textType={'Default'} size={'Medium'}>{skillName}</Text>
                     <TextParent>
-                        <Text textType={'Default'} size={'Tiny'}>{skillExplanation}</Text>
+                        <Text textType={'Default'} size={'Small'}>{skillExplanation}</Text>
                     </TextParent>
                 </AboutSkill>
                 <TriangleParent>
-                    
+                    <TrianglePosition>
+                        <Triangle/>
+                    </TrianglePosition>
                 </TriangleParent>  
             </RowContainer>
         </Parent>
     );
 }
 
+export default SkillCardOnProfilePage;
