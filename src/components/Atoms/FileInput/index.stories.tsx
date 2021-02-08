@@ -19,6 +19,11 @@ export default {
                 type: 'string',
             },
         },
+        noDisplay: {
+            control: {
+                type: 'boolean',
+            },
+        },
     },
 } as Meta;
 
@@ -33,4 +38,5 @@ export const Inputs = Template.bind({});
 Inputs.args = {
     accept: '*',
     id: 'test-file-input',
+    noDisplay: false,
 };

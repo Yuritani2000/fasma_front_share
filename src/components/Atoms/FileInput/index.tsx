@@ -4,18 +4,20 @@ import styled from 'styled-components';
 export type FileInputProps = {
     accept: string;
     id?: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>)=> void
+    onChange: (e: React.ChangeEvent<HTMLInputElement>)=> void;
+    noDisplay?: boolean;
 }
 
 const FileInput: React.FC<FileInputProps> = (props) => {
-    const {accept, id = 'file-input', onChange} = props;
+    const {accept, id = 'file-input', onChange, noDisplay} = props;
 
     return (
-        <StyledInput accept={accept} type='file' id={id} onChange={onChange}/>
+        <StyledInput accept={accept} type='file' id={id} onChange={onChange} noDisplay={noDisplay}/>
     )
 }
 
-const StyledInput = styled.input(()=> `
+const StyledInput = styled.input<{noDisplay?: boolean}>((props)=> `
+    display: ${(props.noDisplay) ? 'none' : 'inline'};
 `);
 
 export default FileInput;
