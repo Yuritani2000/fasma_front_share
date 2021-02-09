@@ -9,9 +9,19 @@ export default {
         (Story) => (<Story />),
     ],
     argTypes: {
-        value: {
+        label: {
             control: {
                 type: 'string',
+            }
+        },
+        numberOfNotification: {
+            control: {
+                type: 'number',
+            }
+        },
+        isDisplaying: {
+            control: {
+                type: 'boolean',
             }
         },
     },
@@ -25,4 +35,7 @@ const Template: Story<OneElementOfLeftMenuOnProfilePageProps> = (args) => {
 
 export const _SearchBox = Template.bind({});
 _SearchBox.args = {
+    label: 'プロフィール',
+    numberOfNotification: 5,
+    isDisplaying: false,
 };

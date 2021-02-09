@@ -9,6 +9,7 @@ import TriangleParent from './StyledComponents/TriangleParent';
 import TrianglePosition from './StyledComponents/TrianglePosition';
 import Text from '../../Atoms/Text/index';
 import Triangle from './MockAtoms/Triangle';
+import Color from '../../../styles/Color';
 
 export type OneElementOfLeftMenuOnProfilePageProps = {
     label: string;                      // メニューの項目名
@@ -20,19 +21,19 @@ const OneElementOfLeftMenuOnProfilePage: React.FC<OneElementOfLeftMenuOnProfileP
     const {label, numberOfNotification, isDisplaying} = props;
     
     return (
-        <Parent>
+        <Parent isPushed={isDisplaying}>
             <Container>
                 <TextParent>
                     <Text size='Medium' textType='Default'>{label}</Text>
                 </TextParent>
-                <CircleParent>
+                <CircleParent isVisible={(numberOfNotification > 0) ? true : false}>
                     <Circle>
                         <NumberOfNotification>{numberOfNotification}</NumberOfNotification>
                     </Circle>
                 </CircleParent>
                 <TriangleParent>
                     <TrianglePosition>
-                        <Triangle></Triangle>
+                        <Triangle color={(isDisplaying) ? 'Black' : 'LightGray'}/>
                     </TrianglePosition>
                 </TriangleParent>
             </Container>

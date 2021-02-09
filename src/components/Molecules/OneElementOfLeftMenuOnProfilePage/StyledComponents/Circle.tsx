@@ -8,8 +8,8 @@ const Circle = styled.div(()=> `
     transform: translate(-50%, -50%);
     background-color: ${Color.Danger};
     color: ${Color.White};
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     text-align: center;
     border-radius: 50%;
 `);

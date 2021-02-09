@@ -10,6 +10,7 @@ const NumberOfNotification = styled.div(()=>`
     color: ${Color.White};
     background: transparent;
     font-weight: bold;
+    font-size: 1.5em;
 `);
 
 export default NumberOfNotification;
