@@ -7,7 +7,8 @@ import Triangle from './MockAtoms/Triangle';
 import TriangleParent from './StyledComponents/TriangleParent';
 import TrianglePosition from './StyledComponents/TrianglePosition';
 import Image from '../../Atoms/Image/Image';
-import Text from '../../Atoms/Text/index';
+import Text from './MockAtoms/Text';
+import MultipleLines from './StyledComponents/MultipleLines';
 
 export type SkillCardOnProfilePageProps = {
     skillName?: string;
@@ -27,7 +28,9 @@ const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) =>
                 <AboutSkill>
                     <Text textType={'Default'} size={'Medium'}>{skillName}</Text>
                     <TextParent>
-                        <Text textType={'Default'} size={'Small'}>{skillExplanation}</Text>
+                        <MultipleLines>
+                            <Text textType={'Default'} size={'Small'}>{skillExplanation}</Text>
+                        </MultipleLines>
                     </TextParent>
                 </AboutSkill>
                 <TriangleParent>

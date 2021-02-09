@@ -35,7 +35,7 @@ const Template: Story<SkillCardOnProfilePageProps> = (args) => {
 
 export const _SearchBox = Template.bind({});
 _SearchBox.args = {
-    skillName: '上手に左バック駐車をする方法',
-    skillExplanation: '免許を取ったはいいけど駐車の練習をしていない！駐車場で後ろの車を待たせるのが怖い！という方に、上手に左バック駐車をする方法を伝授します。',
+    skillName: '上手に左バック駐車をする方法aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    skillExplanation: '免許を取ったはいいけど駐車の練習をしていない！駐車場で後ろの車を待たせるのが怖い！という方に、上手に左バック駐車をする方法を伝授します。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     imageUrl: 'https://www.fun.ac.jp/wp-content/themes/fun_2012/img/title-ja.svg',
 };
