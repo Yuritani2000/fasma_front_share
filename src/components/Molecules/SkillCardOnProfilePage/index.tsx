@@ -26,10 +26,10 @@ const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) =>
             <RowContainer>
                 <Image url={imageUrl} size={97}/>
                 <AboutSkill>
-                    <Text textType={'Default'} size={'Medium'}>{skillName}</Text>
+                    <Text textType={'Default'} size={'Medium'} omit={true} omittingLineNumber={1}>{skillName}</Text>
                     <TextParent>
                         <MultipleLines>
-                            <Text textType={'Default'} size={'Small'}>{skillExplanation}</Text>
+                            <Text textType={'Default'} size={'Small'} omit={true} omittingLineNumber={3}>{skillExplanation}</Text>
                         </MultipleLines>
                     </TextParent>
                 </AboutSkill>
