@@ -16,3 +16,5 @@ const Parent = styled.div<ParentProps>((props) => `
     border-width: 1px;
     border-color: ${Color.Border};
 `);
+
+export default Parent;
