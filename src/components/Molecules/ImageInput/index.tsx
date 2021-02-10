@@ -54,33 +54,27 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     const [value, setValue] = useState<string>('');
 
     const onChangeImageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('onChange発火');
         setValue(e.target.value);
         let files = e.target.files;
         if(files === null || files.length === 0){
-            console.log("ファイルがnull");
             return;
         }else if(files[0].size > maxDataSizeMegaByte * 1024 * 1024){
             alert("ファイルサイズ: " + files[0].size + "バイト.\nファイルサイズが大きすぎます.\nファイルサイズ上限は" + maxDataSizeMegaByte + "MBまでです.");
             return;
         }
-        console.log('setImageを発火');
         setImage(files[0]);
     }
 
     const createUrl = () => {
         if(image != null) {
-            console.log('urlを作成');
             const url = URL.createObjectURL(image);
             setImageUrl(url);
         }else{
-            console.log("imageがnull")
             setImageUrl('');
         }
     }
 
     const deleteUrl = () => {
-        console.log('urlを削除');
         URL.revokeObjectURL(imageUrl);
         setImageUrl('');
         setValue('');
