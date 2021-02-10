@@ -3,6 +3,7 @@ import Image, { ImageSize } from '../../Atoms/Image/Image';
 import FileInput from './MockAtoms/FileInput';
 import Button, {ButtonTypes} from '../../Atoms/Button';
 import { FontSize } from '../../../styles/Font';
+import ImageInputParent from './StyledComponents/ImageInputParent';
 
 
 export type ImageInputProps = {
@@ -44,11 +45,11 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     useEffect(createUrl, [image]);
 
     return(
-        <>
+        <ImageInputParent size={size} sizeTypes={sizeTypes}>
             <Image url={imageUrl} size={size} sizeTypes={sizeTypes}/>
             <FileInput accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={false}/>
             <Button label='画像を削除' buttonType={ButtonTypes.danger} size={FontSize.Medium} handleClick={deleteUrl}/>
-        </>
+        </ImageInputParent>
     );
 } 
 
