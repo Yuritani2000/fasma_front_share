@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
 import ImageInput, { ImageInputProps } from './index'
 import { ImageSize } from '../../Atoms/Image/Image';
+import { StyledLabelProps } from './StyledComponents/StyledLabel';
 
 export default {
     title: "Molecules/ImageInput",
@@ -37,7 +38,7 @@ const Template: Story<ImageInputProps> = (args) => {
 
 export const _ImageInput = Template.bind({});
 _ImageInput.args = {
-    size: 100,
+    size: 300,
     sizeTypes: 'MEDIUM',
     maxDataSizeMegaByte: 10,
 };
