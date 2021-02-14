@@ -28,6 +28,9 @@ export type ImageInputProps = {
     shouldShowDeleteButton?: boolean;
     uploadButtonLabel?: string;
     deleteButtonSize?: keyof typeof FontSize;
+    imageUrl: string;
+    setImageUrl: (url: string) => void;
+    isEditing?: boolean;
 }
 
 const ImageInput: React.FC<ImageInputProps> = (props) => {
@@ -47,10 +50,12 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                                 },
            shouldShowDeleteButton = false,
            uploadButtonLabel = '＋',
-           deleteButtonSize = 'Small'
+           deleteButtonSize = 'Small',
+           imageUrl,
+           setImageUrl,
+           isEditing = true,
           } = props;
     const [image, setImage] = useState<File>();
-    const [imageUrl, setImageUrl] = useState<string>('');
     const [value, setValue] = useState<string>('');
 
     const onChangeImageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,7 +75,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
             const url = URL.createObjectURL(image);
             setImageUrl(url);
         }else{
-            setImageUrl('');
+            console.log("Imageが空だよ");
         }
     }
 
@@ -101,7 +106,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                          fontSize={styledLabelArguments.fontSize}
                          opacity={styledLabelArguments.opacity}>
                              {uploadButtonLabel}
-                <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true}/>
+                <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
             <ButtonParent isDisabled={(shouldShowDeleteButton && imageUrl != '' ) ? false : true}>
                 <Button label='削除' size={FontSize[deleteButtonSize]} width={deleteButtonSizes[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>

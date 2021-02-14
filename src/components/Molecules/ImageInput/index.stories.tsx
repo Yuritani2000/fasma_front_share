@@ -27,12 +27,17 @@ export default {
                 type: 'number',
             }
         },
+        isEditing: {
+            control: {
+                type: 'boolean',
+            }
+        }
     },
 } as Meta;
 
 const Template: Story<ImageInputProps> = (args) => {
-    const [value, setValue] = useState('');
-    return <ImageInput {...args}
+    const [imageUrl, setImageUrl] = useState('');
+    return <ImageInput {...args} imageUrl={imageUrl} setImageUrl={setImageUrl}
     />
 }
 
@@ -41,4 +46,5 @@ _ImageInput.args = {
     size: 300,
     sizeTypes: 'MEDIUM',
     maxDataSizeMegaByte: 10,
+    isEditing: true,
 };

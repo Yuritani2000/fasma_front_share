@@ -32,7 +32,7 @@ const StyledLabel = styled.label<StyledLabelProps>((props)=> `
     border-radius: ${(props.isRounded) ? '100px' : (props.customizedBorderRadius) ? props.customizedBorderRadius + 'px' : '3px'};
     top: ${(props.topPositionPercentage) ? props.topPositionPercentage + '%' : 'calc(100% - 30px)'};
     left: ${(props.leftPositionPercentage) ? props.leftPositionPercentage + '%' : 'calc(100% - 30px)'};
-    visibility: ${(props.isVisible) ? (props.isVisible == true) ? 'visible' : 'hidden' : 'visible'};
+    visibility: ${(props.isVisible == true || props.isVisible == false) ? (props.isVisible === true) ? 'visible' : 'collapse' : 'visible'};
     width: ${(props.width) ? props.width + 'px': '50px'};
     height: ${(props.height) ? props.height + 'px': '50px'};
     font-weight: ${(props.isBold) ? 'bold' : 'normal'};
