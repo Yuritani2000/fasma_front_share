@@ -99,7 +99,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                          customizedBorderRadius={styledLabelArguments.customizedBorderRadius}
                          topPositionPercentage={styledLabelArguments.topPositionPercentage}
                          leftPositionPercentage={styledLabelArguments.leftPositionPercentage}
-                         isVisible={styledLabelArguments.isVisible}
+                         isVisible={(styledLabelArguments.isVisible === true || styledLabelArguments.isVisible === false) ? styledLabelArguments.isVisible : isEditing}
                          width={styledLabelArguments.width}
                          height={styledLabelArguments.height}
                          isBold={styledLabelArguments.isBold}
