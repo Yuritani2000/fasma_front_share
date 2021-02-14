@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import FileInput, { FileInputProps } from './index';
-import { FontSize } from '../../../styles/Font';
-import Color from '../../../styles/Color';
 
 export default {
     title: 'Atoms/FileInput',
@@ -24,11 +22,21 @@ export default {
                 type: 'boolean',
             },
         },
+        value: {
+            control: {
+                type: 'string',
+            }
+        },
+        disabled: {
+            control: {
+                type: 'boolean',
+            }
+        },
     },
 } as Meta;
 
 const Template: Story<FileInputProps> = (args) => {
-    const [value, setValue] = useState('test');
+    const [value, setValue] = useState('https://www.fun.ac.jp/wp-content/themes/fun_2012/img/title-ja.svg');
     return <FileInput
         {...args}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}} />
@@ -39,4 +47,5 @@ Inputs.args = {
     accept: '*',
     id: 'test-file-input',
     noDisplay: false,
+    disabled: false,
 };
