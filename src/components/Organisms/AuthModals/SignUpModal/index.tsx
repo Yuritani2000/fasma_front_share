@@ -40,7 +40,7 @@ const SignUp: React.FC = (props) => {
                 </FormElement>
             </FormArea>
             <ButtonArea height='33%'>
-                <ButtonElement marginTop='30%' height='1.4cm' width='100%'>
+                <ButtonElement marginTop='1.8cm' height='1.4cm' width='100%'>
                     <Button label='アカウントを作成' size={FontSize.Large} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickSignUp}/>
                 </ButtonElement>
             </ButtonArea>

@@ -6,7 +6,7 @@ import Logomark from '../Logo_tmp/logomark.png';
 import { useHistory } from 'react-router-dom';
 import { FontSize } from '../../../../styles/Font'
 
-const AuthModal: React.FC = (props) => {
+const AuthModal: React.FC = () => {
     const history = useHistory();
 
     const handleClickSignUp = () => {
