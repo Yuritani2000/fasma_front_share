@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import LoginModal from './index'
+import LogIn from './index'
 
 export default {
   title: "Organisms/LoginModal",
-  component: LoginModal,
+  component: LogIn,
   decorators: [
     (Story) => (<Story/>),
   ],
@@ -12,7 +12,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <LoginModal />;
+const Template: Story = (args) => <LogIn />;
 
 export const _Header = Template.bind({});
 _Header.args = {
