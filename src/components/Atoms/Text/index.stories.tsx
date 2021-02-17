@@ -51,6 +51,5 @@ Texts.args = {
   textType: 'Default',
   children: 'test',
   omit: false,
-  omittingLineNumber: 1,
   isBold: false,
 };

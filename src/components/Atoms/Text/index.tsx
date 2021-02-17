@@ -68,7 +68,7 @@ const Text: React.FC<TextProps> = function (props) {
         disabled,
         textAlign,
         omit,
-        omittingLineNumber,
+        omittingLineNumber = 1,
         isBold,
     } = props;
     return (
