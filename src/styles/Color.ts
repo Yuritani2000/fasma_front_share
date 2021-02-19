@@ -21,6 +21,7 @@ enum Color {
   Secondary = '#D2D2D2',
   Ashen = '#A4A4A4',
   Hover = '#F7F7F7',
+  PurchaseNotification = '#ffecd4',
 }
 
 export default Color
