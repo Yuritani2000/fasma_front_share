@@ -1,11 +1,11 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Triangle, { TriangleProps } from "./Triangle";
+import TriangleIcon, { TriangleIconProps } from "./TriangleIcon";
 import Color from '../../../styles/Color';
 
 export default {
-  title: 'Atoms/Triangle',
-  component: Triangle,
+  title: 'Atoms/TriangleIcon',
+  component: TriangleIcon,
   decorators: [(Story) => <div style={{ fontSize: '62.5%' }}><Story /></div>],
   argTypes: {
     color: {
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TriangleProps> = (args) => <Triangle {...args} />;
+const Template: Story<TriangleIconProps> = (args) => <TriangleIcon {...args} />;
 
 export const Texts = Template.bind({});
 Texts.args = {

@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import React from 'react';
 import Color from '../../../styles/Color'
 
-export type TriangleProps = {
+export type TriangleIconProps = {
     width?: number;
     height?: number;
     color?: keyof typeof Color;
 }
 
-const Triangle: React.FC<TriangleProps> = (props) => {
+const TriangleIcon: React.FC<TriangleIconProps> = (props) => {
     const {width, height, color} = props;
 
     return (
@@ -33,4 +33,4 @@ const StyledDiv = styled.div<StyledDivProps>((props) => `
     border-color: transparent transparent transparent ${(props.color) ? Color[props.color] : '#333'};
 `);
 
-export default Triangle;
+export default TriangleIcon;
