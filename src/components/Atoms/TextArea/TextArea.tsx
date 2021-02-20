@@ -19,7 +19,7 @@ export type TextAreaProps = {
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
-    const {onChange = () => {},
+    const {onChange,
            disabled = false,
            width,
            height,
@@ -33,12 +33,12 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
            borderColor,
         } = props;
     return (
-        <StyledTextArea onChange={(e) => {onChange(e.target.value)}} 
-                        disabled={disabled} 
-                        width={width} 
-                        height={height} 
+        <StyledTextArea onChange={(e) => {onChange(e.target.value)}}
+                        disabled={disabled}
+                        width={width}
+                        height={height}
                         value={value}
-                        backgroundColor={backgroundColor} 
+                        backgroundColor={backgroundColor}
                         fontSize={fontSize}
                         readOnly={isReadOnly}
                         borderRadius={borderRadius}
@@ -77,6 +77,7 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     border-bottom: ${(props.borderState == 2 ) ?  'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
     border-color: ${(props.borderColor) ? Color[props.borderColor] : Color.Black};
+    outline: none;
 `);
 
 export default TextArea;
