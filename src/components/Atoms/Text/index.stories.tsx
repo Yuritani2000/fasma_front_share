@@ -25,6 +25,21 @@ export default {
         type: 'number',
       },
     },
+    omit: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    omittingLineNumber: {
+      control: {
+        type: 'number',
+      },
+    },
+    isBold: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 } as Meta;
 
@@ -35,4 +50,6 @@ Texts.args = {
   size: 'Small',
   textType: 'Default',
   children: 'test',
+  omit: false,
+  isBold: false,
 };

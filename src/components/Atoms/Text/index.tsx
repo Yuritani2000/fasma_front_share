@@ -20,6 +20,9 @@ export type TextProps = {
     link?: boolean;
     textAlign?: "left" | "center" | "right";
     fontFamily?: keyof typeof FontFamily;
+    omit?: boolean;
+    omittingLineNumber?: number;
+    isBold?: boolean;
 };
 
 const StyledText = styled.div<TextProps>(props => `
@@ -38,6 +41,21 @@ const StyledText = styled.div<TextProps>(props => `
     color: ${props.disabled ? Color.White : ""};
     cursor: not-allowed;
   }
+
+  /* styles to omit sentences */
+  overflow: ${(props.omit) ? 'hidden' : 'visible'};
+
+  /* when omit into one line */
+  white-space: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber == 1) ? 'nowrap' : 'normal' : 'normal' : 'normal'};
+  text-overflow: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber == 1) ? 'ellipsis' : 'clip' : 'clip' : 'clip'};
+
+  /* when omit into multiple lines */
+  display: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? '-webkit-box' : 'block' : 'inline' : 'inline'};
+  -webkit-box-orient: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? 'vertical' : 'inline-axis' : 'inline-axis' : 'inline-axis'};
+  -webkit-line-clamp: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? (props.omittingLineNumber) : 'none' : 'none' : 'none'};
+
+  /*set font-weight*/
+  font-weight: ${(props.isBold) ? 'bold' : 'normal'};
 `);
 
 const Text: React.FC<TextProps> = function (props) {
@@ -49,6 +67,9 @@ const Text: React.FC<TextProps> = function (props) {
         handleClick,
         disabled,
         textAlign,
+        omit,
+        omittingLineNumber = 1,
+        isBold,
     } = props;
     return (
         <StyledText
@@ -58,6 +79,9 @@ const Text: React.FC<TextProps> = function (props) {
             fontFamily={fontFamily}
             textAlign={textAlign}
             textType={textType}
+            omit={omit}
+            omittingLineNumber={omittingLineNumber}
+            isBold={isBold}
         >
             {children}
         </StyledText>
