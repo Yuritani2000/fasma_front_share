@@ -31,6 +31,12 @@ export default {
         type: 'string',
       },
     },
+    fontSize: {
+      control: {
+        type: 'select',
+        options: Object.keys(FontSize).filter(k => typeof FontSize[k as keyof typeof FontSize] === "string"),
+      },
+    },
   },
 } as Meta;
 
@@ -42,4 +48,5 @@ Buttons.args = {
   backgroundColor: 'Danger',
   fontColor: 'White',
   label: '×',
+  fontSize: 'H1',
 };

@@ -9,6 +9,7 @@ export type CircleButtonProps = {
     backgroundColor?: keyof typeof Color;
     fontColor?: keyof typeof Color;
     label?: string;
+    fontSize?: keyof typeof FontSize;
 }
 
 const CircleButton: React.FC<CircleButtonProps> = (props) => {
@@ -18,12 +19,14 @@ const CircleButton: React.FC<CircleButtonProps> = (props) => {
         backgroundColor,
         fontColor,
         label = '',
+        fontSize,
     } = props;
     return (
         <StyledButton   onClick={handleClick}
                         diameter={diameter}
                         backgroundColor={backgroundColor}
-                        fontColor={fontColor}>
+                        fontColor={fontColor}
+                        fontSize={fontSize}>
             {label}
         </StyledButton>
     );
@@ -33,6 +36,7 @@ type StyledButtonProps = {
     diameter: string;
     backgroundColor?: keyof typeof Color;
     fontColor?: keyof typeof Color;
+    fontSize?: keyof typeof FontSize;
 }
 
 const StyledButton = styled.button<StyledButtonProps>((props)=> `
@@ -45,7 +49,7 @@ const StyledButton = styled.button<StyledButtonProps>((props)=> `
     border-radius: 50%;
     font-weight: bold;
     border: none;
-    font-size: ${FontSize.H1};
+    font-size: ${(props.fontSize) ? FontSize[props.fontSize] : FontSize.H1};
     outline: none;
     cursor: pointer;
 `)
