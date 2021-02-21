@@ -1,6 +1,5 @@
 import React from 'react';
-import AuthModal from '../Organisms/AuthModal/index'
-
+import AuthModal from '../../Organisms/AuthModal/index'
 
 const AuthTemplate: React.FC = () => {
     return (
@@ -8,4 +7,4 @@ const AuthTemplate: React.FC = () => {
     );
 }
 
-export default AuthModal;
+export default AuthTemplate;
