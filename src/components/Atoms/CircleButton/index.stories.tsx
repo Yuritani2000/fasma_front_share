@@ -34,7 +34,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CircleButtonProps> = (args) => <CircleButton {...args} />;
+const Template: Story<CircleButtonProps> = (args) => <CircleButton {...args} handleClick={()=>{alert('button clicked')}}/>;
 
 export const Buttons = Template.bind({});
 Buttons.args = {
