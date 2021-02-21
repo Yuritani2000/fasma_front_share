@@ -21,7 +21,7 @@ export type InputProps = {
     placeholder?: string;
     isReadOnly?: boolean;
     borderWidth?: number;
-    borderState?: number;                   // 境界線の状態を決めるprops. 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
+    borderState?: number;                   // 境界線の状態を決めるprops 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
 };
 
 const Input: React.FC<InputProps> = function(props) {
@@ -89,34 +89,45 @@ type StyledInputProps = {
     height?: number;
     backgroundColor: keyof typeof Color;
     borderColor: keyof typeof Color;
-    value?: string;
     fontSize: keyof typeof FontSize;
     fontFamily?: FontFamily;
-    borderRadius?: string;
     rounded?: boolean;
     customizedBorderRadius?: number;
     borderWidth?: number;
     borderState?: number;
 }
 
-const StyledInput = styled.input<StyledInputProps>(props => `
-    width: ${props.width?props.width+'px':'100%'};
-    height: ${props.height?props.height+'px':'100%'};
-    font-size: ${FontSize[props.fontSize]};
-    font-family: ${props.fontFamily};
-    background-color: ${Color[props.backgroundColor]};
-    padding: ${Space.TINY} ${Space.SMALL};
-    border-radius: ${props.rounded ? "100px" : (props.customizedBorderRadius) ? props.customizedBorderRadius + "px" : "4px"};
-    box-sizing: border-box;
-    border-top: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
-    border-right: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
-    border-left: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
-    border-bottom: ${(props.borderState == 2) ? 'none' : 'solid'};
-    border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
-    border-color: ${Color[props.borderColor]};
-    &:focus {
-        border: 1px solid ${Color[props.backgroundColor]};
-    }
-`);
+const StyledInput = styled.input<StyledInputProps>(props => {
+    const { width,
+            height,
+            backgroundColor,
+            borderColor,
+            fontSize,
+            fontFamily,
+            rounded,
+            customizedBorderRadius,
+            borderWidth,
+            borderState,
+        } = props;
+    return`
+        width: ${width?width+'px':'100%'};
+        height: ${height?height+'px':'100%'};
+        font-size: ${FontSize[fontSize]};
+        font-family: ${fontFamily};
+        background-color: ${Color[backgroundColor]};
+        padding: ${Space.TINY} ${Space.SMALL};
+        border-radius: ${rounded ? "100px" : (customizedBorderRadius) ? customizedBorderRadius + "px" : "4px"};
+        box-sizing: border-box;
+        border-top: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
+        border-right: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
+        border-left: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
+        border-bottom: ${(borderState == 2) ? 'none' : 'solid'};
+        border-width: ${(borderWidth) ? borderWidth + 'px' : '1px'};
+        border-color: ${Color[borderColor]};
+        &:focus {
+            border: 1px solid ${Color[backgroundColor]};
+        }
+    `
+});
 
 export default Input;
