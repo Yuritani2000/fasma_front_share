@@ -7,7 +7,7 @@ import Triangle from './MockAtoms/Triangle';
 import TriangleParent from './StyledComponents/TriangleParent';
 import TrianglePosition from './StyledComponents/TrianglePosition';
 import Image from '../../Atoms/Image/Image';
-import Text from './MockAtoms/Text';
+import Text from '../../Atoms/Text/index';
 import MultipleLines from './StyledComponents/MultipleLines';
 
 export type SkillCardOnProfilePageProps = {
