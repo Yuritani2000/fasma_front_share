@@ -118,10 +118,10 @@ const StyledInput = styled.input<StyledInputProps>(props => {
         padding: ${Space.TINY} ${Space.SMALL};
         border-radius: ${rounded ? "100px" : (customizedBorderRadius) ? customizedBorderRadius + "px" : "4px"};
         box-sizing: border-box;
-        border-top: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
-        border-right: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
-        border-left: ${(borderState == 1 || borderState == 2) ? 'none' : 'solid'};
-        border-bottom: ${(borderState == 2) ? 'none' : 'solid'};
+        border-top: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
+        border-right: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
+        border-left: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
+        border-bottom: ${(borderState === 2) ? 'none' : 'solid'};
         border-width: ${(borderWidth) ? borderWidth + 'px' : '1px'};
         border-color: ${Color[borderColor]};
         &:focus {
