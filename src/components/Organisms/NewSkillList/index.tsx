@@ -32,7 +32,7 @@ const NewSkillList: React.FC<NewSkillListProps> = (props) => {
       <StyledCardList>
         {skills.map((skill, index) => {
           return (
-            <StyledCard>
+            <StyledCard key={`styleCard${index}`}>
               <Card key={`card${index}`} cardProps={{ styledCardSize: StyledCardSizeDefault.SKILL, backgroundColor: Color.White }}>
                 <NewSkillCard key={`skillCard${index}`} price={skill.price} skillName={skill.name} thumbnail={skill.thumbnail} />
               </Card>
