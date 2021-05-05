@@ -42,8 +42,8 @@ export default {
 
 const Template: Story<CircleButtonProps> = (args) => <CircleButton {...args} handleClick={()=>{alert('button clicked')}}/>;
 
-export const Buttons = Template.bind({});
-Buttons.args = {
+export const _CircleButton = Template.bind({});
+_CircleButton.args = {
   diameter: '0.97cm',
   backgroundColor: 'Danger',
   fontColor: 'White',
