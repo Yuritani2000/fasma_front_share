@@ -1,6 +1,6 @@
 import React from 'react';
 import { Parent, Container, FlexBox, ContactAreaParent, ContactTextStyle, ContactItemStyle } from './StyledComponents/StyledComponents';
-import Text from './MockAtoms/Text';
+import Text from '../../Atoms/Text/index';
 
 export type ExhibitorInformationProps = {
     exhibitorName: string;

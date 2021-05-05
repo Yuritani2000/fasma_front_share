@@ -40,8 +40,8 @@ export default {
 
 const Template: Story<ExhibitorInformationProps> = (args) => <ExhibitorInformation {...args} />;
 
-export const _Header = Template.bind({});
-_Header.args = {
+export const _ExhibitorInformation = Template.bind({});
+_ExhibitorInformation.args = {
   exhibitorName: 'ゴリョー・カーク', 
   hasGmailAddress: true,
   hasFunMailAddress: true,
