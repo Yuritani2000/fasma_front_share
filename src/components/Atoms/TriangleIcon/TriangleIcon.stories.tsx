@@ -29,8 +29,8 @@ export default {
 
 const Template: Story<TriangleIconProps> = (args) => <TriangleIcon {...args} />;
 
-export const Texts = Template.bind({});
-Texts.args = {
+export const _TriangleIcon = Template.bind({});
+_TriangleIcon.args = {
   color: 'Black',
   width: 12,
   height: 10,
