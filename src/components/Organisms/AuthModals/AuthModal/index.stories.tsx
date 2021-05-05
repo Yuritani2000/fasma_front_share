@@ -14,6 +14,6 @@ export default {
 
 const Template: Story = (args) => <AuthModal />;
 
-export const _Header = Template.bind({});
-_Header.args = {
+export const _AuthModal = Template.bind({});
+_AuthModal.args = {
 };

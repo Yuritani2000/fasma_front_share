@@ -14,6 +14,6 @@ export default {
 
 const Template: Story = (args) => <LogIn />;
 
-export const _Header = Template.bind({});
-_Header.args = {
+export const _LogIn = Template.bind({});
+_LogIn.args = {
 };
