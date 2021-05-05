@@ -59,8 +59,8 @@ const Template: Story<TextAreaProps> = (args) => {
         onChange={(e: string) => setValue(e)} />
 };
 
-export const Inputs = Template.bind({});
-Inputs.args = {
+export const _TextArea = Template.bind({});
+_TextArea.args = {
     fontSize: 'Medium',
     // borderColor: 'LightGray',
     backgroundColor: 'White',
