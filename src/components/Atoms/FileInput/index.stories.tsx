@@ -42,8 +42,8 @@ const Template: Story<FileInputProps> = (args) => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}} />
 };
 
-export const Inputs = Template.bind({});
-Inputs.args = {
+export const _FileInput = Template.bind({});
+_FileInput.args = {
     accept: '*',
     id: 'test-file-input',
     noDisplay: false,
