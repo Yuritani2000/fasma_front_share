@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import TopPage from './Pages/TopPage';
-import SignInPage from './Pages/SignInPage';
+import AuthRouter from './Pages/AuthPages/index';
 import PostPage from './Pages/PostPage';
 import ConfigPage from './Pages/ConfigPage';
 import SkillListPage from './Pages/SkillListPage';
@@ -13,7 +13,7 @@ function App() {
   return (
     <Switch>
       <Route path="/home" component={TopPage} />
-      <Route path="/signIn" component={SignInPage} />
+      <Route path="/auth" component={AuthRouter} />
       <Route path="/post" component={PostPage} />
       <Route path="/config" component={ConfigPage} />
       <Route path="/skillList" component={SkillListPage} />
