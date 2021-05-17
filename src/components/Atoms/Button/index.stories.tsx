@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Button, { ButtonPropsMap, ButtonTypes } from "./index";
+import Button, { ButtonPropsMap, ButtonShapes, ButtonTypes } from "./index";
 import { FontSize } from "../../../styles/Font";
 import Color from "../../../styles/Color";
 
@@ -9,10 +9,16 @@ export default {
   component: Button,
   decorators:  [(Story) => <Story/>],
   argTypes: {
-    size: {
+    fontSize: {
       control: {
         type: 'select',
         options: FontSize,
+      },
+    },
+    buttonShape: {
+      control: {
+        type: 'select',
+        options: ButtonShapes,
       },
     },
     buttonType: {
@@ -21,7 +27,7 @@ export default {
         options: ButtonTypes,
       },
     },
-    color: {
+    fontColor: {
       control: {
         type: 'select',
         options: Color,
@@ -32,6 +38,11 @@ export default {
         type: 'number',
       },
     },
+    diameter: {
+      control: {
+        type: 'string',
+      },
+    },
   },
 } as Meta;
 
@@ -39,7 +50,9 @@ const Template: Story<ButtonPropsMap> = (args) => <Button {...args} />;
 
 export const Buttons = Template.bind({});
 Buttons.args = {
-  size: FontSize.Small,
+  fontSize: FontSize.Small,
+  buttonShape: ButtonShapes.rect,
   buttonType: ButtonTypes.primary,
   label: 'test',
+  diameter: '0.97cm',
 };
