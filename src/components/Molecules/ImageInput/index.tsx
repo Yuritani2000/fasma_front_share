@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Image, { ImageSize } from '../../Atoms/Image/Image';
-import FileInput from './MockAtoms/FileInput';
+import FileInput from './../../Atoms/FileInput/index';
 import Button, {ButtonTypes} from '../../Atoms/Button';
 import { FontSize } from '../../../styles/Font';
 import ImageInputParent from './StyledComponents/ImageInputParent';
-import StyledLabel ,{ StyledLabelProps }from './StyledComponents/StyledLabel';
+import StyledLabel ,{ StyledLabelProps } from './StyledComponents/StyledLabel';
 import ButtonParent from './StyledComponents/ButtonParent';
 
 
