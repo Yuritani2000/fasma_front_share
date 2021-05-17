@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
 import ImageInput, { ImageInputProps } from './index'
 import { ImageSize } from '../../Atoms/Image/Image';
-import { StyledLabelProps } from './StyledComponents/StyledLabel';
 
 export default {
     title: "Molecules/ImageInput",
