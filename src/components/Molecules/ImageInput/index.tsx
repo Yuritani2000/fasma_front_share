@@ -118,7 +118,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                          horizontalPosition={uploadButtonHorizontalPosition ? uploadButtonHorizontalPosition : 'calc(100% - 30px)' }
                          width={uploadButtonWidth ? uploadButtonWidth : 20 }
                          height={uploadButtonHeight ? uploadButtonHeight : 20}
-                         isBold={uploadButtonTextIsBold ? uploadButtonTextIsBold : true}
+                         isBold={uploadButtonTextIsBold ? uploadButtonTextIsBold : uploadButtonTextIsBold === false ? false : true}
                          fontSize={uploadButtonTextSize ? uploadButtonTextSize : 'Large'}
                          opacity={uploadButtonOpacity ? uploadButtonOpacity : 1.0}>
                              {uploadButtonLabel ? uploadButtonLabel : '＋'}
