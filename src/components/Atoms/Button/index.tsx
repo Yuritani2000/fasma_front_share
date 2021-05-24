@@ -26,7 +26,7 @@ export type ButtonPropsMap = {
   fontSize?: FontSize;
   disabled?: boolean;
   rounded?: boolean;
-  handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 export enum ButtonShapes {
@@ -43,7 +43,7 @@ export enum ButtonTypes {
   secondary = 'secondary',
 };
 
-const StyledButton = styled.button<ButtonPropsMap>`
+const StyledButton = styled.button<ButtonPropsMap>((props) => `
   flex-flow: row nowrap;
   align-self: center;
   align-items: center;
@@ -58,107 +58,139 @@ const StyledButton = styled.button<ButtonPropsMap>`
     margin-right: ${Space.SMALL};
   }
 
-  /* // Button
-  width: ${(props) => (props.width ? props.width + "px" : "100%")};
-  // CircleButton
-  width: ${(props) => (props.diameter)}; */
-  // ButtonShapes.circleのとき
-  width: ${(props) => (props.buttonShape === ButtonShapes.circle ? props.diameter : (props.width ? props.width + "px" : "100%"))};
+  width: ${(props.buttonShape === ButtonShapes.circle
+    ? props.diameter
+    : (props.width
+      ? props.width + "px"
+      : "100%"))};
 
-  height: ${(props) => (props.diameter)};
+  height: ${(props.buttonShape === ButtonShapes.circle && props.diameter
+    ? props.diameter
+    : "0.97cm")};
 
-  /* border-radius: ${(props) => (props.rounded ? "100px" : "3px")};
-  // CircleButton
-  border-radius: 50%; */
-  // 
-  border-radius: ${(props) => (props.buttonShape === ButtonShapes.circle ? "50%" : (props.rounded ? "100px" : "3px"))};
+  border-radius: ${(props.buttonShape === ButtonShapes.circle
+    ? "50%"
+    : (props.rounded
+      ? "100px"
+      : "3px"))};
 
-  padding: ${(props) =>
-    props.fontSize === FontSize.Tiny ? `${Space.TINY} ${Space.TINY}` : ""};
-  padding: ${(props) =>
-    props.fontSize === FontSize.Small ? `${Space.TINY} ${Space.SMALL}` : ""};
-  padding: ${(props) =>
-    props.fontSize === FontSize.Medium || props.fontSize === FontSize.H3
-      ? `${Space.SMALL} ${Space.BASE}`
-      : ""};
-  padding: ${(props) =>
-    props.fontSize === FontSize.Large || props.fontSize === FontSize.H2
-      ? `${Space.BASE} ${Space.LARGE}`
-      : ""};
-  padding: ${(props) => (props.buttonType === ButtonTypes.text ? "0" : "")};
+  padding: ${props.fontSize === FontSize.Tiny
+    ? `${Space.TINY} ${Space.TINY}`
+    : ""};
+  padding: ${props.fontSize === FontSize.Small
+    ? `${Space.TINY} ${Space.SMALL}`
+    : ""};
+  padding: ${props.fontSize === FontSize.Medium || props.fontSize === FontSize.H3
+    ? `${Space.SMALL} ${Space.BASE}`
+    : ""};
+  padding: ${props.fontSize === FontSize.Large || props.fontSize === FontSize.H2
+    ? `${Space.BASE} ${Space.LARGE}`
+    : ""};
+  padding: ${(props.buttonType === ButtonTypes.text
+    ? "0"
+    : "")};
+  padding: ${(props.buttonShape === ButtonShapes.circle
+    ? "none"
+    : "")};
 
-  background: ${(props) => (props.buttonType === ButtonTypes.primary ? Color.Primary : "")};
-  background: ${(props) => (props.buttonType === ButtonTypes.warning ? Color.Warn : "")};
-  background: ${(props) => (props.buttonType === ButtonTypes.danger ? Color.Danger : "")};
-  background: ${(props) => (props.buttonType === ButtonTypes.info ? Color.White : "")};
-  background: ${(props) => (props.buttonType === ButtonTypes.text ? "none" : "")};
-  background: ${(props) => (props.buttonType === ButtonTypes.secondary ? Color.Secondary : "")};
+  background: ${(props.buttonType === ButtonTypes.primary
+    ? Color.Primary
+    : "")};
+  background: ${(props.buttonType === ButtonTypes.warning
+    ? Color.Warn
+    : "")};
+  background: ${(props.buttonType === ButtonTypes.danger
+    ? Color.Danger
+    : "")};
+  background: ${(props.buttonType === ButtonTypes.info
+    ? Color.White
+    : "")};
+  background: ${(props.buttonType === ButtonTypes.text
+    ? "none"
+    : "")};
+  background: ${(props.buttonType === ButtonTypes.secondary
+    ? Color.Secondary
+    : "")};
   
-  color: ${(props) => (props.buttonType === ButtonTypes.info ? Color.Gray : Color.White)};
-  color: ${(props) => (props.buttonType === ButtonTypes.text ? Color.Black : "")};
-  color: ${(props) => (props.buttonType === ButtonTypes.secondary ? Color.Black : "")};
-  // CircleButtonからの移行部分
-  color: ${(props) => (props.fontColor ? props.fontColor : Color.White)};
+  color: ${(props.buttonShape === ButtonShapes.rect && props.buttonType === ButtonTypes.info
+    ? Color.Gray
+    : Color.White)};
+  color: ${(props.buttonShape === ButtonShapes.rect && props.buttonType === ButtonTypes.text
+    ? Color.Black
+    : "")};
+  color: ${(props.buttonShape === ButtonShapes.rect && props.buttonType === ButtonTypes.secondary
+    ? Color.Black
+    : "")};
+  color: ${(props.fontColor === Color.Success && props.buttonType === ButtonTypes.text
+    ? Color.Success
+    : "")};
+  color: ${(props.fontColor === Color.Danger && props.buttonType === ButtonTypes.text
+    ? Color.Danger
+    : "")};
+  color: ${(props.fontColor === Color.Inactive && props.buttonType === ButtonTypes.text
+    ? Color.Inactive
+    : "")};
 
-  border: ${(props) => (props.buttonType === ButtonTypes.info ? `1px solid ${Color.LightGray}` : "")};
-  // CircleButton
-  border: none;
+  border: ${(props.buttonShape === ButtonShapes.rect && props.buttonType === ButtonTypes.info
+    ? `1px solid ${Color.LightGray}`
+    : "")};
+  border: ${(props.buttonShape === ButtonShapes.circle
+    ? "none"
+    : "")};
 
   // CircleButtonのデフォルトを追加
-  font-size: ${(props) => (props.fontSize ? props.fontSize : FontSize.H1)};
-  line-height: ${(props) => (props.fontSize)};
-  // CircleButton
-  line-height: ${(props) => (props.diameter)};
+  font-size: ${(props.buttonShape === ButtonShapes.circle
+    ? props.fontSize
+    : FontSize.H1)};
+  font-size: ${(props.buttonShape === ButtonShapes.rect
+    ? props.fontSize
+    : "")};
 
-  /* type */
-  background: ${(props) => (props.buttonType === ButtonTypes.text ? "none" : "")};
-
-  /* color */
-  color: ${(props) => (props.fontColor === Color.Success && props.buttonType === ButtonTypes.text ? Color.Success : "")};
-  color: ${(props) => (props.fontColor === Color.Danger && props.buttonType === ButtonTypes.text ? Color.Danger : "")};
-  color: ${(props) => (props.fontColor === Color.Inactive && props.buttonType === ButtonTypes.text ? Color.Inactive : "")};
-
-  /* size */
+  line-height: ${(props.buttonShape === ButtonShapes.circle
+    ? props.diameter
+    : props.fontSize)};
 
   &:hover {
-    font-weight: ${(props) => (props.disabled ? "" : "bold")};
+    font-weight: ${(props.disabled ? "" : "bold")};
   }
 
   &:disabled {
-    background-color: ${(props) =>
-    props.buttonType !== ButtonTypes.text && props.disabled ? Color.Disabled : ""};
-    color: ${(props) =>
-    props.buttonType === ButtonTypes.text && props.disabled ? Color.White : ""};
+    background-color: ${props.buttonType !== ButtonTypes.text && props.disabled
+      ? Color.Disabled
+      : ""};
+    color: ${props.buttonType === ButtonTypes.text && props.disabled
+      ? Color.White
+      : ""};
     cursor: not-allowed;
   }
-`;
+`);
 
 const Button: React.FC<ButtonPropsMap> = function (props) {
   const {
+    label,
     specClass,
+    width,
+    diameter,
     buttonShape,
     buttonType,
     fontColor,
     fontSize,
-    width,
-    diameter,
-    handleClick,
     disabled,
     rounded,
-    label,
+    handleClick,
   } = props;
   return (
     <StyledButton
       className={specClass}
-      onClick={handleClick}
-      disabled={disabled}
-      buttonShape={buttonShape}
-      buttonType={buttonType}
       width={width}
       diameter={diameter}
+      buttonShape={buttonShape}
+      buttonType={buttonType}
+      disabled={disabled}
       rounded={rounded}
       fontColor={fontColor}
       fontSize={fontSize}
+      onClick={handleClick}
     >
       {label}
     </StyledButton>

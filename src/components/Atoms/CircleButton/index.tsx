@@ -6,10 +6,10 @@ import { FontSize } from '../../../styles/Font';
 export type CircleButtonProps = {
     diameter: string;   // Modalではcm指定のため、string型で単位を指定しない決め方にする。
     handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    backgroundColor?: keyof typeof Color;
-    fontColor?: keyof typeof Color;
-    label?: string;
-    fontSize?: keyof typeof FontSize;
+    backgroundColor?: keyof typeof Color; //buttonTypeとして移行
+    fontColor?: keyof typeof Color; //移行済
+    label?: string; //移行済
+    fontSize?: keyof typeof FontSize; //移行済
 }
 
 const CircleButton: React.FC<CircleButtonProps> = (props) => {
