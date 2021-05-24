@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
-import ImageInput, { ImageInputProps } from './index'
+import ImageInput, { ImageInputProps, UploadButtonShapeTypes } from './index'
 import { ImageSize } from '../../Atoms/Image/Image';
 
 export default {
@@ -18,12 +18,18 @@ export default {
         sizeTypes: {
             control: {
                 type: 'select',
-                options: Object.keys(ImageSize).filter(k => typeof ImageSize[k as keyof typeof ImageSize] === "string"),
+                options: Object.keys(ImageSize).filter(k => typeof ImageSize[k as keyof typeof ImageSize] === "number"),
             }
         },
         maxDataSizeMegaByte: {
             control: {
                 type: 'number',
+            }
+        },
+        uploadButtonShape: {
+            control: {
+                type: 'select',
+                options: Object.keys(UploadButtonShapeTypes).filter(k => typeof UploadButtonShapeTypes[k as keyof typeof UploadButtonShapeTypes] === "string"),
             }
         },
         isEditing: {

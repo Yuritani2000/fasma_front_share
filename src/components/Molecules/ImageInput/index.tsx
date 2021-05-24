@@ -6,8 +6,7 @@ import { FontSize } from '../../../styles/Font';
 import ImageInputParent from './StyledComponents/ImageInputParent';
 import StyledLabel ,{ StyledLabelProps } from './StyledComponents/StyledLabel';
 import ButtonParent from './StyledComponents/ButtonParent';
-
-
+import Color from '../../../styles/Color';
 
 enum deleteButtonSizes {
     Tiny = 40,
@@ -20,11 +19,28 @@ enum deleteButtonSizes {
     H1 = 120,
 }
 
+export enum UploadButtonShapeTypes {
+    Rounded = 'Rounded',
+    Rectangle = 'Rectangle',
+}
+
 export type ImageInputProps = {
     size?: number;
     sizeTypes?: keyof typeof ImageSize;
     maxDataSizeMegaByte?: number;
-    styledLabelArguments?: StyledLabelProps; 
+    uploadButtonPadding?: number;
+    uploadButtonVerticalPosition?: string;
+    uploadButtonHorizontalPosition?: string;
+    uploadButtonWidth?: number;
+    uploadButtonHeight?: number;
+    uploadButtonShape?: UploadButtonShapeTypes;
+    uploadButtonBackgroundColor?: keyof typeof Color;
+    uploadButtonTextColor?: keyof typeof Color;
+    uploadButtonTextIsBold?: boolean;
+    uploadButtonTextSize?: keyof typeof FontSize;
+    uploadButtonBorderColor?: keyof typeof Color;
+    uploadButtonBorderWidth?: number;
+    uploadButtonOpacity?: number;
     shouldShowDeleteButton?: boolean;
     uploadButtonLabel?: string;
     deleteButtonSize?: keyof typeof FontSize;
@@ -37,17 +53,19 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     const {size = 100, 
            sizeTypes = 'MEDIUM', 
            maxDataSizeMegaByte = 10, 
-           styledLabelArguments = { color: 'Black',
-                                    backgroundColor: 'WhiteSmoke',
-                                    borderColor: 'Border',
-                                    borderWidth: 2,
-                                    isRounded: true,
-                                    padding: 5,
-                                    width: 20,
-                                    height: 20,
-                                    isBold: true,
-                                    fontSize: 'Large',
-                                },
+            uploadButtonPadding = 5,
+            uploadButtonVerticalPosition = 'calc(100% - 30px)',
+            uploadButtonHorizontalPosition = 'calc(100% - 30px)',
+            uploadButtonWidth = 20,
+            uploadButtonHeight = 20,
+            uploadButtonShape = 'Rounded',
+            uploadButtonBackgroundColor = 'WhiteSmoke',
+            uploadButtonTextColor = 'Black',
+            uploadButtonTextIsBold = true,
+            uploadButtonTextSize = 'Large',
+            uploadButtonBorderColor = 'Border',
+            uploadButtonBorderWidth = 2,
+            uploadButtonOpacity = 1.0,
            shouldShowDeleteButton = false,
            uploadButtonLabel = '＋',
            deleteButtonSize = 'Small',
@@ -90,22 +108,20 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     return(
         <ImageInputParent size={size} sizeTypes={sizeTypes}>
             <Image url={imageUrl} size={size} sizeTypes={sizeTypes}/>
-            <StyledLabel color={styledLabelArguments.color}
-                         backgroundColor={styledLabelArguments.backgroundColor}
-                         borderColor={styledLabelArguments.borderColor}
-                         borderWidth={styledLabelArguments.borderWidth}
-                         isRounded={styledLabelArguments.isRounded}
-                         padding={styledLabelArguments.padding}
-                         customizedBorderRadius={styledLabelArguments.customizedBorderRadius}
-                         topPositionPercentage={styledLabelArguments.topPositionPercentage}
-                         leftPositionPercentage={styledLabelArguments.leftPositionPercentage}
-                         isVisible={(styledLabelArguments.isVisible === true || styledLabelArguments.isVisible === false) ? styledLabelArguments.isVisible : isEditing}
-                         width={styledLabelArguments.width}
-                         height={styledLabelArguments.height}
-                         isBold={styledLabelArguments.isBold}
-                         fontSize={styledLabelArguments.fontSize}
-                         opacity={styledLabelArguments.opacity}>
-                             {uploadButtonLabel}
+            <StyledLabel color={uploadButtonTextColor ?  uploadButtonTextColor :  'Black'}
+                         backgroundColor={uploadButtonBackgroundColor ? uploadButtonBackgroundColor : 'WhiteSmoke' }
+                         borderColor={uploadButtonBorderColor ? uploadButtonBorderColor : 'Border' }
+                         borderWidth={uploadButtonBorderWidth ? uploadButtonBorderWidth : 2}
+                         isRounded={ (UploadButtonShapeTypes[uploadButtonShape] === UploadButtonShapeTypes.Rectangle) ? false: true}
+                         padding={uploadButtonPadding ? uploadButtonPadding : 5}
+                         verticalPosition={uploadButtonVerticalPosition ? uploadButtonVerticalPosition : 'calc(100% - 30px)'}
+                         horizontalPosition={uploadButtonHorizontalPosition ? uploadButtonHorizontalPosition : 'calc(100% - 30px)' }
+                         width={uploadButtonWidth ? uploadButtonWidth : 20 }
+                         height={uploadButtonHeight ? uploadButtonHeight : 20}
+                         isBold={uploadButtonTextIsBold ? uploadButtonTextIsBold : true}
+                         fontSize={uploadButtonTextSize ? uploadButtonTextSize : 'Large'}
+                         opacity={uploadButtonOpacity ? uploadButtonOpacity : 1.0}>
+                             {uploadButtonLabel ? uploadButtonLabel : '＋'}
                 <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
             <ButtonParent isDisabled={(shouldShowDeleteButton && imageUrl != '' ) ? false : true}>
