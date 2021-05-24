@@ -111,7 +111,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
             <StyledLabel color={uploadButtonTextColor ?  uploadButtonTextColor :  'Black'}
                          backgroundColor={uploadButtonBackgroundColor ? uploadButtonBackgroundColor : 'WhiteSmoke' }
                          borderColor={uploadButtonBorderColor ? uploadButtonBorderColor : 'Border' }
-                         borderWidth={uploadButtonBorderWidth ? uploadButtonBorderWidth : 2}
+                         borderWidth={uploadButtonBorderWidth ? uploadButtonBorderWidth < 0 ? 0 : uploadButtonBorderWidth : uploadButtonBorderWidth <= 0 ? 0 : 2}
                          isRounded={ (UploadButtonShapeTypes[uploadButtonShape] === UploadButtonShapeTypes.Rectangle) ? false: true}
                          padding={uploadButtonPadding ? uploadButtonPadding : 5}
                          verticalPosition={uploadButtonVerticalPosition ? uploadButtonVerticalPosition : 'calc(100% - 30px)'}
