@@ -1,6 +1,6 @@
 import React from 'react';
 import {ModalBase} from '../../../Molecules/Modal/ModalBase';
-import  Button , {ButtonTypes} from '../../../Atoms/Button/index';
+import  Button , {ButtonShapes, ButtonTypes} from '../../../Atoms/Button/index';
 import {TitleArea, ButtonArea, LogoSpace, ButtonElement} from '../StyledComponent';
 import Logomark from '../Logo_tmp/logomark.png';
 import { useHistory } from 'react-router-dom';
@@ -26,10 +26,10 @@ const AuthModal: React.FC = () => {
                 </TitleArea>
                 <ButtonArea height='58%'>
                     <ButtonElement marginTop='0%' height='54px' width='100%'>
-                        <Button label='アカウントを作成' size={FontSize.Large} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickSignUp}/>
+                        <Button label='アカウントを作成' size={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickSignUp}/>
                     </ButtonElement>
                     <ButtonElement marginTop='15%' height='1.4cm' width='100%'>
-                        <Button label='ログイン' size={FontSize.Large} buttonType={ButtonTypes.secondary} rounded={true} handleClick={handleClickLogIn}/>
+                        <Button label='ログイン' size={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.secondary} rounded={true} handleClick={handleClickLogIn}/>
                     </ButtonElement>
                 </ButtonArea>
             </ModalBase>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontSize } from '../../../../styles/Font';
 import {ModalBase} from '../../../Molecules/Modal/ModalBase';
 import Input from '../../../Atoms/Input/index';
-import  Button , {ButtonTypes} from '../../../Atoms/Button/index';
+import  Button , {ButtonShapes, ButtonTypes} from '../../../Atoms/Button/index';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from '../StyledComponent';
 import Logomark from '../Logo_tmp/logomark.png';
 import { useHistory } from 'react-router-dom';
@@ -41,7 +41,7 @@ const LogIn: React.FC = () => {
             </FormArea>
             <ButtonArea height='33%'>
                 <ButtonElement marginTop='1.8cm' height='1.4cm' width='100%'>
-                    <Button label='ログイン' size={FontSize.Large} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickLogIn}/>
+                    <Button label='ログイン' size={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickLogIn}/>
                 </ButtonElement>
             </ButtonArea>
         </ModalBase>
