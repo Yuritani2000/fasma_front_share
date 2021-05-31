@@ -41,7 +41,7 @@ export type ImageInputProps = {
     uploadButtonBorderColor?: keyof typeof Color;
     uploadButtonBorderWidth?: number;
     uploadButtonOpacity?: number;
-    shouldShowDeleteButton?: boolean;
+    isDeleteButtonVisible?: boolean;
     uploadButtonLabel?: string;
     deleteButtonSize?: keyof typeof FontSize;
     imageUrl: string;
@@ -50,9 +50,9 @@ export type ImageInputProps = {
 }
 
 const ImageInput: React.FC<ImageInputProps> = (props) => {
-    const {size = 100, 
-           sizeTypes = 'MEDIUM', 
-           maxDataSizeMegaByte = 10, 
+    const {size = 100,
+           sizeTypes = 'MEDIUM',
+           maxDataSizeMegaByte = 10,
             uploadButtonPadding = 5,
             uploadButtonVerticalPosition = 'calc(100% - 30px)',
             uploadButtonHorizontalPosition = 'calc(100% - 30px)',
@@ -66,7 +66,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
             uploadButtonBorderColor = 'Border',
             uploadButtonBorderWidth = 2,
             uploadButtonOpacity = 1.0,
-           shouldShowDeleteButton = false,
+           isDeleteButtonVisible = false,
            uploadButtonLabel = '＋',
            deleteButtonSize = 'Small',
            imageUrl,
@@ -124,11 +124,11 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                              {uploadButtonLabel ? uploadButtonLabel : '＋'}
                 <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
-            <ButtonParent isDisabled={(shouldShowDeleteButton && imageUrl != '' ) ? false : true}>
+            <ButtonParent isDisabled={(isDeleteButtonVisible && imageUrl != '' ) ? false : true}>
                 <Button label='削除' size={FontSize[deleteButtonSize]} width={deleteButtonSizes[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>
             </ButtonParent>
         </ImageInputParent>
     );
-} 
+}
 
 export default ImageInput;
