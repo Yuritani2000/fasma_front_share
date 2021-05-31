@@ -49,12 +49,8 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
             alert("ファイルサイズが大きすぎます。: " + files[0].size + "バイト.\nファイルサイズ上限は" + maxDataSizeMegaByte + "MBまでです.");
             return;
         }
-        setImage(files[0]);
-    }
-
-    const createUrl = () => {
-        if(image != null) {
-            const url = URL.createObjectURL(image);
+        if(files[0] != null) {
+            const url = URL.createObjectURL(files[0]);
             setImageUrl(url);
         }
     }
@@ -63,8 +59,6 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
         URL.revokeObjectURL(imageUrl);
         setImageUrl('');
     }
-
-    useEffect(createUrl, [image]);
 
     return(
         <ImageInputParent size={imageSize} sizeTypes={imageSizeType}>
