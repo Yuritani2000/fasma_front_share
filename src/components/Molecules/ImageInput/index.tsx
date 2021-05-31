@@ -6,17 +6,6 @@ import { FontSize } from '../../../styles/Font';
 import Icon from '../../Atoms/Icon';
 import { ButtonParent, ImageInputParent, StyledLabel, IconParent, IconPosition } from './StyledComponents';
 
-enum deleteButtonSizes {
-    Tiny = 40,
-    Small = 55,
-    Medium = 70,
-    Large = 90,
-    H4 = 50,
-    H3 = 80,
-    H2 = 110,
-    H1 = 120,
-}
-
 export type ImageInputProps = {
     imageSize?: number;
     imageSizeType?: keyof typeof ImageSize;
@@ -39,7 +28,6 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
             setImageUrl,
             isEditing = true,
           } = props;
-    const [image, setImage] = useState<File>();
 
     const onChangeImageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         let files = e.target.files;
