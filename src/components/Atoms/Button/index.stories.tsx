@@ -9,7 +9,7 @@ export default {
   component: Button,
   decorators:  [(Story) => <Story/>],
   argTypes: {
-    fontSize: {
+    size: {
       control: {
         type: 'select',
         options: FontSize,
@@ -27,7 +27,7 @@ export default {
         options: ButtonTypes,
       },
     },
-    fontColor: {
+    color: {
       control: {
         type: 'select',
         options: Color,
@@ -50,7 +50,7 @@ const Template: Story<ButtonPropsMap> = (args) => <Button {...args} />;
 
 export const Buttons = Template.bind({});
 Buttons.args = {
-  fontSize: FontSize.Small,
+  size: FontSize.Small,
   buttonShape: ButtonShapes.rect,
   buttonType: ButtonTypes.primary,
   label: 'test',
