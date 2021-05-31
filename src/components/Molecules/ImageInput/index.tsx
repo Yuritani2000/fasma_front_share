@@ -3,12 +3,8 @@ import Image, { ImageSize } from '../../Atoms/Image/Image';
 import FileInput from './../../Atoms/FileInput/index';
 import Button, {ButtonTypes} from '../../Atoms/Button';
 import { FontSize } from '../../../styles/Font';
-import ImageInputParent from './StyledComponents/ImageInputParent';
-import StyledLabel from './StyledComponents/StyledLabel';
-import ButtonParent from './StyledComponents/ButtonParent';
-import Color from '../../../styles/Color';
 import Icon from '../../Atoms/Icon';
-import styled from 'styled-components';
+import { ButtonParent, ImageInputParent, StyledLabel, IconParent, IconPosition } from './StyledComponents';
 
 enum deleteButtonSizes {
     Tiny = 40,
@@ -93,16 +89,3 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
 }
 
 export default ImageInput;
-
-const IconParent = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100%;
-`;
-
-const IconPosition = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
