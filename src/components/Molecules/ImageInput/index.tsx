@@ -46,7 +46,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
         if(files === null || files.length === 0){
             return;
         }else if(files[0].size > maxDataSizeMegaByte * 1024 * 1024){
-            alert("ファイルサイズ: " + files[0].size + "バイト.\nファイルサイズが大きすぎます.\nファイルサイズ上限は" + maxDataSizeMegaByte + "MBまでです.");
+            alert("ファイルサイズが大きすぎます。: " + files[0].size + "バイト.\nファイルサイズ上限は" + maxDataSizeMegaByte + "MBまでです.");
             return;
         }
         setImage(files[0]);
