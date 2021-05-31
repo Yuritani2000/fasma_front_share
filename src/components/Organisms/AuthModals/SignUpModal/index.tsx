@@ -41,7 +41,7 @@ const SignUp: React.FC = (props) => {
             </FormArea>
             <ButtonArea height='33%'>
                 <ButtonElement marginTop='1.8cm' height='1.4cm' width='100%'>
-                    <Button label='アカウントを作成' size={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickSignUp}/>
+                    <Button label='アカウントを作成' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickSignUp}/>
                 </ButtonElement>
             </ButtonArea>
         </ModalBase>
