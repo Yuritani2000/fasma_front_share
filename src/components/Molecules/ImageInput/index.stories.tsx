@@ -26,12 +26,6 @@ export default {
                 type: 'number',
             }
         },
-        uploadButtonShape: {
-            control: {
-                type: 'select',
-                options: Object.keys(UploadButtonShapeTypes).filter(k => typeof UploadButtonShapeTypes[k as keyof typeof UploadButtonShapeTypes] === "string"),
-            }
-        },
         isEditing: {
             control: {
                 type: 'boolean',

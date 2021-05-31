@@ -4,9 +4,11 @@ import FileInput from './../../Atoms/FileInput/index';
 import Button, {ButtonTypes} from '../../Atoms/Button';
 import { FontSize } from '../../../styles/Font';
 import ImageInputParent from './StyledComponents/ImageInputParent';
-import StyledLabel ,{ StyledLabelProps } from './StyledComponents/StyledLabel';
+import StyledLabel from './StyledComponents/StyledLabel';
 import ButtonParent from './StyledComponents/ButtonParent';
 import Color from '../../../styles/Color';
+import Icon from '../../Atoms/Icon';
+import styled from 'styled-components';
 
 enum deleteButtonSizes {
     Tiny = 40,
@@ -28,21 +30,7 @@ export type ImageInputProps = {
     size?: number;
     sizeTypes?: keyof typeof ImageSize;
     maxDataSizeMegaByte?: number;
-    uploadButtonPadding?: number;
-    uploadButtonVerticalPosition?: string;
-    uploadButtonHorizontalPosition?: string;
-    uploadButtonWidth?: number;
-    uploadButtonHeight?: number;
-    uploadButtonShape?: UploadButtonShapeTypes;
-    uploadButtonBackgroundColor?: keyof typeof Color;
-    uploadButtonTextColor?: keyof typeof Color;
-    uploadButtonTextIsBold?: boolean;
-    uploadButtonTextSize?: keyof typeof FontSize;
-    uploadButtonBorderColor?: keyof typeof Color;
-    uploadButtonBorderWidth?: number;
-    uploadButtonOpacity?: number;
     isDeleteButtonVisible?: boolean;
-    uploadButtonLabel?: string;
     deleteButtonSize?: keyof typeof FontSize;
     imageUrl: string;
     setImageUrl: (url: string) => void;
@@ -53,21 +41,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     const {size = 100,
            sizeTypes = 'MEDIUM',
            maxDataSizeMegaByte = 10,
-            uploadButtonPadding = 5,
-            uploadButtonVerticalPosition = 'calc(100% - 30px)',
-            uploadButtonHorizontalPosition = 'calc(100% - 30px)',
-            uploadButtonWidth = 20,
-            uploadButtonHeight = 20,
-            uploadButtonShape = 'Rounded',
-            uploadButtonBackgroundColor = 'WhiteSmoke',
-            uploadButtonTextColor = 'Black',
-            uploadButtonTextIsBold = true,
-            uploadButtonTextSize = 'Large',
-            uploadButtonBorderColor = 'Border',
-            uploadButtonBorderWidth = 2,
-            uploadButtonOpacity = 1.0,
            isDeleteButtonVisible = false,
-           uploadButtonLabel = '＋',
            deleteButtonSize = 'Small',
            imageUrl,
            setImageUrl,
@@ -108,20 +82,12 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     return(
         <ImageInputParent size={size} sizeTypes={sizeTypes}>
             <Image url={imageUrl} size={size} sizeTypes={sizeTypes}/>
-            <StyledLabel color={uploadButtonTextColor ?  uploadButtonTextColor :  'Black'}
-                         backgroundColor={uploadButtonBackgroundColor ? uploadButtonBackgroundColor : 'WhiteSmoke' }
-                         borderColor={uploadButtonBorderColor ? uploadButtonBorderColor : 'Border' }
-                         borderWidth={uploadButtonBorderWidth ? uploadButtonBorderWidth < 0 ? 0 : uploadButtonBorderWidth : uploadButtonBorderWidth <= 0 ? 0 : 2}
-                         isRounded={ (UploadButtonShapeTypes[uploadButtonShape] === UploadButtonShapeTypes.Rectangle) ? false: true}
-                         padding={uploadButtonPadding ? uploadButtonPadding : 5}
-                         verticalPosition={uploadButtonVerticalPosition ? uploadButtonVerticalPosition : 'calc(100% - 30px)'}
-                         horizontalPosition={uploadButtonHorizontalPosition ? uploadButtonHorizontalPosition : 'calc(100% - 30px)' }
-                         width={uploadButtonWidth ? uploadButtonWidth : 20 }
-                         height={uploadButtonHeight ? uploadButtonHeight : 20}
-                         isBold={uploadButtonTextIsBold ? uploadButtonTextIsBold : uploadButtonTextIsBold === false ? false : true}
-                         fontSize={uploadButtonTextSize ? uploadButtonTextSize : 'Large'}
-                         opacity={uploadButtonOpacity ? uploadButtonOpacity : 1.0}>
-                             {uploadButtonLabel ? uploadButtonLabel : '＋'}
+            <StyledLabel noDisplay={!isEditing}>
+                <IconParent>
+                    <IconPosition>
+                        <Icon type='MdAdd' size='H1'/>
+                    </IconPosition>
+                </IconParent>
                 <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
             <ButtonParent isDisabled={(isDeleteButtonVisible && imageUrl != '' ) ? false : true}>
@@ -132,3 +98,16 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
 }
 
 export default ImageInput;
+
+const IconParent = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+`;
+
+const IconPosition = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
