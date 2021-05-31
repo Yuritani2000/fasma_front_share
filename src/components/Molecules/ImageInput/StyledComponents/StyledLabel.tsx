@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Color from '../../../../styles/Color';
 import { FontSize } from '../../../../styles/Font';
 
-const StyledLabel = styled.label<{noDisplay?: boolean}>((props)=> `
+const StyledLabel = styled.label<{isDisplaying: boolean}>((props)=> `
     color: Black;
     background-color: ${Color.WhiteSmoke};
     border: solid;
@@ -18,7 +18,7 @@ const StyledLabel = styled.label<{noDisplay?: boolean}>((props)=> `
     font-weight: bold;
     font-size: ${FontSize.Large};
     opacity: 1.0;
-    display: ${props.noDisplay ? 'none' : 'block'};
+    display: ${props.isDisplaying ? 'block' : 'none'};
     cursor: pointer;
     text-align: center;
     line-height: 50px;

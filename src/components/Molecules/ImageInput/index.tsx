@@ -77,7 +77,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     return(
         <ImageInputParent size={size} sizeTypes={sizeTypes}>
             <Image url={imageUrl} size={size} sizeTypes={sizeTypes}/>
-            <StyledLabel noDisplay={!isEditing}>
+            <StyledLabel isDisplaying={isEditing}>
                 <IconParent>
                     <IconPosition>
                         <Icon type='MdAdd' size='H1'/>
