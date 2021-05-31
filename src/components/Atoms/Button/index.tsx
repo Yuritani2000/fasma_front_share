@@ -22,8 +22,8 @@ export type ButtonPropsMap = {
   buttonShape?: ButtonShapes;
   buttonType?: ButtonTypes;
   specClass?: string;
-  fontColor?: Color;
-  fontSize?: FontSize;
+  color?: Color;
+  size?: FontSize;
   disabled?: boolean;
   rounded?: boolean;
   handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -74,16 +74,16 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
       ? "100px"
       : "3px"))};
 
-  padding: ${props.fontSize === FontSize.Tiny
+  padding: ${props.size === FontSize.Tiny
     ? `${Space.TINY} ${Space.TINY}`
     : ""};
-  padding: ${props.fontSize === FontSize.Small
+  padding: ${props.size === FontSize.Small
     ? `${Space.TINY} ${Space.SMALL}`
     : ""};
-  padding: ${props.fontSize === FontSize.Medium || props.fontSize === FontSize.H3
+  padding: ${props.size === FontSize.Medium || props.size === FontSize.H3
     ? `${Space.SMALL} ${Space.BASE}`
     : ""};
-  padding: ${props.fontSize === FontSize.Large || props.fontSize === FontSize.H2
+  padding: ${props.size === FontSize.Large || props.size === FontSize.H2
     ? `${Space.BASE} ${Space.LARGE}`
     : ""};
   padding: ${(props.buttonType === ButtonTypes.text
@@ -121,13 +121,13 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
   color: ${(props.buttonShape === ButtonShapes.rect && props.buttonType === ButtonTypes.secondary
     ? Color.Black
     : "")};
-  color: ${(props.fontColor === Color.Success && props.buttonType === ButtonTypes.text
+  color: ${(props.color === Color.Success && props.buttonType === ButtonTypes.text
     ? Color.Success
     : "")};
-  color: ${(props.fontColor === Color.Danger && props.buttonType === ButtonTypes.text
+  color: ${(props.color === Color.Danger && props.buttonType === ButtonTypes.text
     ? Color.Danger
     : "")};
-  color: ${(props.fontColor === Color.Inactive && props.buttonType === ButtonTypes.text
+  color: ${(props.color === Color.Inactive && props.buttonType === ButtonTypes.text
     ? Color.Inactive
     : "")};
 
@@ -140,15 +140,15 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
 
   // CircleButtonのデフォルトを追加
   font-size: ${(props.buttonShape === ButtonShapes.circle
-    ? props.fontSize
+    ? props.size
     : FontSize.H1)};
   font-size: ${(props.buttonShape === ButtonShapes.rect
-    ? props.fontSize
+    ? props.size
     : "")};
 
   line-height: ${(props.buttonShape === ButtonShapes.circle
     ? props.diameter
-    : props.fontSize)};
+    : props.size)};
 
   &:hover {
     font-weight: ${(props.disabled ? "" : "bold")};
@@ -173,8 +173,8 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
     diameter,
     buttonShape,
     buttonType,
-    fontColor,
-    fontSize,
+    color,
+    size,
     disabled,
     rounded,
     handleClick,
@@ -188,8 +188,8 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
       buttonType={buttonType}
       disabled={disabled}
       rounded={rounded}
-      fontColor={fontColor}
-      fontSize={fontSize}
+      color={color}
+      size={size}
       onClick={handleClick}
     >
       {label}
@@ -200,7 +200,7 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
 Button.defaultProps = {
   buttonShape: ButtonShapes.rect,
   buttonType: ButtonTypes.primary,
-  fontSize: FontSize.Medium,
+  size: FontSize.Medium,
   disabled: false,
   rounded: false,
 };
