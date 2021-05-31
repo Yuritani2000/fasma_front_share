@@ -66,7 +66,7 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
 
   height: ${(props.buttonShape === ButtonShapes.circle && props.diameter
     ? props.diameter
-    : "0.97cm")};
+    : "auto")};
 
   border-radius: ${(props.buttonShape === ButtonShapes.circle
     ? "50%"
