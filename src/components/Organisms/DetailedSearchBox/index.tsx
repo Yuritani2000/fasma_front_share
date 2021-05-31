@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Atoms
 import Text from '../../Atoms/Text';
-import Button, { ButtonTypes } from '../../Atoms/Button';
+import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button';
 import Input from '../../Atoms/Input';
 // Moloecules
 import DropdownList, { Items } from '../../Molecules/DropdownList';
@@ -57,8 +57,8 @@ const DetailedSearchBox: React.FC<Props> = (props) => {
         <DropdownList placeholder={"指定なし"}　selectItem={selectDayValue} items={[{ label: "1" }]} isBoxShadow={false} onChangedSelectItem={onChangedDayItem} />
       </DaysWrapper>
       <ButtonWrapper>
-        <Button label={"クリア"} width={120} rounded={true} buttonType={ButtonTypes.info} />
-        <Button label={"絞り込む"} width={120} rounded={true} buttonType={ButtonTypes.primary} />
+        <Button label={"クリア"} width={120} rounded={true} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.info} />
+        <Button label={"絞り込む"} width={120} rounded={true} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} />
       </ButtonWrapper>
     </Wrapper>
   );
