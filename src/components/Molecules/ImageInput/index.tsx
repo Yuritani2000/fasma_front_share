@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image, { ImageSize } from '../../Atoms/Image/Image';
 import FileInput from './../../Atoms/FileInput/index';
 import Button, {ButtonTypes} from '../../Atoms/Button';
