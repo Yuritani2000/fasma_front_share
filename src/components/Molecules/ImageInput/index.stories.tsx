@@ -35,7 +35,7 @@ export default {
 } as Meta;
 
 const Template: Story<ImageInputProps> = (args) => {
-    const [imageUrl, setImageUrl] = useState('');
+    const [imageUrl, setImageUrl] = useState(args.imageUrl || '');
     return <ImageInput {...args} imageUrl={imageUrl} setImageUrl={setImageUrl}
     />
 }

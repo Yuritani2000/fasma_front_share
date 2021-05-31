@@ -23,26 +23,25 @@ export type ImageInputProps = {
     maxDataSizeMegaByte?: number;
     isDeleteButtonVisible?: boolean;
     deleteButtonSize?: keyof typeof FontSize;
-    imageUrl: string;
+    imageUrl?: string;
     setImageUrl: (url: string) => void;
     isEditing?: boolean;
 }
 
 const ImageInput: React.FC<ImageInputProps> = (props) => {
-    const {imageSize = 100,
-           imageSizeType = 'MEDIUM',
-           maxDataSizeMegaByte = 10,
-           isDeleteButtonVisible = false,
-           deleteButtonSize = 'Small',
-           imageUrl,
-           setImageUrl,
-           isEditing = true,
+    const {
+            imageSize = 100,
+            imageSizeType = 'MEDIUM',
+            maxDataSizeMegaByte = 10,
+            isDeleteButtonVisible = false,
+            deleteButtonSize = 'Small',
+            imageUrl = '',
+            setImageUrl,
+            isEditing = true,
           } = props;
     const [image, setImage] = useState<File>();
-    const [value, setValue] = useState<string>('');
 
     const onChangeImageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value);
         let files = e.target.files;
         if(files === null || files.length === 0){
             return;
@@ -65,7 +64,6 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     const deleteUrl = () => {
         URL.revokeObjectURL(imageUrl);
         setImageUrl('');
-        setValue('');
     }
 
     useEffect(createUrl, [image]);
@@ -79,7 +77,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                         <Icon type='MdAdd' size='H1'/>
                     </IconPosition>
                 </IconParent>
-                <FileInput value={value} accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
+                <FileInput value='' accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
             <ButtonParent isDisabled={(isDeleteButtonVisible && imageUrl != '' ) ? false : true}>
                 <Button label='削除' size={FontSize[deleteButtonSize]} width={deleteButtonSizes[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>
