@@ -18,8 +18,8 @@ enum deleteButtonSizes {
 }
 
 export type ImageInputProps = {
-    size?: number;
-    sizeTypes?: keyof typeof ImageSize;
+    imageSize?: number;
+    imageSizeType?: keyof typeof ImageSize;
     maxDataSizeMegaByte?: number;
     isDeleteButtonVisible?: boolean;
     deleteButtonSize?: keyof typeof FontSize;
@@ -29,8 +29,8 @@ export type ImageInputProps = {
 }
 
 const ImageInput: React.FC<ImageInputProps> = (props) => {
-    const {size = 100,
-           sizeTypes = 'MEDIUM',
+    const {imageSize = 100,
+           imageSizeType = 'MEDIUM',
            maxDataSizeMegaByte = 10,
            isDeleteButtonVisible = false,
            deleteButtonSize = 'Small',
@@ -71,8 +71,8 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
     useEffect(createUrl, [image]);
 
     return(
-        <ImageInputParent size={size} sizeTypes={sizeTypes}>
-            <Image url={imageUrl} size={size} sizeTypes={sizeTypes}/>
+        <ImageInputParent size={imageSize} sizeTypes={imageSizeType}>
+            <Image url={imageUrl} size={imageSize} sizeTypes={imageSizeType}/>
             <StyledLabel isDisplaying={isEditing}>
                 <IconParent>
                     <IconPosition>

@@ -42,8 +42,8 @@ const Template: Story<ImageInputProps> = (args) => {
 
 export const _ImageInput = Template.bind({});
 _ImageInput.args = {
-    size: 300,
-    sizeTypes: 'MEDIUM',
+    imageSize: 300,
+    imageSizeType: 'MEDIUM',
     maxDataSizeMegaByte: 10,
     isEditing: true,
 };
