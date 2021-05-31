@@ -22,8 +22,8 @@ export type ButtonPropsMap = {
   buttonShape?: ButtonShapes;
   buttonType?: ButtonTypes;
   specClass?: string;
-  color?: Color;
-  size?: FontSize;
+  fontColor?: Color;
+  fontSize?: FontSize;
   disabled?: boolean;
   rounded?: boolean;
   handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -74,16 +74,16 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
       ? "100px"
       : "3px"))};
 
-  padding: ${props.size === FontSize.Tiny
+  padding: ${props.fontSize === FontSize.Tiny
     ? `${Space.TINY} ${Space.TINY}`
     : ""};
-  padding: ${props.size === FontSize.Small
+  padding: ${props.fontSize === FontSize.Small
     ? `${Space.TINY} ${Space.SMALL}`
     : ""};
-  padding: ${props.size === FontSize.Medium || props.size === FontSize.H3
+  padding: ${props.fontSize === FontSize.Medium || props.fontSize === FontSize.H3
     ? `${Space.SMALL} ${Space.BASE}`
     : ""};
-  padding: ${props.size === FontSize.Large || props.size === FontSize.H2
+  padding: ${props.fontSize === FontSize.Large || props.fontSize === FontSize.H2
     ? `${Space.BASE} ${Space.LARGE}`
     : ""};
   padding: ${(props.buttonType === ButtonTypes.text
@@ -140,15 +140,15 @@ const StyledButton = styled.button<ButtonPropsMap>((props) => `
 
   // CircleButtonのデフォルトを追加
   font-size: ${(props.buttonShape === ButtonShapes.circle
-    ? props.size
+    ? props.fontSize
     : FontSize.H1)};
   font-size: ${(props.buttonShape === ButtonShapes.rect
-    ? props.size
+    ? props.fontSize
     : "")};
 
   line-height: ${(props.buttonShape === ButtonShapes.circle
     ? props.diameter
-    : props.size)};
+    : props.fontSize)};
 
   &:hover {
     font-weight: ${(props.disabled ? "" : "bold")};
@@ -173,8 +173,8 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
     diameter,
     buttonShape,
     buttonType,
-    color,
-    size,
+    fontColor,
+    fontSize,
     disabled,
     rounded,
     handleClick,
@@ -188,8 +188,8 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
       buttonType={buttonType}
       disabled={disabled}
       rounded={rounded}
-      color={color}
-      size={size}
+      fontColor={fontColor}
+      fontSize={fontSize}
       onClick={handleClick}
     >
       {label}
@@ -200,7 +200,7 @@ const Button: React.FC<ButtonPropsMap> = function (props) {
 Button.defaultProps = {
   buttonShape: ButtonShapes.rect,
   buttonType: ButtonTypes.primary,
-  size: FontSize.Medium,
+  fontSize: FontSize.Medium,
   disabled: false,
   rounded: false,
 };

@@ -41,7 +41,7 @@ const LogIn: React.FC = () => {
             </FormArea>
             <ButtonArea height='33%'>
                 <ButtonElement marginTop='1.8cm' height='1.4cm' width='100%'>
-                    <Button label='ログイン' size={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickLogIn}/>
+                    <Button label='ログイン' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickLogIn}/>
                 </ButtonElement>
             </ButtonArea>
         </ModalBase>
