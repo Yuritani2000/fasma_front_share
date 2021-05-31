@@ -80,7 +80,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                 <FileInput value='' accept='image/*' id='input-image' onChange={onChangeImageInput} noDisplay={true} disabled={!isEditing}/>
             </StyledLabel>
             <ButtonParent isDisabled={(isDeleteButtonVisible && imageUrl != '' ) ? false : true}>
-                <Button label='削除' size={FontSize[deleteButtonSize]} width={deleteButtonSizes[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>
+                <Button label='削除' size={FontSize[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>
             </ButtonParent>
         </ImageInputParent>
     );
