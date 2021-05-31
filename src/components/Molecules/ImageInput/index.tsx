@@ -21,11 +21,6 @@ enum deleteButtonSizes {
     H1 = 120,
 }
 
-export enum UploadButtonShapeTypes {
-    Rounded = 'Rounded',
-    Rectangle = 'Rectangle',
-}
-
 export type ImageInputProps = {
     size?: number;
     sizeTypes?: keyof typeof ImageSize;
