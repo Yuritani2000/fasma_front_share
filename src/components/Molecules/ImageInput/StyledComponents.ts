@@ -6,11 +6,11 @@ import { FontSize } from '../../../styles/Font';
 type ButtonParentProps = {
     topPositionPercentage?: number;
     leftPositionPercentage?: number;
-    isDisabled?: boolean
+    isEnabled: boolean
 }
 
 export const ButtonParent = styled.div<ButtonParentProps>((props)=>`
-    visibility: ${(props.isDisabled) ? 'collapse' : 'visible'};
+    visibility: ${(props.isEnabled) ? 'visible' : 'collapse'};
     position: absolute;
     top: ${(props.topPositionPercentage) ? props.topPositionPercentage + '%' : '0px'};
     left: ${(props.leftPositionPercentage) ? props.leftPositionPercentage + '%' : '0px'};
