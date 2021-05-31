@@ -56,8 +56,6 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
         if(image != null) {
             const url = URL.createObjectURL(image);
             setImageUrl(url);
-        }else{
-            console.log("Imageが空だよ");
         }
     }
 
