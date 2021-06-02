@@ -6,15 +6,14 @@ export type FileInputProps = {
     id?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>)=> void;
     noDisplay?: boolean;
-    value: string;
     disabled?: boolean;
 }
 
 const FileInput: React.FC<FileInputProps> = (props) => {
-    const {accept, id = 'file-input', onChange, noDisplay, value, disabled = false} = props;
+    const {accept, id = 'file-input', onChange, noDisplay, disabled = false} = props;
 
     return (
-        <StyledInput value={value} accept={accept} type='file' id={id} onChange={onChange} noDisplay={noDisplay} disabled={disabled}/>
+        <StyledInput accept={accept} type='file' id={id} onChange={onChange} noDisplay={noDisplay} disabled={disabled}/>
     )
 }
 
