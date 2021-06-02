@@ -5,8 +5,6 @@ import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button';
 import Input from '../../Atoms/Input';
 // Moloecules
 import DropdownList, { Items } from '../../Molecules/DropdownList';
-// State
-import { SkillsState } from '../../../states/Skills';
 // Styled Components
 import {
   Wrapper,

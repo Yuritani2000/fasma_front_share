@@ -19,8 +19,8 @@ export type Props = {
     items: Items[];
     selectItem: Items; //TODO:何があるか分からん.APIの設計書を確認すべし
     onChangedSelectItem: (_: Items) => void;
-    width?: number;
-    height?: number;
+    // width?: number;
+    // height?: number;
     fontSize?: keyof typeof FontSize;
     fontFamily?: FontFamily;
     isBoxShadow?: boolean;
@@ -28,7 +28,7 @@ export type Props = {
 }
 
 const DropDownList: React.FC<Props> = (props) => {
-    const { items, onChangedSelectItem, selectItem, width, height, isBoxShadow = true, placeholder= '' } = props;
+    const { items, onChangedSelectItem, selectItem, isBoxShadow = true, placeholder= '' } = props;
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const toggleDropdownOpen = useCallback(() => {
         setIsDropdownOpen(!isDropdownOpen);

@@ -1,6 +1,6 @@
 import React from 'react';
 // Atoms
-import SkillCard, { SkillCardProps } from '../../Molecules/SkillCard';
+import SkillCard from '../../Molecules/SkillCard';
 // State
 import { SkillsState, Skill } from '../../../states/Skills';
 // Styled Components

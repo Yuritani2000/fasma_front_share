@@ -46,8 +46,8 @@ const StyledText = styled.div<TextProps>(props => `
   overflow: ${(props.omit) ? 'hidden' : 'visible'};
 
   /* when omit into one line */
-  white-space: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber == 1) ? 'nowrap' : 'normal' : 'normal' : 'normal'};
-  text-overflow: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber == 1) ? 'ellipsis' : 'clip' : 'clip' : 'clip'};
+  white-space: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber === 1) ? 'nowrap' : 'normal' : 'normal' : 'normal'};
+  text-overflow: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber === 1) ? 'ellipsis' : 'clip' : 'clip' : 'clip'};
 
   /* when omit into multiple lines */
   display: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? '-webkit-box' : 'block' : 'inline' : 'inline'};

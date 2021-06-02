@@ -26,8 +26,6 @@ const Template: Story<Props> = (args) => {
         selectItem={value}
         onChangedSelectItem={(_) =>
             setValue(_)}
-        width={200}
-        height={50}
     />
 }
 

@@ -10,7 +10,7 @@ const TopPage: React.FC = () => {
     dispatch(getTopPageSkills.request({ category: "programming", number: 1, quantity: 5, sort: "new", token: "hoge" }));
     dispatch(getTopPageSkills.request({ category: "design", number: 1, quantity: 5, sort: "new", token: "hoge" }));
     dispatch(getTopPageSkills.request({ category: "math", number: 1, quantity: 5, sort: "new", token: "hoge" }));
-  }, [])
+  }, [dispatch])
   const topPageSkills = useSelector<RootState, RootState['topPageSkills']>(state => state.topPageSkills);
   return (
     <TopTemplate topPageSkills={topPageSkills} />

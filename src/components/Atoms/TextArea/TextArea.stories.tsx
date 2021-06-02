@@ -3,7 +3,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import TextArea, { TextAreaProps } from './TextArea';
 import { FontSize } from '../../../styles/Font';
 import Color from '../../../styles/Color';
-import { boolean } from '@storybook/addon-knobs';
 
 export default {
     title: 'Atoms/TextArea',

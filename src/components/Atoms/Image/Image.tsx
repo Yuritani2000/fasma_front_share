@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components'
 
+export enum ImageSize {
+    SMALL = 160,
+    MEDIUM = 180,
+    NORMAL = 177,
+    BIGGER = 240,
+    LARGE = 300,
+}
+
 export type ImageProps = {
     url: string,
     size?: number,
@@ -15,14 +23,6 @@ const Image: React.FC<ImageProps> = (props) => {
 }
 
 export default Image;
-
-export enum ImageSize {
-    SMALL = 160,
-    MEDIUM = 180,
-    NOMAL = 177,
-    BIGGER = 240,
-    LARGE = 300,
-}
 
 export type ImageStyleProps = {
     size: number
