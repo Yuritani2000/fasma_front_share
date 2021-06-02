@@ -19,8 +19,6 @@ export type Props = {
     items: Items[];
     selectItem: Items; //TODO:何があるか分からん.APIの設計書を確認すべし
     onChangedSelectItem: (_: Items) => void;
-    // width?: number;
-    // height?: number;
     fontSize?: keyof typeof FontSize;
     fontFamily?: FontFamily;
     isBoxShadow?: boolean;
