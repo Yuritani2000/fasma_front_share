@@ -19,7 +19,7 @@ export default {
                 type: 'number',
             }
         },
-        isDisplaying: {
+        isSelected: {
             control: {
                 type: 'boolean',
             }
@@ -37,5 +37,5 @@ export const _NavigationMenuElement = Template.bind({});
 _NavigationMenuElement.args = {
     label: 'プロフィール',
     numberOfNotification: 5,
-    isDisplaying: false,
+    isSelected: false,
 };
