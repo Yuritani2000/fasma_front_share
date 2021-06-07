@@ -1,14 +1,9 @@
 import React from 'react';
-import AboutSkill from './StyledComponents/AboutSkill';
-import Parent from './StyledComponents/Parent';
-import RowContainer from './StyledComponents/RowContainer';
-import TextParent from './StyledComponents/TextParent';
-import TriangleParent from './StyledComponents/TriangleParent';
-import TrianglePosition from './StyledComponents/TrianglePosition';
+import { Parent, RowContainer, AboutSkill, TextParent, MultipleLines, TriangleParent, TrianglePosition } from './styledComponents';
 import Image from '../../Atoms/Image/Image';
 import Text from '../../Atoms/Text/index';
-import MultipleLines from './StyledComponents/MultipleLines';
 import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
+
 
 export type SkillSummaryCardProps = {
     skillName?: string;
