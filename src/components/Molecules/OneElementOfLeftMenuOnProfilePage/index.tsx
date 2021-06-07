@@ -10,13 +10,13 @@ import TrianglePosition from './StyledComponents/TrianglePosition';
 import Text from '../../Atoms/Text/index';
 import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
 
-export type OneElementOfLeftMenuOnProfilePageProps = {
+export type NavigationMenuElementProps = {
     label: string;                      // メニューの項目名
     numberOfNotification: number;       // 通知の数
     isDisplaying: boolean;              // その項目のページが表示されている場合はtrueが渡される
 }
 
-const OneElementOfLeftMenuOnProfilePage: React.FC<OneElementOfLeftMenuOnProfilePageProps> = (props) => {
+const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
     const {label, numberOfNotification, isDisplaying} = props;
     
     return (
@@ -40,4 +40,4 @@ const OneElementOfLeftMenuOnProfilePage: React.FC<OneElementOfLeftMenuOnProfileP
     );
 }
 
-export default OneElementOfLeftMenuOnProfilePage;
+export default NavigationMenuElement;

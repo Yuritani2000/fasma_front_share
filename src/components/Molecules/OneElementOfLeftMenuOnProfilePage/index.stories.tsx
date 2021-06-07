@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
-import OneElementOfLeftMenuOnProfilePage, { OneElementOfLeftMenuOnProfilePageProps } from './index'
+import NavigationMenuElement, { NavigationMenuElementProps } from './index'
 
 export default {
-    title: "Molecules/OneElementOfLeftMenuOnProfilePage",
-    component: OneElementOfLeftMenuOnProfilePage,
+    title: "Molecules/NavigationMenuElement",
+    component: NavigationMenuElement,
     decorators: [
         (Story) => (<Story />),
     ],
@@ -27,14 +27,14 @@ export default {
     },
 } as Meta;
 
-const Template: Story<OneElementOfLeftMenuOnProfilePageProps> = (args) => {
+const Template: Story<NavigationMenuElementProps> = (args) => {
     const [value, setValue] = useState('');
-    return <OneElementOfLeftMenuOnProfilePage {...args}
+    return <NavigationMenuElement {...args}
     />
 }
 
-export const _SearchBox = Template.bind({});
-_SearchBox.args = {
+export const _NavigationMenuElement = Template.bind({});
+_NavigationMenuElement.args = {
     label: 'プロフィール',
     numberOfNotification: 5,
     isDisplaying: false,
