@@ -10,12 +10,12 @@ export default {
         (Story) => (<Story />),
     ],
     argTypes: {
-        size: {
+        imageSize: {
             control: {
                 type: 'number',
             }
         },
-        sizeTypes: {
+        imageSizeType: {
             control: {
                 type: 'select',
                 options: Object.keys(ImageSize).filter(k => typeof ImageSize[k as keyof typeof ImageSize] === "number"),
