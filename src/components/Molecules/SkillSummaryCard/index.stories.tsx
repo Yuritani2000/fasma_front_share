@@ -10,21 +10,9 @@ export default {
         (Story) => (<Story />),
     ],
     argTypes: {
-        skillName: {
-            control: {
-                type: 'string',
-            }
-        },
-        skillExplanation: {
-            control: {
-                type: 'string',
-            }
-        },
-        imageUrl: {
-            control: {
-                type: 'string',
-            }
-        },
+        skillName: {},
+        skillExplanation: {},
+        imageUrl: {},
     },
 } as Meta;
 
