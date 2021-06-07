@@ -10,13 +10,13 @@ import Text from '../../Atoms/Text/index';
 import MultipleLines from './StyledComponents/MultipleLines';
 import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
 
-export type SkillCardOnProfilePageProps = {
+export type SkillSummaryCardProps = {
     skillName?: string;
     skillExplanation?: string;
     imageUrl: string;
 }
 
-const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) => {
+const SkillSummaryCard: React.FC<SkillSummaryCardProps> = (props) => {
     const {skillName = 'nullSkillName',
            skillExplanation = 'nullSkillExplanation',
            imageUrl} = props;
@@ -43,4 +43,4 @@ const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) =>
     );
 }
 
-export default SkillCardOnProfilePage;
+export default SkillSummaryCard;
