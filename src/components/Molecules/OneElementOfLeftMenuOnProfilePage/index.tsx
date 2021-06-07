@@ -8,8 +8,7 @@ import TextParent from './StyledComponents/TextParent';
 import TriangleParent from './StyledComponents/TriangleParent';
 import TrianglePosition from './StyledComponents/TrianglePosition';
 import Text from '../../Atoms/Text/index';
-import Triangle from './MockAtoms/Triangle';
-import Color from '../../../styles/Color';
+import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
 
 export type OneElementOfLeftMenuOnProfilePageProps = {
     label: string;                      // メニューの項目名
@@ -28,12 +27,12 @@ const OneElementOfLeftMenuOnProfilePage: React.FC<OneElementOfLeftMenuOnProfileP
                 </TextParent>
                 <CircleParent isVisible={(numberOfNotification > 0) ? true : false}>
                     <Circle>
-                        <NumberOfNotification>{numberOfNotification}</NumberOfNotification>
+                        <NumberOfNotification>{numberOfNotification >= 100 ? '99+' : numberOfNotification }</NumberOfNotification>
                     </Circle>
                 </CircleParent>
                 <TriangleParent>
                     <TrianglePosition>
-                        <Triangle color={(isDisplaying) ? 'Black' : 'LightGray'}/>
+                        <TriangleIcon color={(isDisplaying) ? 'Black' : 'LightGray'}/>
                     </TrianglePosition>
                 </TriangleParent>
             </Container>
