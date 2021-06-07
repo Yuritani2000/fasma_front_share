@@ -3,12 +3,12 @@ import AboutSkill from './StyledComponents/AboutSkill';
 import Parent from './StyledComponents/Parent';
 import RowContainer from './StyledComponents/RowContainer';
 import TextParent from './StyledComponents/TextParent';
-import Triangle from './MockAtoms/Triangle';
 import TriangleParent from './StyledComponents/TriangleParent';
 import TrianglePosition from './StyledComponents/TrianglePosition';
 import Image from '../../Atoms/Image/Image';
 import Text from '../../Atoms/Text/index';
 import MultipleLines from './StyledComponents/MultipleLines';
+import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
 
 export type SkillCardOnProfilePageProps = {
     skillName?: string;
@@ -35,7 +35,7 @@ const SkillCardOnProfilePage: React.FC<SkillCardOnProfilePageProps> = (props) =>
                 </AboutSkill>
                 <TriangleParent>
                     <TrianglePosition>
-                        <Triangle/>
+                        <TriangleIcon/>
                     </TrianglePosition>
                 </TriangleParent>  
             </RowContainer>
