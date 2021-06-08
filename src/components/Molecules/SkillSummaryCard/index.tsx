@@ -6,33 +6,35 @@ import TriangleIcon from '../../Atoms/TriangleIcon/TriangleIcon';
 
 
 export type SkillSummaryCardProps = {
-    skillName?: string;
-    skillExplanation?: string;
+    skillName: string;
+    skillDescription?: string;
     imageUrl: string;
 }
 
 const SkillSummaryCard: React.FC<SkillSummaryCardProps> = (props) => {
-    const {skillName = 'nullSkillName',
-           skillExplanation = 'nullSkillExplanation',
-           imageUrl} = props;
-    
-    return(
+    const {
+        skillName,
+        skillDescription = '',
+        imageUrl
+    } = props;
+
+    return (
         <Parent>
             <RowContainer>
-                <Image url={imageUrl} size={97}/>
+                <Image url={imageUrl} size={97} />
                 <AboutSkill>
                     <Text textType={'Default'} size={'Medium'} omit={true} omittingLineNumber={1}>{skillName}</Text>
                     <TextParent>
                         <MultipleLines>
-                            <Text textType={'Default'} size={'Small'} omit={true} omittingLineNumber={3}>{skillExplanation}</Text>
+                            <Text textType={'Default'} size={'Small'} omit={true} omittingLineNumber={3}>{skillDescription}</Text>
                         </MultipleLines>
                     </TextParent>
                 </AboutSkill>
                 <TriangleParent>
                     <TrianglePosition>
-                        <TriangleIcon/>
+                        <TriangleIcon />
                     </TrianglePosition>
-                </TriangleParent>  
+                </TriangleParent>
             </RowContainer>
         </Parent>
     );
