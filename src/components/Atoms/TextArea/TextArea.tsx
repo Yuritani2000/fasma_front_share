@@ -71,10 +71,10 @@ const StyledTextArea = styled.textarea<StyledTextAreaProps>((props)=> `
     font-size: ${(props.fontSize) ? FontSize[props.fontSize] : FontSize.Medium};
     box-sizing: border-box;
     border-radius: ${(props.borderRadius) ? props.borderRadius + 'px' : '4px'};
-    border-top: ${(props.borderState == 1 || props.borderState == 2) ?  'none' : 'solid'};
-    border-right: ${(props.borderState == 1 || props.borderState == 2) ? 'none' : 'solid'};
-    border-left: ${(props.borderState == 1 || props.borderState == 2) ?  'none' : 'solid'};
-    border-bottom: ${(props.borderState == 2 ) ?  'none' : 'solid'};
+    border-top: ${(props.borderState === 1 || props.borderState === 2) ?  'none' : 'solid'};
+    border-right: ${(props.borderState === 1 || props.borderState === 2) ? 'none' : 'solid'};
+    border-left: ${(props.borderState === 1 || props.borderState === 2) ?  'none' : 'solid'};
+    border-bottom: ${(props.borderState === 2 ) ?  'none' : 'solid'};
     border-width: ${(props.borderWidth) ? props.borderWidth + 'px' : '1px'};
     border-color: ${(props.borderColor) ? Color[props.borderColor] : Color.Black};
     outline: none;

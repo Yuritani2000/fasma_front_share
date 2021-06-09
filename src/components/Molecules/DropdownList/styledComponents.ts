@@ -3,7 +3,7 @@ import styled from "styled-components";
 // utils
 import Space from "../../../styles/Space";
 import Color from "../../../styles/Color";
-import { FontSize, FontFamily } from "../../../styles/Font";
+import { FontSize } from "../../../styles/Font";
 
 export const ItemWrapper = styled.div<{onClick?:() => void, isSelected?:boolean}>(props =>`
   display: flex;

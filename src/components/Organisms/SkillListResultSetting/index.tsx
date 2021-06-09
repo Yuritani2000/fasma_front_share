@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import history from '../../../utils/history';
-import { useDispatch } from "react-redux";
 // Atoms
 import Text from '../../Atoms/Text';
 // Moloecules
