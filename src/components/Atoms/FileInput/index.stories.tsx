@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import FileInput, { FileInputProps } from './index';
 
@@ -22,11 +22,6 @@ export default {
                 type: 'boolean',
             },
         },
-        value: {
-            control: {
-                type: 'string',
-            }
-        },
         disabled: {
             control: {
                 type: 'boolean',
@@ -36,7 +31,6 @@ export default {
 } as Meta;
 
 const Template: Story<FileInputProps> = (args) => {
-    const [value, setValue] = useState('https://www.fun.ac.jp/wp-content/themes/fun_2012/img/title-ja.svg');
     return <FileInput
         {...args}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}} />
