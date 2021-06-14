@@ -21,22 +21,6 @@ export const CircleParent = styled.div<{isVisible?: boolean}>((props)=> `
     margin-right: 15px;
 `);
 
-export const Container = styled.div(()=> `
-width: 100%;
-height: 100%;
-border: solid;
-box-sizing: border-box;
-border-width: 10px;
-border-color: transparent;
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-`);
-
 export const NumberOfNotification = styled.div(()=>`
 position: absolute;
 left: 50%;
@@ -62,11 +46,16 @@ export const Parent = styled.div<ParentProps>((props) => `
     border: solid;
     border-width: 1px;
     border-color: ${Color.Border};
+    box-sizing: border-box;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
 `);
 
 export const TextParent = styled.div(()=>`
     flex-grow: 2;
     align-self: center;
+    margin-left: 4%;
 `);
 
 export const TriangleParent = styled.div(()=> `
@@ -74,6 +63,7 @@ export const TriangleParent = styled.div(()=> `
     position: relative;
     width: 12px;
     height: 29px;
+    margin-right: 4%;
 `);
 
 export const TrianglePosition = styled.div(()=> `
