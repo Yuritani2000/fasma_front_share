@@ -14,11 +14,6 @@ export default {
                 type: 'string',
             }
         },
-        numberOfNotification: {
-            control: {
-                type: 'number',
-            }
-        },
         isSelected: {
             control: {
                 type: 'boolean',
