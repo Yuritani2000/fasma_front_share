@@ -9,16 +9,21 @@ export default {
         (Story) => (<Story />),
     ],
     argTypes: {
-        label: {
-            control: {
-                type: 'string',
-            }
-        },
         isSelected: {
             control: {
                 type: 'boolean',
             }
         },
+        width: {
+            control: {
+                type: 'number',
+            }
+        },
+        height: {
+            control: {
+                type: 'number',
+            }
+        }
     },
 } as Meta;
 
@@ -33,4 +38,6 @@ _NavigationMenuElement.args = {
     label: 'プロフィール',
     notificationCount: 5,
     isSelected: false,
+    width: 291,
+    height: 43
 };

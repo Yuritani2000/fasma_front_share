@@ -56,6 +56,7 @@ export const TextParent = styled.div(()=>`
     flex-grow: 2;
     align-self: center;
     margin-left: 4%;
+    width: 60%;
 `);
 
 export const TriangleParent = styled.div(()=> `

@@ -7,15 +7,17 @@ export type NavigationMenuElementProps = {
     label: string;                      // メニューの項目名
     notificationCount: number;       // 通知の数
     isSelected: boolean;              // その項目のページが表示されている場合はtrueが渡される
+    width: number;
+    height: number;
 }
 
 const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
-    const {label, notificationCount, isSelected} = props;
+    const {label, notificationCount, isSelected, width, height} = props;
     
     return (
-        <Parent isPushed={isSelected}>
+        <Parent width={width} height={height} isPushed={isSelected}>
             <TextParent>
-                <Text size='Medium' textType='Default'>{label}</Text>
+                <Text omit={true} omittingLineNumber={1} size='Medium' textType='Default'>{label}</Text>
             </TextParent>
             <CircleParent isVisible={(notificationCount > 0) ? true : false}>
                 <Circle>
