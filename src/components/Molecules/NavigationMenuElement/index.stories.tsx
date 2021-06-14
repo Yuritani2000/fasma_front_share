@@ -36,6 +36,6 @@ const Template: Story<NavigationMenuElementProps> = (args) => {
 export const _NavigationMenuElement = Template.bind({});
 _NavigationMenuElement.args = {
     label: 'プロフィール',
-    numberOfNotification: 5,
+    notificationCount: 5,
     isSelected: false,
 };

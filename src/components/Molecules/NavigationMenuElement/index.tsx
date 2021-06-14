@@ -5,12 +5,12 @@ import { Circle, CircleParent, Container, NumberOfNotification, Parent, TextPare
 
 export type NavigationMenuElementProps = {
     label: string;                      // メニューの項目名
-    numberOfNotification: number;       // 通知の数
+    notificationCount: number;       // 通知の数
     isSelected: boolean;              // その項目のページが表示されている場合はtrueが渡される
 }
 
 const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
-    const {label, numberOfNotification, isSelected} = props;
+    const {label, notificationCount, isSelected} = props;
     
     return (
         <Parent isPushed={isSelected}>
@@ -18,9 +18,9 @@ const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
                 <TextParent>
                     <Text size='Medium' textType='Default'>{label}</Text>
                 </TextParent>
-                <CircleParent isVisible={(numberOfNotification > 0) ? true : false}>
+                <CircleParent isVisible={(notificationCount > 0) ? true : false}>
                     <Circle>
-                        <NumberOfNotification>{numberOfNotification >= 100 ? '99+' : numberOfNotification }</NumberOfNotification>
+                        <NumberOfNotification>{notificationCount >= 100 ? '99+' : notificationCount }</NumberOfNotification>
                     </Circle>
                 </CircleParent>
                 <TriangleParent>
