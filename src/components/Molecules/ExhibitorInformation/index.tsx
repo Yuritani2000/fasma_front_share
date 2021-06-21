@@ -1,5 +1,5 @@
 import React from 'react';
-import { Parent, Container, FlexBox, ContactAreaParent, ContactTextStyle, ContactItemStyle } from './StyledComponents/StyledComponents';
+import { Parent, Container, FlexBox, ContactAreaParent, ContactTextStyle, ContactItemStyle } from './StyledComponents';
 import Text from '../../Atoms/Text/index';
 
 export type ExhibitorInformationProps = {
