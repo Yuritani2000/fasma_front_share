@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Color from '../../../../styles/Color';
+import Color from '../../../styles/Color';
 
 export const Parent = styled.div(()=> `
     border: solid;
