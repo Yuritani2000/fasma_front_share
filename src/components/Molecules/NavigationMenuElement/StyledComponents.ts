@@ -32,13 +32,13 @@ font-weight: bold;
 font-size: 1.5em;
 `);
 
-type ParentProps = {
+type ContainerProps = {
     width?: number;
     height?: number;
     isPushed?: boolean;    // その項目が選択状態にあるかどうかを示すprops
 }
 
-export const Parent = styled.div<ParentProps>((props) => `
+export const Container = styled.div<ContainerProps>((props) => `
     position: relative;
     width: ${(props.width) ? props.width + 'px' : '291px'};
     height: ${(props.height) ? props.height + 'px' : '43px'};
