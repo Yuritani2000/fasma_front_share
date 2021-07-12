@@ -13,7 +13,7 @@ export type NavigationMenuProps = {
 
 const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
   const { navigationMenuData, setMenuNumber } = props;
-  const [whichIsSelected, setWhichIsSelected] = useState<boolean[]>(new Array<boolean>(navigationMenuData.length).fill(false).map((item, index) => item = (index == 0) ? true : false));
+  const [whichIsSelected, setWhichIsSelected] = useState<boolean[]>(new Array<boolean>(navigationMenuData.length).fill(false).map((item, index) => item = (index === 0) ? true : false));
 
   const onClickElement = (_: React.MouseEvent<HTMLDivElement, MouseEvent>, indexArg: number) => {
     const alteredArray = whichIsSelected.map((item, index) => item = (index === indexArg) ? true : false);
