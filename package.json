@@ -37,7 +37,9 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "heroku-postbuild": "react-scripts build && yarn run build-storybook",
+    "start": "node heroku/storybook_server.js",
+    "start-client": "react-scripts start",
     "mock-server": "node mock_server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
