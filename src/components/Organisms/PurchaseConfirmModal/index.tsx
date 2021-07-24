@@ -31,7 +31,7 @@ const PurchaseConfirmModal: React.FC<PurchaseConfirmModalProps> = (props) => {
       <ModalBase>
         <BackButtonParent>
           <BackButton>
-            <Button handleClick={handleClickCloseButton} diameter='0.97cm' buttonType={ButtonTypes.danger} fontColor={Color.White} label='×' buttonShape={ButtonShapes.circle} />
+            <Button handleClick={handleClickCloseButton} diameter='0.97cm' buttonType={ButtonTypes.danger} fontColor={Color.White} fontSize={FontSize.H1} label='×' buttonShape={ButtonShapes.circle} />
           </BackButton>
         </BackButtonParent>
         <ModalContent>
