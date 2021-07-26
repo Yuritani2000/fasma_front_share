@@ -58,5 +58,4 @@ export const AddressTexts = styled.div(() => `
 
 export const PurchaseButton = styled.div(() => `
   margin-top: 1.8cm;
-  box-shadow: 0 3px 4px 2px #ddd;
 `)
