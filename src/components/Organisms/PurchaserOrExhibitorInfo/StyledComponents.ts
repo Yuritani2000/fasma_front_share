@@ -13,7 +13,7 @@ export const Container = styled.div<{ isVisible: boolean }>((props) => `
 export const Content = styled.div(() => `
     position: absolute;
     top: 0px;
-    left: 0px;    
+    left: 0px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
