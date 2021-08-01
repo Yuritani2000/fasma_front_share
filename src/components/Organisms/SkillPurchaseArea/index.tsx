@@ -1,10 +1,12 @@
 import React from 'react'
+import { useState } from 'react'
 import Color from '../../../styles/Color'
 import { FontSize } from '../../../styles/Font'
 import Button, { ButtonTypes } from '../../Atoms/Button'
 import Image from '../../Atoms/Image/Image'
 import Text from '../../Atoms/Text'
 import ExhibitorInformation from '../../Molecules/ExhibitorInformation'
+import PurchaseConfirmModal from '../PurchaseConfirmModal'
 import PurchaserOrExhibitorInformation from '../PurchaserOrExhibitorInfo'
 import { Container, MoneyUnit, PurchaseButton, SkillDescription, SkillPrice, SkillPurchaseCard, ThumbnailAndSellerProfile } from './StyledComponents'
 
@@ -41,10 +43,12 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
     purchasedDate = 0
   } = props
 
+  const [isDisPlayConfirmModal, setIsDisPlayConfirmModal] = useState(false);
   const skillPriceWithCommas = skillPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
     <Container>
+      {isDisPlayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAdress != ''} isGmailAddress={gmailAdress != ''} isLineQrCode={lineQrCodeUrl != ''} isOtherMailAddress={otherMailAdress != ''} handleClickCloseButton={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} handleClickPurchaseButton={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} />}
       {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAdress} gmailAddress={gmailAdress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAdress} />}
       <SkillPurchaseCard isPurchased={isPurchased}>
         <Text isBold={true} children={skillName} textType='Default' size='H2' omit={true} omittingLineNumber={1} />
@@ -64,7 +68,7 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
         </SkillPrice>
         <PurchaseButton>
           {isPurchased && <Button label="購入済みです" buttonType={ButtonTypes.secondary} fontColor={Color.White} fontSize={FontSize.H3} width={500} />}
-          {!isPurchased && <Button label="購入確認に進む" fontSize={FontSize.H3} width={500} />}
+          {!isPurchased && <Button label="購入確認に進む" fontSize={FontSize.H3} width={500} handleClick={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} />}
         </PurchaseButton>
       </SkillPurchaseCard>
     </Container>
