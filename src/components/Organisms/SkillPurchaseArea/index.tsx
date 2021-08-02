@@ -43,19 +43,19 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
     purchasedDate = 0
   } = props
 
-  const [isDisPlayConfirmModal, setIsDisPlayConfirmModal] = useState(false);
-  const skillPriceWithCommas = skillPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const [isDisplayConfirmModal, setIsDisplayConfirmModal] = useState(false);
+  const skillPriceWithCommas = skillPrice.toLocaleString();
 
   return (
     <Container>
-      {isDisPlayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAdress != ''} isGmailAddress={gmailAdress != ''} isLineQrCode={lineQrCodeUrl != ''} isOtherMailAddress={otherMailAdress != ''} handleClickCloseButton={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} handleClickPurchaseButton={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} />}
+      {isDisplayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAdress !== ''} isGmailAddress={gmailAdress !== ''} isLineQrCode={lineQrCodeUrl !== ''} isOtherMailAddress={otherMailAdress !== ''} handleClickCloseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} handleClickPurchaseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
       {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAdress} gmailAddress={gmailAdress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAdress} />}
       <SkillPurchaseCard isPurchased={isPurchased}>
         <Text isBold={true} children={skillName} textType='Default' size='H2' omit={true} omittingLineNumber={1} />
         <Text isBold={false} children={"ホーム > プログラミング > " + skillName} textType='Default' size='Small' omit={true} omittingLineNumber={1} />
         <ThumbnailAndSellerProfile>
           <Image url={skillThumbnail} sizeTypes={"LARGE"} />
-          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAdress != ''} hasGmailAddress={gmailAdress != ''} hasLineQrCord={lineQrCodeUrl != ''} hasOtherMailAddress={otherMailAdress != ''} />
+          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAdress !== ''} hasGmailAddress={gmailAdress !== ''} hasLineQrCord={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAdress !== ''} />
         </ThumbnailAndSellerProfile>
         <SkillDescription>
           <Text isBold={false} children={skillDescription} textType='Default' size='Medium' />
@@ -67,8 +67,8 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
           </MoneyUnit>
         </SkillPrice>
         <PurchaseButton>
-          {isPurchased && <Button label="購入済みです" buttonType={ButtonTypes.secondary} fontColor={Color.White} fontSize={FontSize.H3} width={500} />}
-          {!isPurchased && <Button label="購入確認に進む" fontSize={FontSize.H3} width={500} handleClick={() => setIsDisPlayConfirmModal(!isDisPlayConfirmModal)} />}
+          {isPurchased ? <Button label="購入済みです" buttonType={ButtonTypes.secondary} fontColor={Color.White} fontSize={FontSize.H3} width={500} />
+            : <Button label="購入確認に進む" fontSize={FontSize.H3} width={500} handleClick={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
         </PurchaseButton>
       </SkillPurchaseCard>
     </Container>
