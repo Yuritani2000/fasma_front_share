@@ -1,11 +1,16 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import NavigationMenu, { NavigationMenuProps } from './index';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from '../../../reducers';
+
+const store = createStore(rootReducer)
 
 export default {
   title: 'Organisms/NavigationMenu',
   component: NavigationMenu,
-  decorators: [(Story) => <div style={{ width: '200px' }}><Story /></div>]
+  decorators: [(Story) => <Provider store={store}><Story /></Provider>]
 } as Meta;
 
 const Template: Story<NavigationMenuProps> = (args) => {
