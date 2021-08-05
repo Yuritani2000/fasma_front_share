@@ -26,7 +26,7 @@ const SkillListTemplate: React.FC<Props> = (props) => {
   return (
     <Wrapper>
       <HeaderWrapper>
-        <Header isSerchBox={true} />
+        <Header isSearchBox={true} />
       </HeaderWrapper>
       <SkillListResultSettingWrapper>
         <SkillListResultSetting />
