@@ -109,7 +109,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
                         <Text size='Medium' textType='Danger' children='*必須項目です*'/>
                     </InputWarning>
                     <InputElement>
-                        <Input type='number' onChange={(value) => {if(parseInt(value) < 0)return; setSkillPrice(parseInt(value));}} value={skillPrice.toString()} />
+                        <Input type='number' onChange={(value) => {if(parseInt(value) < 0 || value === '')return; setSkillPrice(parseInt(value));}} value={skillPrice.toString()} />
                     </InputElement>
                 </OneInputParent>
             </InputForm>
