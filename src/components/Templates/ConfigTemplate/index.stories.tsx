@@ -11,7 +11,7 @@ import { NavigationMenuContent } from "../../../states/NavigationMenu";
 const store = createStore(rootReducer)
 
 export default {
-  title: "Templetes/ConfigTemplate",
+  title: "Templates/ConfigTemplate",
   component: ConfigTemplate,
   decorators: [
     (Story) => (<Provider store={store}><MemoryRouter initialEntries={['/']}>{Story()}</MemoryRouter></Provider>),
