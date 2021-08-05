@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import SkillPurchaseTemplete, { SkillPurchaseTempleteProps } from ".";
+import SkillPurchaseTemplate, { SkillPurchaseTemplateProps } from ".";
 import { NotificationType } from "../../Organisms/PurchaserOrExhibitorInfo";
 export default {
-  title: "Templetes/SkillPurchaseTemplete",
-  component: SkillPurchaseTemplete,
+  title: "Templetes/SkillPurchaseTemplate",
+  component: SkillPurchaseTemplate,
   decorators: [
     (Story) => (<Story />),
   ],
@@ -43,9 +43,9 @@ export default {
     }
   },
 } as Meta;
-const Template: Story<SkillPurchaseTempleteProps> = (args) => <SkillPurchaseTemplete {...args} />;
-export const _SkillPurchaseTemplete = Template.bind({});
-_SkillPurchaseTemplete.args = {
+const Template: Story<SkillPurchaseTemplateProps> = (args) => <SkillPurchaseTemplate {...args} />;
+export const _SkillPurchaseTemplate = Template.bind({});
+_SkillPurchaseTemplate.args = {
   skillName: "React",
   skillDescription: "Reactとは、Facebook社が開発したWebサイト上のUIパーツを構築するためのJavaScriptライブラリです。React.jsやReact.JSと呼ばれることもあります。よくAngularJSやjQueryと比較されますが、React自体はフレームワークでなく、あくまでもUIを構築するだけのライブラリです。",
   skillThumbnail: "https://bit.ly/3igJ0Vu",

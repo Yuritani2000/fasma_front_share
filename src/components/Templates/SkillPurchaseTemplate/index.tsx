@@ -2,9 +2,8 @@ import React from 'react'
 import Space from '../../../styles/Space'
 import { NotificationType } from '../../Organisms/PurchaserOrExhibitorInfo'
 import SkillPurchaseArea from '../../Organisms/SkillPurchaseArea'
-import { Container } from './StyledComponent'
 
-export type SkillPurchaseTempleteProps = {
+export type SkillPurchaseTemplateProps = {
   skillName: string,
   skillThumbnail?: string,
   sellerName: string,
@@ -21,7 +20,7 @@ export type SkillPurchaseTempleteProps = {
   notificationType?: keyof typeof NotificationType;
 }
 
-const SkillPurchaseTemplete: React.FC<SkillPurchaseTempleteProps> = (props) => {
+const SkillPurchaseTemplate: React.FC<SkillPurchaseTemplateProps> = (props) => {
   const {
     skillName,
     skillThumbnail = '',
@@ -44,10 +43,10 @@ const SkillPurchaseTemplete: React.FC<SkillPurchaseTempleteProps> = (props) => {
         skillName={skillName}
         skillThumbnail={skillThumbnail}
         sellerName={sellerName}
-        gmailAdress={gmailAddress}
-        funMailAdress={funMailAddress}
+        gmailAddress={gmailAddress}
+        funMailAddress={funMailAddress}
         lineQrCodeUrl={lineQrCodeUrl}
-        otherMailAdress={otherMailAddress}
+        otherMailAddress={otherMailAddress}
         purchasedMonth={purchasedMonth}
         purchasedDate={purchasedDate}
         skillDescription={skillDescription}
@@ -62,4 +61,4 @@ const SkillPurchaseTemplete: React.FC<SkillPurchaseTempleteProps> = (props) => {
   )
 
 }
-export default SkillPurchaseTemplete
+export default SkillPurchaseTemplate
