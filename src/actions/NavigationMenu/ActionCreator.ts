@@ -9,10 +9,10 @@ export const clickNoticeTab = createAction(
   NavigationMenuActionType.CLICK_NOTICE_TAB
 )();
 
-export const clickExhibitedSkillTab = createAction(
-  NavigationMenuActionType.CLICK_EXHIBITED_SKILL_TAB
+export const clickExhibitedSkillsTab = createAction(
+  NavigationMenuActionType.CLICK_EXHIBITED_SKILLS_TAB
 )();
 
-export const clickPurchasedSkillTab = createAction(
-  NavigationMenuActionType.CLICK_PURCHASED_SKILL_TAB
+export const clickPurchasedSkillsTab = createAction(
+  NavigationMenuActionType.CLICK_PURCHASED_SKILLS_TAB
 )();

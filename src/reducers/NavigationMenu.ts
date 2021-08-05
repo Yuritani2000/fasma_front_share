@@ -10,10 +10,10 @@ export default (state: NavigationMenuState = initialState, action: NavigationMen
       return NavigationMenuContent.Profile
     case NavigationMenuActionType.CLICK_NOTICE_TAB:
       return NavigationMenuContent.Notice
-    case NavigationMenuActionType.CLICK_EXHIBITED_SKILL_TAB:
-      return NavigationMenuContent.ExhibitedSkill
-    case NavigationMenuActionType.CLICK_PURCHASED_SKILL_TAB:
-      return NavigationMenuContent.PurchasedSkill
+    case NavigationMenuActionType.CLICK_EXHIBITED_SKILLS_TAB:
+      return NavigationMenuContent.ExhibitedSkills
+    case NavigationMenuActionType.CLICK_PURCHASED_SKILLS_TAB:
+      return NavigationMenuContent.PurchasedSkills
     default:
       return state
   }

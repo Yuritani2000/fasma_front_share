@@ -2,8 +2,8 @@
 export enum NavigationMenuContent {
   Profile = 'Profile',
   Notice = 'Notice',
-  ExhibitedSkill = 'ExhibitedSkill',
-  PurchasedSkill = 'PurchasedSkill'
+  ExhibitedSkills = 'ExhibitedSkills',
+  PurchasedSkills = 'PurchasedSkills'
 }
 
 type NavigationMenuState = NavigationMenuContent

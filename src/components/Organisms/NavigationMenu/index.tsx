@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import NavigationMenuAction from '../../../actions/NavigationMenu/Action';
-import { clickExhibitedSkillTab, clickNoticeTab, clickProfileTab, clickPurchasedSkillTab } from '../../../actions/NavigationMenu/ActionCreator';
+import { clickExhibitedSkillsTab, clickNoticeTab, clickProfileTab, clickPurchasedSkillsTab } from '../../../actions/NavigationMenu/ActionCreator';
 import NavigationMenuElement from '../../Molecules/NavigationMenuElement';
 
 export type NavigationMenuData = {
@@ -17,7 +17,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
   const { navigationMenuData } = props;
   const [whichIsSelected, setWhichIsSelected] = useState<boolean[]>(new Array<boolean>(navigationMenuData.length).fill(false).map((item, index) => item = (index === 0) ? true : false));
   const dispatch = useDispatch();
-  const navigationMenuActions: NavigationMenuAction[] = [clickProfileTab(), clickNoticeTab(), clickExhibitedSkillTab(), clickPurchasedSkillTab()]
+  const navigationMenuActions: NavigationMenuAction[] = [clickProfileTab(), clickNoticeTab(), clickExhibitedSkillsTab(), clickPurchasedSkillsTab()]
 
   const onClickElement = (_: React.MouseEvent<HTMLDivElement, MouseEvent>, indexArg: number) => {
     const alteredArray = whichIsSelected.map((item, index) => item = (index === indexArg) ? true : false);
