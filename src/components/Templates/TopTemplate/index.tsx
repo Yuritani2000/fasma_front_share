@@ -13,7 +13,7 @@ const TopTemplate: React.FC<HomeTempleteProps> = (props) => {
   const { topPageSkills } = props;
   return (
     <div>
-      <Header isSerchBox={true} />
+      <Header isSearchBox={true} />
       <StyledNewSkillListArea>
         {Object.entries(topPageSkills).map(([category, skills]) => {
           return (

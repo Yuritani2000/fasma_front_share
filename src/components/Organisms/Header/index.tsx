@@ -17,11 +17,11 @@ import {
 } from './styledComponents';
 
 export type Props = {
-  isSerchBox: boolean;
+  isSearchBox: boolean;
 }
 
 const Header: React.FC<Props> = (props) => {
-  const { isSerchBox } = props;
+  const { isSearchBox } = props;
   //TODO: あんまいいやり方じゃないのでようcheck
   let query: string | null = '';
   if (history.location.pathname === "/skillList") {
@@ -41,7 +41,7 @@ const Header: React.FC<Props> = (props) => {
       <LogoWrapper>
         <Logo />
       </LogoWrapper>
-      <SearchBox handleSearchValue={(_) => { setSearchValue(_) }} handleSubmit={handleSubmit} value={searchValue} disable={!isSerchBox} placeholder={"探しているスキルは何ですか?"} />
+      <SearchBox handleSearchValue={(_) => { setSearchValue(_) }} handleSubmit={handleSubmit} value={searchValue} disable={!isSearchBox} placeholder={"探しているスキルは何ですか?"} />
       <RightWrapper>
         <Icon type="MdAccountCircle" size="H2" handleClick={() => console.log("ここをクリックするとアカウント作成")} />
         <AlertWrapper>

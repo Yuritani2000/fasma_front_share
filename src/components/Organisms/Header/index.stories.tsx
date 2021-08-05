@@ -1,6 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import Header, { Props } from './index'
+import ReduxProvider from '../../../utils/Fixture/ReduxProvider';
 
 export default {
   title: "Organisms/Header",
@@ -11,8 +12,7 @@ export default {
   argTypes: {
   },
 } as Meta;
-
-const Template: Story<Props> = (args) => <Header {...args} />;
+const Template: Story<Props> = (args) => <ReduxProvider component={<Header {...args} />}/>;
 
 export const _Header = Template.bind({});
 _Header.args = {
