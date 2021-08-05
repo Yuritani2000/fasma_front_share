@@ -14,6 +14,8 @@ export default {
         type: 'boolean'
       }
     },
+    width: {
+    },
     notificationType: {
       control: {
         type: 'select',
@@ -38,6 +40,7 @@ const Template: Story<PurchaserOrExhibitorInfoProps> = (args) => <PurchaserOrExh
 export const _PurchaserOrExhibitorInfo = Template.bind({});
 _PurchaserOrExhibitorInfo.args = {
   isVisible: true,
+  width: '840px',
   notificationType: 'Bought',
   month: 4,
   date: 1,
