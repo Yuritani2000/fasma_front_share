@@ -12,6 +12,9 @@ export default {
   decorators: [
     (Story) => (<Story />),
   ],
+  parameters:{
+    layout:'fullscreen',
+  },
   argTypes: {
     topPageSkills: {},
   },

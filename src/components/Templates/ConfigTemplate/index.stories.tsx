@@ -16,6 +16,9 @@ export default {
   decorators: [
     (Story) => (<Provider store={store}><MemoryRouter initialEntries={['/']}>{Story()}</MemoryRouter></Provider>),
   ],
+  parameters:{
+    layout:'fullscreen',
+  },
   argTypes: {
     navigationMenuData: [],
     userName: {
