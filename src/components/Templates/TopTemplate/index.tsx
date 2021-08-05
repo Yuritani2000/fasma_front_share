@@ -5,11 +5,11 @@ import Space from '../../../styles/Space'
 import Header from '../../Organisms/Header'
 import NewSkillList from '../../Organisms/NewSkillList'
 
-export type HomeTempleteProps = {
+export type HomeTemplateProps = {
   topPageSkills: TopPageSkillsState
 }
 
-const TopTemplate: React.FC<HomeTempleteProps> = (props) => {
+const TopTemplate: React.FC<HomeTemplateProps> = (props) => {
   const { topPageSkills } = props;
   return (
     <div>
