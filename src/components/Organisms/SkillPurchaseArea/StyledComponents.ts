@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import Space from '../../../styles/Space';
 
-export const Container = styled.div(() => `
-`)
+export const Container = styled.div<{ marginTop: string | number, marginBottom: string | number, marginLeft: string | number, marginRight: string | number }>((props) => `
+    margin-top: ${props.marginTop};
+    margin-bottom: ${props.marginBottom};
+    margin-left: ${props.marginLeft};
+    margin-right: ${props.marginRight};
+    width: 65%;
+`);
 
 export const SkillPurchaseCard = styled.div<{ isPurchased: boolean }>((props) => `
-    width: 65%;
     height: auto;
     background-color: white;
     padding: ${Space.LARGE};

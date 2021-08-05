@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import SkillPurchaseArea, { SkillPurchaseAreaProps } from './index'
-
+import SkillPurchaseTemplate, { SkillPurchaseTemplateProps } from ".";
+import { NotificationType } from "../../Organisms/PurchaserOrExhibitorInfo";
 export default {
-  title: "Organisms/SkillPurchaseArea",
-  component: SkillPurchaseArea,
+  title: "Templetes/SkillPurchaseTemplate",
+  component: SkillPurchaseTemplate,
   decorators: [
     (Story) => (<Story />),
   ],
@@ -37,14 +37,15 @@ export default {
     },
     purchasedDate: {
       type: 'number'
+    },
+    notificationType: {
+      type: NotificationType
     }
   },
 } as Meta;
-
-const Template: Story<SkillPurchaseAreaProps> = (args) => <SkillPurchaseArea {...args} />;
-
-export const _SkillPurchaseArea = Template.bind({});
-_SkillPurchaseArea.args = {
+const Template: Story<SkillPurchaseTemplateProps> = (args) => <SkillPurchaseTemplate {...args} />;
+export const _SkillPurchaseTemplate = Template.bind({});
+_SkillPurchaseTemplate.args = {
   skillName: "React",
   skillDescription: "Reactとは、Facebook社が開発したWebサイト上のUIパーツを構築するためのJavaScriptライブラリです。React.jsやReact.JSと呼ばれることもあります。よくAngularJSやjQueryと比較されますが、React自体はフレームワークでなく、あくまでもUIを構築するだけのライブラリです。",
   skillThumbnail: "https://bit.ly/3igJ0Vu",
@@ -57,5 +58,6 @@ _SkillPurchaseArea.args = {
   skillPrice: 1000000,
   isPurchased: false,
   purchasedMonth: 4,
-  purchasedDate: 1
+  purchasedDate: 1,
+  notificationType: 'Bought'
 };
