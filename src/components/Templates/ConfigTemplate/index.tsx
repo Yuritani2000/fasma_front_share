@@ -43,8 +43,8 @@ const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
 
   const history = useHistory()
   useEffect(() => {
-    history.push(`config/${currentTab}`)
-  })
+    history.push(`${currentTab}`)
+  }, [history, currentTab])
 
   const ProfileAreaComponent = <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />
   const NotificationHeadingListComponent = <NotificationHeadingList skillNamesAndPurchasers={skillNamesAndPurchasers} />
