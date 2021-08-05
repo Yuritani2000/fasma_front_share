@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Color from '../../../styles/Color';
 
 
-export const Container = styled.div<{ isVisible: boolean }>((props) => `
-    width: 840px;
+export const Container = styled.div<{ isVisible: boolean, width: string }>((props) => `
+    width: ${props.width};
     height: 347px;
     position: relative;
     visibility: ${(props.isVisible) ? 'visible' : 'collapse'};

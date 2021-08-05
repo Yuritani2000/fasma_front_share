@@ -10,6 +10,7 @@ export enum NotificationType {
 
 export type PurchaserOrExhibitorInfoProps = {
   isVisible: boolean;
+  width?: string
   notificationType?: keyof typeof NotificationType;
   month?: number;
   date?: number;
@@ -22,6 +23,7 @@ export type PurchaserOrExhibitorInfoProps = {
 const PurchaserOrExhibitorInformation: React.FC<PurchaserOrExhibitorInfoProps> = (props) => {
   const {
     isVisible,
+    width = '840px',
     notificationType = 'Bought',
     month = 0,
     date = 0,
@@ -45,7 +47,7 @@ const PurchaserOrExhibitorInformation: React.FC<PurchaserOrExhibitorInfoProps> =
   }
 
   return (
-    <Container isVisible={isVisible}>
+    <Container isVisible={isVisible} width={width}>
       <Content>
         <Title>
           <Text isBold={true}
