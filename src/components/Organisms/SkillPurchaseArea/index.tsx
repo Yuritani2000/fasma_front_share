@@ -14,9 +14,9 @@ export type SkillPurchaseAreaProps = {
   skillName: string,
   skillThumbnail?: string,
   sellerName: string,
-  gmailAdress?: string,
-  funMailAdress?: string,
-  otherMailAdress?: string,
+  gmailAddress?: string,
+  funMailAddress?: string,
+  otherMailAddress?: string,
   lineQrCodeUrl?: string,
   skillDescription?: string,
   skillTags?: string[],
@@ -35,9 +35,9 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
     skillName,
     skillThumbnail = '',
     sellerName,
-    gmailAdress = '',
-    funMailAdress = '',
-    otherMailAdress = '',
+    gmailAddress = '',
+    funMailAddress = '',
+    otherMailAddress = '',
     lineQrCodeUrl = '',
     skillDescription = '',
     skillTags = [],
@@ -56,14 +56,14 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
 
   return (
     <Container marginTop={marginTop} marginBottom={marginBottom} marginLeft={marginLeft} marginRight={marginRight} >
-      {isDisplayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAdress !== ''} isGmailAddress={gmailAdress !== ''} isLineQrCode={lineQrCodeUrl !== ''} isOtherMailAddress={otherMailAdress !== ''} handleClickCloseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} handleClickPurchaseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
-      {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAdress} gmailAddress={gmailAdress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAdress} />}
+      {isDisplayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAddress !== ''} isGmailAddress={gmailAddress !== ''} isLineQrCode={lineQrCodeUrl !== ''} isOtherMailAddress={otherMailAddress !== ''} handleClickCloseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} handleClickPurchaseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
+      {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAddress} gmailAddress={gmailAddress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAddress} />}
       <SkillPurchaseCard isPurchased={isPurchased}>
         <Text isBold={true} children={skillName} textType='Default' size='H2' omit={true} omittingLineNumber={1} />
         <Text isBold={false} children={"ホーム > プログラミング > " + skillName} textType='Default' size='Small' omit={true} omittingLineNumber={1} />
         <ThumbnailAndSellerProfile>
           <Image url={skillThumbnail} sizeTypes={"LARGE"} />
-          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAdress !== ''} hasGmailAddress={gmailAdress !== ''} hasLineQrCord={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAdress !== ''} />
+          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAddress !== ''} hasGmailAddress={gmailAddress !== ''} hasLineQrCord={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAddress !== ''} />
         </ThumbnailAndSellerProfile>
         <SkillDescription>
           <Text isBold={false} children={skillDescription} textType='Default' size='Medium' />
