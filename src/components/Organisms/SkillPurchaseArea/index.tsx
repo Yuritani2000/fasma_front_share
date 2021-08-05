@@ -23,7 +23,11 @@ export type SkillPurchaseAreaProps = {
   skillPrice: number,
   isPurchased: boolean,
   purchasedMonth?: number,
-  purchasedDate?: number
+  purchasedDate?: number,
+  marginTop?: string | number,
+  marginBottom?: string | number,
+  marginLeft?: string | number,
+  marginRight?: string | number,
 }
 
 const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
@@ -40,14 +44,18 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
     skillPrice,
     isPurchased,
     purchasedMonth = 0,
-    purchasedDate = 0
+    purchasedDate = 0,
+    marginTop = 0,
+    marginBottom = 0,
+    marginLeft = 0,
+    marginRight = 0
   } = props
 
   const [isDisplayConfirmModal, setIsDisplayConfirmModal] = useState(false);
   const skillPriceWithCommas = skillPrice.toLocaleString();
 
   return (
-    <Container>
+    <Container marginTop={marginTop} marginBottom={marginBottom} marginLeft={marginLeft} marginRight={marginRight} >
       {isDisplayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAdress !== ''} isGmailAddress={gmailAdress !== ''} isLineQrCode={lineQrCodeUrl !== ''} isOtherMailAddress={otherMailAdress !== ''} handleClickCloseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} handleClickPurchaseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
       {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAdress} gmailAddress={gmailAdress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAdress} />}
       <SkillPurchaseCard isPurchased={isPurchased}>
