@@ -1,7 +1,11 @@
-import React from 'react'
-import Space from '../../../styles/Space'
-import { NotificationType } from '../../Organisms/PurchaserOrExhibitorInfo'
-import SkillPurchaseArea from '../../Organisms/SkillPurchaseArea'
+import React from 'react';
+import Space from '../../../styles/Space';
+//Organisms
+import Header from '../../Organisms/Header';
+import { NotificationType } from '../../Organisms/PurchaserOrExhibitorInfo';
+import SkillPurchaseArea from '../../Organisms/SkillPurchaseArea';
+
+import { Container, HeaderContainer, SkillPurchaseAreaContainer } from './styledComponent';
 
 export type SkillPurchaseTemplateProps = {
   skillName: string,
@@ -38,7 +42,11 @@ const SkillPurchaseTemplate: React.FC<SkillPurchaseTemplateProps> = (props) => {
   } = props
 
   return (
-    <div>
+    <Container>
+      <HeaderContainer>
+        <Header isSearchBox={false}/>
+      </HeaderContainer>
+      <SkillPurchaseAreaContainer>
       <SkillPurchaseArea
         skillName={skillName}
         skillThumbnail={skillThumbnail}
@@ -57,7 +65,8 @@ const SkillPurchaseTemplate: React.FC<SkillPurchaseTemplateProps> = (props) => {
         marginLeft='auto'
         marginRight='auto'
       />
-    </div>
+      </SkillPurchaseAreaContainer>
+    </Container>
   )
 
 }
