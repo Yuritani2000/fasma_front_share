@@ -8,7 +8,7 @@ export default {
   component: SkillSummaryCards,
   decorators: [(Story) => <div style={{ width: '200px' }}><Story /></div>],
   argTypes: {
-    skillSummarysData: {
+    skillSummariesData: {
     }
   },
 } as Meta;
@@ -47,5 +47,5 @@ const mockData: SkillSummaryCardProps[] = [
 
 export const _SkillSummaryCards = Template.bind({});
 _SkillSummaryCards.args = {
-  skillSummarysData: mockData
+  skillSummariesData: mockData
 };
