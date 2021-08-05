@@ -76,7 +76,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
                         <Text size='Medium' textType='Danger' children='*必須項目です*'/>
                     </InputWarning>
                     <InputElement>
-                        <Input onChange={(value) => {setSkillName(value)}} value={skillName} />
+                        <Input onChange={(value) => {setSkillName(value)}} value={skillName} maxLength={50}/>
                     </InputElement>
                 </OneInputParent>
                 <OneInputParent verticalSize={1.5}>
