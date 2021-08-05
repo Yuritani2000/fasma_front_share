@@ -1,8 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import { Route, Switch, useHistory } from 'react-router-dom'
-import RootState from '../../../states'
 import { NavigationMenuContent } from '../../../states/NavigationMenu'
 import { NotificationHeadingElementProps } from '../../Molecules/NotificationHeadingElement'
 import { SkillSummaryCardProps } from '../../Molecules/SkillSummaryCard'
@@ -12,7 +10,7 @@ import ProfileArea from '../../Organisms/ProfileArea'
 import SkillSummaryCards from '../../Organisms/SkillSummaryCards'
 import { Container, MainArea, StyledNavigationMenu } from './StyledComponent'
 
-export type ConfigTempleteProps = {
+export type ConfigTemplateProps = {
   currentTab: NavigationMenuContent,
   navigationMenuData: NavigationMenuData[],
   userName: string,
@@ -27,7 +25,7 @@ export type ConfigTempleteProps = {
   purchasedSkillSummariesData: SkillSummaryCardProps[]
 }
 
-const ConfigTemplete: React.FC<ConfigTempleteProps> = (props) => {
+const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
   const {
     currentTab,
     navigationMenuData,
@@ -48,6 +46,11 @@ const ConfigTemplete: React.FC<ConfigTempleteProps> = (props) => {
     history.push(`config/${currentTab}`)
   })
 
+  const ProfileAreaComponent = <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />
+  const NotificationHeadingListComponent = <NotificationHeadingList skillNamesAndPurchasers={skillNamesAndPurchasers} />
+  const ExhibitedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={exhibitedSkillSummariesData} />
+  const PurchasedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={purchasedSkillSummariesData} />
+
   return (
     <Container>
       <StyledNavigationMenu>
@@ -55,14 +58,14 @@ const ConfigTemplete: React.FC<ConfigTempleteProps> = (props) => {
       </StyledNavigationMenu>
       <MainArea>
         <Switch>
-          <Route path="/config/Profile" render={() => <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />} />
-          <Route path="/config/Notice" render={() => <NotificationHeadingList skillNamesAndPurchasers={skillNamesAndPurchasers} />} />
-          <Route path="/config/ExhibitedSkills" render={() => <SkillSummaryCards skillSummariesData={exhibitedSkillSummariesData} />} />
-          <Route path="/config/PurchasedSkills" component={() => <SkillSummaryCards skillSummariesData={purchasedSkillSummariesData} />} />
+          <Route path="/config/Profile" component={() => ProfileAreaComponent} />
+          <Route path="/config/Notice" component={() => NotificationHeadingListComponent} />
+          <Route path="/config/ExhibitedSkills" component={() => ExhibitedSkillSummaryCardsComponent} />
+          <Route path="/config/PurchasedSkills" component={() => PurchasedSkillSummaryCardsComponent} />
         </Switch>
       </MainArea>
     </Container>
   )
 }
 
-export default ConfigTemplete
+export default ConfigTemplate

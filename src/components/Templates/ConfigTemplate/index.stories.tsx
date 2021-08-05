@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import ConfigTemplete, { ConfigTempleteProps } from ".";
+import ConfigTemplate, { ConfigTemplateProps } from ".";
 import { SkillSummaryCardProps } from "../../Molecules/SkillSummaryCard";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -11,8 +11,8 @@ import { NavigationMenuContent } from "../../../states/NavigationMenu";
 const store = createStore(rootReducer)
 
 export default {
-  title: "Templetes/ConfigTemplete",
-  component: ConfigTemplete,
+  title: "Templetes/ConfigTemplate",
+  component: ConfigTemplate,
   decorators: [
     (Story) => (<Provider store={store}><MemoryRouter initialEntries={['/']}>{Story()}</MemoryRouter></Provider>),
   ],
@@ -38,7 +38,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ConfigTempleteProps> = (args) => <ConfigTemplete {...args} />;
+const Template: Story<ConfigTemplateProps> = (args) => <ConfigTemplate {...args} />;
 
 const navigationMenuData = [
   {
