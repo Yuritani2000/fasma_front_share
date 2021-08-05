@@ -29,7 +29,7 @@ export type SkillPostProps = {
 const SkillPost: React.FC<SkillPostProps> = (props) => {
     const [ imageUrl, setImageUrl ] = useState('');
     const [ skillName, setSkillName ] = useState('');
-    const categoryItem = [{label: 'カテゴリを選択してください'} , ...new Array<Items>(mockCategories.length).fill({label: ''}).map((item, index) => { return {label: mockCategories[index]} })] as Items[];
+    const categoryItem = [{label: 'カテゴリを選択'} , ...new Array<Items>(mockCategories.length).fill({label: ''}).map((item, index) => { return {label: mockCategories[index]} })] as Items[];
     const [ selectedCategory, setSelectedCategory ] = useState(categoryItem[0]);
     const [ skillDescription, setSkillDescription ] = useState('');
     const [ skillPrice, setSkillPrice ] = useState(0);
@@ -39,7 +39,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
     const history = useHistory();
 
     const findEmptyInput = () => {
-        setIsEmpty([(skillName === ''), (selectedCategory.label === 'カテゴリを選択してください'), (skillDescription === ''), (skillPrice === 0)]);
+        setIsEmpty([(skillName === ''), (selectedCategory.label === 'カテゴリを選択'), (skillDescription === ''), (skillPrice === 0)]);
     }
 
     useEffect(()=>{
