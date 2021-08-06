@@ -5,12 +5,16 @@ import { FontSize } from '../../../styles/Font';
 import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button';
 import { ModalBase } from '../../Molecules/Modal/ModalBase';
 import Text from '../../Atoms/Text';
+import { useDispatch } from 'react-redux';
+import { clickExhibitedSkillsTab } from '../../../actions/NavigationMenu/ActionCreator';
 
-const ListingCompletedModal: React.FC = () => {
+const PostCompletedModal: React.FC = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const handleClickConfirmListingSkill = () => {
+  const handleClickConfirmPostSkill = () => {
     history.push('/config');
+    dispatch(clickExhibitedSkillsTab())
   }
 
   const handleClickTopPage = () => {
@@ -23,7 +27,7 @@ const ListingCompletedModal: React.FC = () => {
         <Text isBold={true} children='出品が完了しました' textType='Default' size='H2' />
       </Title>
       <StyledButton>
-        <Button label='出品したスキルを確認' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickConfirmListingSkill} />
+        <Button label='出品したスキルを確認' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickConfirmPostSkill} />
       </StyledButton>
       <StyledButton>
         <Button label='トップページに戻る' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.secondary} rounded={true} handleClick={handleClickTopPage} />
@@ -32,4 +36,4 @@ const ListingCompletedModal: React.FC = () => {
   );
 }
 
-export default ListingCompletedModal;
+export default PostCompletedModal;
