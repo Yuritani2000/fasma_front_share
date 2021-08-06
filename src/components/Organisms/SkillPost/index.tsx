@@ -51,7 +51,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
             setWarning(true);
             return;
         }
-        history.push('/post/completed');
+        history.push('/postCompleted');
     }
 
     const onClickSaveDraftButton = () => {
