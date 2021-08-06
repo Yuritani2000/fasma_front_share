@@ -23,6 +23,10 @@ const NewSkillList: React.FC<NewSkillListProps> = (props) => {
     history.push('/skillList')
   }
 
+  const onClickSkillCard = () => {
+    history.push('/purchase')
+  }
+
   return (
     <Wrapper>
       <Text textType={"Default"} size={"H3"} >{newSkillListTitle}</Text>
@@ -33,14 +37,16 @@ const NewSkillList: React.FC<NewSkillListProps> = (props) => {
         {skills.map((skill, index) => {
           return (
             <StyledCard key={`styleCard${index}`}>
-              <Card key={`card${index}`} cardProps={{ styledCardSize: StyledCardSizeDefault.SKILL, backgroundColor: Color.White }}>
-                <NewSkillCard key={`skillCard${index}`} price={skill.price} skillName={skill.name} thumbnail={skill.thumbnail} />
-              </Card>
+              <span onClick={onClickSkillCard}>
+                <Card key={`card${index}`} cardProps={{ styledCardSize: StyledCardSizeDefault.SKILL, backgroundColor: Color.White }}>
+                  <NewSkillCard key={`skillCard${index}`} price={skill.price} skillName={skill.name} thumbnail={skill.thumbnail} />
+                </Card>
+              </span>
             </StyledCard>
           )
         })}
       </StyledCardList>
-    </Wrapper>
+    </Wrapper >
   )
 }
 

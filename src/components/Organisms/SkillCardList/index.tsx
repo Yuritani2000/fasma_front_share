@@ -7,6 +7,7 @@ import { SkillsState, Skill } from '../../../states/Skills';
 import {
   Wrapper
 } from './styledComponents';
+import { useHistory } from 'react-router-dom';
 
 export type SkillCardListProps = {
   skillData: SkillsState;
@@ -14,10 +15,16 @@ export type SkillCardListProps = {
 
 const SkillCardList: React.FC<SkillCardListProps> = (props) => {
   const { skillData } = props;
+  const history = useHistory()
+
+  const onClickSkillCard = () => {
+    history.push('/purchase')
+  }
+
   const skillCardList = (skillDatas: SkillsState) => {
     return skillDatas.map((skillData: Skill) => {
       const { id, name, thumbnail, description, price, category, tags } = skillData;
-      return skillData ? <SkillCard id={id} skillName={name} skillCategory={category} tags={tags} skillDescription={description} price={price} imgUrl={thumbnail} key={skillData.id} /> : <div />
+      return skillData ? <span onClick={onClickSkillCard}><SkillCard id={id} skillName={name} skillCategory={category} tags={tags} skillDescription={description} price={price} imgUrl={thumbnail} key={skillData.id} /></span> : <div />
     })
   }
   return (
