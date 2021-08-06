@@ -16,13 +16,13 @@ import {
   SkillCardListWrapper,
 } from './styeldComponent';
 
-export type Props = {
-  Category: Items[];
+export type SkillListTemplateProps = {
+  category: Items[];
   skills: SkillsState;
 }
 
-const SkillListTemplate: React.FC<Props> = (props) => {
-  const { Category, skills } = props;
+const SkillListTemplate: React.FC<SkillListTemplateProps> = (props) => {
+  const { category, skills } = props;
   return (
     <Wrapper>
       <HeaderWrapper>
@@ -32,7 +32,7 @@ const SkillListTemplate: React.FC<Props> = (props) => {
         <SkillListResultSetting />
       </SkillListResultSettingWrapper>
       <DetailedSearchBoxWrapper>
-        <DetailedSearchBox Category={Category} />
+        <DetailedSearchBox Category={category} />
       </DetailedSearchBoxWrapper>
       <SkillCardListWrapper>
         <SkillCardList skillData={skills} />

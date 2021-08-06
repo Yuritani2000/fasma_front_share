@@ -2,12 +2,18 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import SkillPurchaseTemplate, { SkillPurchaseTemplateProps } from ".";
 import { NotificationType } from "../../Organisms/PurchaserOrExhibitorInfo";
+//utils
+import ReduxProvider from '../../../utils/Fixture/ReduxProvider';
+
 export default {
-  title: "Templetes/SkillPurchaseTemplate",
+  title: "Templates/SkillPurchaseTemplate",
   component: SkillPurchaseTemplate,
   decorators: [
     (Story) => (<Story />),
   ],
+  parameters:{
+    layout:'fullscreen',
+  },
   argTypes: {
     skillName: {
     },
@@ -43,7 +49,7 @@ export default {
     }
   },
 } as Meta;
-const Template: Story<SkillPurchaseTemplateProps> = (args) => <SkillPurchaseTemplate {...args} />;
+const Template: Story<SkillPurchaseTemplateProps> = (args) => <ReduxProvider component={<SkillPurchaseTemplate {...args} />}/>;
 export const _SkillPurchaseTemplate = Template.bind({});
 _SkillPurchaseTemplate.args = {
   skillName: "React",
