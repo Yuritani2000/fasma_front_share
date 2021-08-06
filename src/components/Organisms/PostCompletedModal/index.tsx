@@ -13,7 +13,7 @@ const PostCompletedModal: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleClickConfirmPostSkill = () => {
-    history.push('/config');
+    history.push('/config/ExhibitedSkills');
     dispatch(clickExhibitedSkillsTab())
   }
 
