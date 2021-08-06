@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
-import { NavigationMenuContent } from '../../../states/NavigationMenu'
 // Molecules
 import { NotificationHeadingElementProps } from '../../Molecules/NotificationHeadingElement'
 import { SkillSummaryCardProps } from '../../Molecules/SkillSummaryCard'
@@ -15,7 +14,7 @@ import SkillSummaryCards from '../../Organisms/SkillSummaryCards'
 import { Container, HeaderContainer, MainArea, StyledNavigationMenu } from './StyledComponent'
 
 export type ConfigTemplateProps = {
-  currentTab: NavigationMenuContent,
+  currentTab: string,
   navigationMenuData: NavigationMenuData[],
   userName: string,
   selfIntroduction?: string,
@@ -47,7 +46,7 @@ const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
 
   const history = useHistory()
   useEffect(() => {
-    history.push(`config/${currentTab}`)
+    history.push(`${currentTab}`)
   }, [history, currentTab])
 
   const ProfileAreaComponent = <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />
