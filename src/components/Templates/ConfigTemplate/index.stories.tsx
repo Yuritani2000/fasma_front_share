@@ -16,8 +16,8 @@ export default {
   decorators: [
     (Story) => (<Provider store={store}><MemoryRouter initialEntries={['/']}>{Story()}</MemoryRouter></Provider>),
   ],
-  parameters:{
-    layout:'fullscreen',
+  parameters: {
+    layout: 'fullscreen',
   },
   argTypes: {
     navigationMenuData: [],
@@ -92,7 +92,7 @@ const skillSummariesData: SkillSummaryCardProps[] = [
 
 export const Profile = Template.bind({});
 Profile.args = {
-  currentTab: NavigationMenuContent.Profile,
+  currentTab: `config/${NavigationMenuContent.Profile}`,
   navigationMenuData,
   userName: "山田太郎",
   selfIntroduction: "学部3年情シスです。プログラミング基礎はSで通過しました。デザイン系は全くわかりませんが、プログラミング系と数学系はそれなりに教えられると思います。",
@@ -105,7 +105,7 @@ Profile.args = {
 
 export const Notice = Template.bind({});
 Notice.args = {
-  currentTab: NavigationMenuContent.Notice,
+  currentTab: `config/${NavigationMenuContent.Notice}`,
   navigationMenuData,
   skillNamesAndPurchasers: [
     {
@@ -129,14 +129,14 @@ Notice.args = {
 
 export const ExhibitedSkills = Template.bind({});
 ExhibitedSkills.args = {
-  currentTab: NavigationMenuContent.ExhibitedSkills,
+  currentTab: `config/${NavigationMenuContent.ExhibitedSkills}`,
   navigationMenuData,
   exhibitedSkillSummariesData: skillSummariesData
 }
 
 export const PurchasedSkills = Template.bind({});
 PurchasedSkills.args = {
-  currentTab: NavigationMenuContent.PurchasedSkills,
+  currentTab: `config/${NavigationMenuContent.PurchasedSkills}`,
   navigationMenuData,
   purchasedSkillSummariesData: skillSummariesData
 }
