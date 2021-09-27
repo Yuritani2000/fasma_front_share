@@ -5,11 +5,12 @@ import Color from '../../../styles/Color';
 import Space from "../../../styles/Space";
 
 export type InputProps = {
+    inputType: InputTypes;
     width?: number;
     height?: number;
     backgroundColor?: keyof typeof Color;
     borderColor?: keyof typeof Color;
-    type?: string;
+    type?: string|File;
     name?: string;
     value: string;  // 必須
     fontSize?: keyof typeof FontSize;
@@ -17,20 +18,32 @@ export type InputProps = {
     maxLength?: number;
     rounded?: boolean;
     customizedBorderRadius?: number;           // roundedが無効のときのみ有効。入力フォームに任意の丸みをもたせる。
-    onChange: (value: string) => void;   // 必須
+    textOnChange: (value: string) => void;
+    fileOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
     placeholder?: string;
     isReadOnly?: boolean;
     borderWidth?: number;
     borderState?: number;                   // 境界線の状態を決めるprops 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
+    
+    accept: string;
+    id?: string;
+    noDisplay?: boolean;
+    disabled?: boolean;
 };
 
-const Input: React.FC<InputProps> = function(props) {
+export enum InputTypes{
+text = 'text',
+file = 'file',
+}
+
+const Input: React.FC<InputProps> = (props) => {
     const {
+        inputType ,
         width,
         height,
         backgroundColor = 'White',
         borderColor = 'LightGray',
-        type,
+
         name,
         value,
         fontSize = 'Medium',
@@ -38,17 +51,23 @@ const Input: React.FC<InputProps> = function(props) {
         maxLength,
         rounded,
         customizedBorderRadius,
-        onChange,
+        textOnChange,
+        fileOnChange,
         placeholder,
         isReadOnly,
         borderWidth,
         borderState,
+
+        accept, id = 'file-input',
+        noDisplay, disabled= false,
     } = props;
+    if(inputType===InputTypes.text){
     return (
         <StyledInput
-            type={type}
+            
+            type={InputTypes.text}
             onChange={(e) => {
-                onChange(e.target.value);
+                textOnChange(e.target.value);
             }}
             value={value}
             fontSize={fontSize}
@@ -64,14 +83,49 @@ const Input: React.FC<InputProps> = function(props) {
             placeholder={placeholder}
             readOnly={isReadOnly}
             borderWidth={borderWidth}
-            borderState={borderState}/>
+            borderState={borderState}
+            
+            />
     );
-};
+}else if(inputType===InputTypes.file){
+    return(
+            <StyledInput
+            
+            type={InputTypes.file}
+            accept={accept} 
+            id={id} 
+            onChange={fileOnChange} 
+            noDisplay={noDisplay} 
+            disabled={disabled}
+            
+            fontSize={fontSize}
+            backgroundColor={backgroundColor}
+            borderColor={borderColor}
+            
+            fontFamily={fontFamily}
+            width={width}
+            height={height}
+            name={name}
+            maxLength={maxLength}
+            rounded={rounded}
+            customizedBorderRadius={customizedBorderRadius}
+            placeholder={placeholder}
+            readOnly={isReadOnly}
+            borderWidth={borderWidth}
+            borderState={borderState}
+            />
+    );
+}
+else{
+    return <div>例外の値が入っています</div>
+}
+}
 
 Input.defaultProps = {
+   
     backgroundColor: 'White',
     borderColor: 'LightGray',
-    type: 'text',
+    type: InputTypes.text,
     name: '',
     fontSize: 'Medium',
     fontFamily: FontFamily.Roboto,
@@ -85,6 +139,7 @@ Input.defaultProps = {
 }
 
 type StyledInputProps = {
+
     width?: number;
     height?: number;
     backgroundColor: keyof typeof Color;
@@ -95,6 +150,8 @@ type StyledInputProps = {
     customizedBorderRadius?: number;
     borderWidth?: number;
     borderState?: number;
+
+    noDisplay?: boolean;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => {
@@ -127,6 +184,7 @@ const StyledInput = styled.input<StyledInputProps>(props => {
         &:focus {
             border: 1px solid ${Color[backgroundColor]};
         }
+        display: ${(props.noDisplay) ? 'none' : 'inline'};
     `
 });
 
