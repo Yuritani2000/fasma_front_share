@@ -15,7 +15,7 @@ const SkillListPage: React.FC = () => {
   }, [dispatch]);
   const skills = useSelector<RootState, RootState['skills']>(state => state.skills);
   return (
-      <SkillListTemplate  Category={Category} skills={skills}/>
+      <SkillListTemplate  category={Category} skills={skills}/>
   )
 }
 

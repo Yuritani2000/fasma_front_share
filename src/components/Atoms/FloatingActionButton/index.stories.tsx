@@ -56,7 +56,7 @@ const testFunc = () => {
 export const Buttons = Template.bind({});
 Buttons.args = {
     color: 'White',
-    backgroundColor: 'Primary',
+    backgroundColor: Color.Primary,
     fontSize: 'Large',
     fontFamily: 'Roboto',
     label: '出品',

@@ -7,7 +7,7 @@ export type FloatingActionButtonProps = {
     size?: number;
     label: string;
     color?: keyof typeof Color;
-    backgroundColor?: keyof typeof Color;
+    backgroundColor?: Color;
     fontSize?: keyof typeof FontSize;
     fontFamily?: keyof typeof FontFamily;
     handleClick?: () => void;
@@ -71,7 +71,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = function (prop
 FloatingActionButton.defaultProps = {
     size: 100,
     color: 'White',
-    backgroundColor: 'Primary',
+    backgroundColor: Color.Primary,
     fontSize: 'Large',
     fontFamily: 'Roboto',
 }
