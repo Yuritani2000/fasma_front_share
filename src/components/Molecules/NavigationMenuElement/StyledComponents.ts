@@ -40,8 +40,8 @@ type ContainerProps = {
 
 export const Container = styled.div<ContainerProps>((props) => `
     position: relative;
-    width: ${props.width};
-    height: ${props.height};
+    width: ${props.width}px;
+    height: ${props.height}px;
     background-color: ${(props.isPushed) ? Color.Secondary : Color.WhiteSmoke };
     border: solid;
     border-width: 1px;
