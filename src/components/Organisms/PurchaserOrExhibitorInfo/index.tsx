@@ -82,7 +82,7 @@ const PurchaserOrExhibitorInformation: React.FC<PurchaserOrExhibitorInfoProps> =
             <AddressText marginTop={18} isDisplay={lineQrCodeUrl !== ''}>
               <Text children='LINE' textType='Tag' size='Medium' />
               <MailAddress>
-                <Text handleClick={() => { setIsDisplayQrCord(!isDisplayQrCord); }} isBold={true} children={isDisplayQrCord ? 'QRコードを隠す' : 'QRコードを表示する'} textType='Primary' size='Medium' />
+                <Text handleClick={() => { setIsDisplayQrCord(!isDisplayQrCord); }} isBold={true} children={isDisplayQrCord ? 'QRコードを隠す' : 'QRコードを表示する'} textType='Primary' size='Medium' link={true}/>
               </MailAddress>
             </AddressText>
           </AddressTexts>
