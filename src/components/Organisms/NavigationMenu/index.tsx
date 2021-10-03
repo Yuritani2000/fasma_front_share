@@ -30,7 +30,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
       {navigationMenuData.map((menuData, index) => {
         return (
           <div key={index + menuData.label} onClick={(e) => { onClickElement(e, index) }}>
-            <NavigationMenuElement label={menuData.label} isSelected={whichIsSelected[index]} notificationCount={menuData.notificationCount} width={291} height={43} />
+            <NavigationMenuElement label={menuData.label} isSelected={whichIsSelected[index]} notificationCount={menuData.notificationCount}/>
           </div>
         )
       })}
