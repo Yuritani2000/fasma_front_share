@@ -29,7 +29,7 @@ const StyledText = styled.div<TextProps>(props => `
   font-size: ${FontSize[props.size]};
   font-family: ${props.fontFamily};
   text-align: ${props.textAlign};
-  cursor: pointer;
+  cursor: default;
   /* color */
   color: ${TextTypes[props.textType]};
   &:hover {
@@ -66,6 +66,7 @@ const Text: React.FC<TextProps> = function (props) {
         size = 'Medium',
         handleClick,
         disabled,
+        link,
         textAlign,
         omit,
         omittingLineNumber = 1,
@@ -77,6 +78,7 @@ const Text: React.FC<TextProps> = function (props) {
             onClick={handleClick}
             disabled={disabled}
             fontFamily={fontFamily}
+            link={link}
             textAlign={textAlign}
             textType={textType}
             omit={omit}
