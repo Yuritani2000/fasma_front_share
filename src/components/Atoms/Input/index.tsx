@@ -6,26 +6,29 @@ import Space from "../../../styles/Space";
 
 export type InputProps = {
     inputType: InputTypes;
-    width?: number;
-    height?: number;
     backgroundColor?: keyof typeof Color;
     borderColor?: keyof typeof Color;
     type?: string|File;
-    name?: string;
-    value: string;  // 必須
     fontSize?: keyof typeof FontSize;
-    fontFamily?: FontFamily;
+
+    // input text props
+    value: string;  // 必須
+    customizedBorderRadius?: number;           // roundedが無効のときのみ有効。入力フォームに任意の丸みをもたせる。
+    textOnChange?: (value: string) => void;
+    width?: number;
+    height?: number;
+    name?: string;
     maxLength?: number;
     rounded?: boolean;
-    customizedBorderRadius?: number;           // roundedが無効のときのみ有効。入力フォームに任意の丸みをもたせる。
-    textOnChange: (value: string) => void;
-    fileOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
-    placeholder?: string;
+    fontFamily?: FontFamily;
     isReadOnly?: boolean;
+    placeholder?: string;    
     borderWidth?: number;
     borderState?: number;                   // 境界線の状態を決めるprops 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
     
-    accept: string;
+    // input file props
+    fileOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; 
+    accept?: string;
     id?: string;
     noDisplay?: boolean;
     disabled?: boolean;
@@ -51,8 +54,8 @@ const Input: React.FC<InputProps> = (props) => {
         maxLength,
         rounded,
         customizedBorderRadius,
-        textOnChange,
-        fileOnChange,
+        textOnChange= (value: string) => {},
+        fileOnChange=(e: React.ChangeEvent<HTMLInputElement>) => {},
         placeholder,
         isReadOnly,
         borderWidth,
@@ -90,7 +93,6 @@ const Input: React.FC<InputProps> = (props) => {
 }else if(inputType===InputTypes.file){
     return(
             <StyledInput
-            
             type={InputTypes.file}
             accept={accept} 
             id={id} 
@@ -101,18 +103,6 @@ const Input: React.FC<InputProps> = (props) => {
             fontSize={fontSize}
             backgroundColor={backgroundColor}
             borderColor={borderColor}
-            
-            fontFamily={fontFamily}
-            width={width}
-            height={height}
-            name={name}
-            maxLength={maxLength}
-            rounded={rounded}
-            customizedBorderRadius={customizedBorderRadius}
-            placeholder={placeholder}
-            readOnly={isReadOnly}
-            borderWidth={borderWidth}
-            borderState={borderState}
             />
     );
 }
