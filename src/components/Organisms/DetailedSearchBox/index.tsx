@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // Atoms
 import Text from '../../Atoms/Text';
 import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button';
-import Input from '../../Atoms/Input';
+import Input, { InputTypes } from '../../Atoms/Input';
 // Moloecules
 import DropdownList, { Items } from '../../Molecules/DropdownList';
 // Styled Components
@@ -45,9 +45,9 @@ const DetailedSearchBox: React.FC<Props> = (props) => {
       <PriceWrapper>
         <Text textType={"Default"} size={"Medium"} children={"価格"} />
         <PriceInputWrapper>
-          <Input value={minPriceValue} placeholder={"min"}　width={120} onChange={setMinPriceValue} />
+          <Input value={minPriceValue} placeholder={"min"}　width={120} textOnChange={setMinPriceValue} inputType={InputTypes.text}/>
           <Text textType={"Default"} size={"Medium"} children={"〜"} />
-          <Input value={maxPriceValue} placeholder={"max"} width={120} onChange={setMaxPriceValue} />
+          <Input value={maxPriceValue} placeholder={"max"} width={120} textOnChange={setMaxPriceValue} inputType={InputTypes.text}/>
         </PriceInputWrapper>
       </PriceWrapper>
       <DaysWrapper>
