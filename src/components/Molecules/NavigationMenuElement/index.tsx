@@ -7,12 +7,12 @@ export type NavigationMenuElementProps = {
     label: string;                      // メニューの項目名
     notificationCount: number;       // 通知の数
     isSelected: boolean;              // その項目のページが表示されている場合はtrueが渡される
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
 }
 
 const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
-    const {label, notificationCount, isSelected, width, height} = props;
+    const {label, notificationCount, isSelected, width = 291, height = 43} = props;
 
     return (
         <Container width={width} height={height} isPushed={isSelected}>

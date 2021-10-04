@@ -33,15 +33,15 @@ font-size: 1.5em;
 `);
 
 type ContainerProps = {
-    width?: number;
-    height?: number;
-    isPushed?: boolean;    // その項目が選択状態にあるかどうかを示すprops
+    width: number;
+    height: number;
+    isPushed: boolean;    // その項目が選択状態にあるかどうかを示すprops
 }
 
 export const Container = styled.div<ContainerProps>((props) => `
     position: relative;
-    width: ${(props.width) ? props.width + 'px' : '291px'};
-    height: ${(props.height) ? props.height + 'px' : '43px'};
+    width: ${props.width}px;
+    height: ${props.height}px;
     background-color: ${(props.isPushed) ? Color.Secondary : Color.WhiteSmoke };
     border: solid;
     border-width: 1px;
