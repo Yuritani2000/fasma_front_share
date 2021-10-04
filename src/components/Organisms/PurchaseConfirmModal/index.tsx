@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, BackButtonParent, BackButton, ModalContent, PurchaseConfirmText, PriceText, AddressArea, AddressTexts, PurchaseButton } from './StyledComponents';
-import { ModalBase } from '../../Molecules/Modal/ModalBase';
+import Modal from '../../Molecules/Modal';
 import Text from '../../Atoms/Text/index';
 import { FontSize } from '../../../styles/Font';
 import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button/index';
@@ -28,7 +28,7 @@ const PurchaseConfirmModal: React.FC<PurchaseConfirmModalProps> = (props) => {
 
   return (
     <Container>
-      <ModalBase>
+      <Modal>
         <BackButtonParent>
           <BackButton>
             <Button handleClick={handleClickCloseButton} diameter='0.97cm' buttonType={ButtonTypes.danger} fontColor={Color.White} fontSize={FontSize.H1} label='×' buttonShape={ButtonShapes.circle} />
@@ -55,7 +55,7 @@ const PurchaseConfirmModal: React.FC<PurchaseConfirmModalProps> = (props) => {
             <Button handleClick={() => { handleClickPurchaseButton() }} label='購入する' buttonType={ButtonTypes.primary} fontSize={FontSize.Large} />
           </PurchaseButton>
         </ModalContent>
-      </ModalBase>
+      </Modal>
     </Container>
   );
 }
