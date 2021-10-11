@@ -13,6 +13,8 @@ export default {
     },
     purchaser: {
     },
+    width: {
+    },
   },
 } as Meta;
 
@@ -23,5 +25,6 @@ const Template: Story<NotificationHeadingElementProps> = (args) => {
 export const _NotificationHeadingElement = Template.bind({});
 _NotificationHeadingElement.args = {
   skillName: "アルゴの課題のお手伝い",
-  purchaser: "タコ"
+  purchaser: "タコ",
+  width: 750
 };

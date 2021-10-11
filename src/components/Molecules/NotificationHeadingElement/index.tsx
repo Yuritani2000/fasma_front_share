@@ -6,15 +6,16 @@ import { Container, TriangleParent, TrianglePosition, Content, PurchaseNotificat
 
 export type NotificationHeadingElementProps = {
   skillName: string;
-  purchaser: string
+  purchaser: string;
+  width?: number
 }
 
 const NotificationHeadingElement: React.FC<NotificationHeadingElementProps> = (props) => {
-  const { skillName, purchaser } = props;
+  const { skillName, purchaser, width } = props;
   let label = `出品した「${skillName}」が「${purchaser}」さんに購入されました。購入者へ連絡してください。`
 
   return (
-    <Container>
+    <Container width={width}>
       <Content>
         <PurchaseNotificationText>
           <Text children={label} textType="Default" size="Small" omit={true} omittingLineNumber={1} />

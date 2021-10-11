@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import Color from '../../../styles/Color';
 
-export const Container = styled.div(() => `
+
+export const Container = styled.div<ContainerProps>((props) => `
   position: relative;
-  width: 750px;
+  width: ${(props.width) ? (props.width) : 750}px;
   height: 69px;
   background-color: ${Color.White};
   border-bottom-style: solid;
@@ -11,6 +12,10 @@ export const Container = styled.div(() => `
   border-color: transparent transparent #bbb transparent;
   cursor: pointer;
 `);
+
+type ContainerProps = {
+  width?: number
+}
 
 export const Content = styled.div(() => `
   width: 100%;
