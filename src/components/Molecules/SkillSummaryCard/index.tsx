@@ -9,17 +9,19 @@ export type SkillSummaryCardProps = {
     skillName: string;
     skillDescription?: string;
     imageUrl: string;
+    handleClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 const SkillSummaryCard: React.FC<SkillSummaryCardProps> = (props) => {
     const {
         skillName,
         skillDescription = '',
-        imageUrl
+        imageUrl,
+        handleClick
     } = props;
 
     return (
-        <Parent>
+        <Parent onClick={handleClick}>
             <RowContainer>
                 <Image url={imageUrl} size={97} />
                 <AboutSkill>
