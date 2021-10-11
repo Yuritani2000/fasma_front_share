@@ -5,6 +5,7 @@ type Props = {
     children?: React.ReactNode,
     cardProps: StyledCardProps,
     rotation?: boolean // 横長指定にする場合trueを指定する
+    handleClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 export type StyledCardProps = {
@@ -46,6 +47,7 @@ export const StyledCardSizeDefault = {
 }
 
 const Card: React.FC<Props> = props => {
+    const { handleClick } = props
     const {
         styledCardSize,
         backgroundColor
@@ -55,7 +57,7 @@ const Card: React.FC<Props> = props => {
     if (props.rotation) styledCardSize.cardWidthSize = props.cardProps.styledCardSize.cardHeightSize
 
     return (
-        <StyledCard styledCardSize={styledCardSize} backgroundColor={backgroundColor}>
+        <StyledCard styledCardSize={styledCardSize} backgroundColor={backgroundColor} onClick={handleClick}>
             <StyledCenteringDiv>
                 {props.children ? props.children : <div />}
             </StyledCenteringDiv>
