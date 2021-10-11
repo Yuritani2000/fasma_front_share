@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontSize } from '../../../../styles/Font';
-import {ModalBase} from '../../../Molecules/Modal/ModalBase';
+import Modal from '../../../Molecules/Modal';
 import Input from '../../../Atoms/Input/index';
 import  Button , {ButtonShapes, ButtonTypes} from '../../../Atoms/Button/index';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from '../StyledComponent';
@@ -25,7 +25,7 @@ const LogIn: React.FC = () => {
     }
 
     return (
-        <ModalBase>
+        <Modal>
             <TitleArea height='42%'>
                 <LogoSpace>
                     <img src={Logomark} width='100%' alt='Service Logo'/>
@@ -44,7 +44,7 @@ const LogIn: React.FC = () => {
                     <Button label='ログイン' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.primary} rounded={true} handleClick={handleClickLogIn}/>
                 </ButtonElement>
             </ButtonArea>
-        </ModalBase>
+        </Modal>
     );
 }
 

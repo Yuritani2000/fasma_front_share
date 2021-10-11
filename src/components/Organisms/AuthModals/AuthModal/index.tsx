@@ -1,5 +1,5 @@
 import React from 'react';
-import {ModalBase} from '../../../Molecules/Modal/ModalBase';
+import Modal from '../../../Molecules/Modal';
 import  Button , {ButtonShapes, ButtonTypes} from '../../../Atoms/Button/index';
 import {TitleArea, ButtonArea, LogoSpace, ButtonElement} from '../StyledComponent';
 import Logomark from '../Logo_tmp/logomark.png';
@@ -18,7 +18,7 @@ const AuthModal: React.FC = () => {
     }
 
     return (
-            <ModalBase>
+            <Modal>
                 <TitleArea height='42%'>
                     <LogoSpace>
                         <img src={Logomark} width='100%' alt='Service Logo'/>
@@ -32,7 +32,7 @@ const AuthModal: React.FC = () => {
                         <Button label='ログイン' fontSize={FontSize.Large} buttonShape={ButtonShapes.rect} buttonType={ButtonTypes.secondary} rounded={true} handleClick={handleClickLogIn}/>
                     </ButtonElement>
                 </ButtonArea>
-            </ModalBase>
+            </Modal>
     );
 }
 
