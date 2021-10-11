@@ -18,9 +18,7 @@ const SkillSummaryCards: React.FC<SkillSummaryCardsProps> = (props) => {
     <div>
       {skillSummariesData.map((skillSummaryData, index) => {
         return (
-          <div key={index + skillSummaryData.skillName} onClick={(e) => { onClickSkillCard(e, index) }}>
-            <SkillSummaryCard skillName={skillSummaryData.skillName} skillDescription={skillSummaryData.skillDescription} imageUrl={skillSummaryData.imageUrl} />
-          </div>
+          <SkillSummaryCard key={index + skillSummaryData.skillName} skillName={skillSummaryData.skillName} skillDescription={skillSummaryData.skillDescription} imageUrl={skillSummaryData.imageUrl} handleClick={(e) => onClickSkillCard(e, index)} />
         )
       })}
     </div>
