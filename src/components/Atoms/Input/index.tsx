@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { FontSize, FontFamily } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 import Space from "../../../styles/Space";
+import { number } from '@storybook/addon-knobs';
 
 export type InputProps = {
     inputType: InputTypes;
     backgroundColor?: keyof typeof Color;
     borderColor?: keyof typeof Color;
-    type?: string|File;
+    type?: string;
     fontSize?: keyof typeof FontSize;
 
     // input text props
-    value: string;  // 必須
+    value: string|number;  // 必須
     customizedBorderRadius?: number;           // roundedが無効のときのみ有効。入力フォームに任意の丸みをもたせる。
     textOnChange?: (value: string) => void;
     width?: number;
@@ -41,6 +42,7 @@ file = 'file',
 
 const Input: React.FC<InputProps> = (props) => {
     const {
+        type,
         inputType ,
         width,
         height,
@@ -67,8 +69,7 @@ const Input: React.FC<InputProps> = (props) => {
     if(inputType===InputTypes.text){
     return (
         <StyledInput
-            
-            type={InputTypes.text}
+            type={type}
             onChange={(e) => {
                 textOnChange(e.target.value);
             }}
@@ -87,7 +88,6 @@ const Input: React.FC<InputProps> = (props) => {
             readOnly={isReadOnly}
             borderWidth={borderWidth}
             borderState={borderState}
-            
             />
     );
 }else if(inputType===InputTypes.file){
