@@ -29,7 +29,7 @@ export default {
         type: 'boolean'
       }
     },
-    hasLineQrCord: {
+    hasLineQrCode: {
       control: {
         type: 'boolean'
       }
@@ -42,9 +42,9 @@ const Template: Story<ExhibitorInformationProps> = (args) => <ExhibitorInformati
 
 export const _ExhibitorInformation = Template.bind({});
 _ExhibitorInformation.args = {
-  exhibitorName: 'ゴリョー・カーク', 
+  exhibitorName: 'ゴリョー・カーク',
   hasGmailAddress: true,
   hasFunMailAddress: true,
   hasOtherMailAddress: true,
-  hasLineQrCord: true,
+  hasLineQrCode: true,
 };
