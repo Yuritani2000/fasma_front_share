@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Input, { InputProps } from './index';
+import Input, { borderStateType, InputProps } from './index';
 import { FontSize } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 
@@ -13,6 +13,12 @@ export default {
             control: {
                 type: 'select',
                 options: Object.keys(FontSize).filter(k => typeof FontSize[k as keyof typeof FontSize] === "string"),
+            },
+        },
+        borderState: {
+            control: {
+                type: 'select',
+                options:borderStateType
             },
         },
         backgroundColor: {

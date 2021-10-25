@@ -4,6 +4,11 @@ import { FontSize, FontFamily } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 import Space from "../../../styles/Space";
 
+export enum borderStateType {
+    default = 'default',
+    under = 'under',
+    none = 'none'
+}
 export type InputProps = {
     width?: number;
     height?: number;
@@ -21,7 +26,7 @@ export type InputProps = {
     placeholder?: string;
     isReadOnly?: boolean;
     borderWidth?: number;
-    borderState?: number;                   // 境界線の状態を決めるprops 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
+    borderState?: borderStateType; 
 };
 
 const Input: React.FC<InputProps> = function(props) {
@@ -81,7 +86,7 @@ Input.defaultProps = {
     placeholder:'',
     isReadOnly: false,
     borderWidth: 1,
-    borderState: 0,
+    borderState: borderStateType.default,
 }
 
 type StyledInputProps = {
@@ -94,7 +99,7 @@ type StyledInputProps = {
     rounded?: boolean;
     customizedBorderRadius?: number;
     borderWidth?: number;
-    borderState?: number;
+    borderState?: borderStateType;
 }
 
 const StyledInput = styled.input<StyledInputProps>(props => {
@@ -118,10 +123,10 @@ const StyledInput = styled.input<StyledInputProps>(props => {
         padding: ${Space.TINY} ${Space.SMALL};
         border-radius: ${rounded ? "100px" : (customizedBorderRadius) ? customizedBorderRadius + "px" : "4px"};
         box-sizing: border-box;
-        border-top: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
-        border-right: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
-        border-left: ${(borderState === 1 || borderState === 2) ? 'none' : 'solid'};
-        border-bottom: ${(borderState === 2) ? 'none' : 'solid'};
+        border-top: ${(borderState === 'under' || borderState === 'none') ? 'none' : 'solid'};
+        border-right: ${(borderState === 'under' || borderState === 'none') ? 'none' : 'solid'};
+        border-left: ${(borderState === 'under' || borderState === 'none') ? 'none' : 'solid'};
+        border-bottom: ${(borderState === 'none') ? 'none' : 'solid'};
         border-width: ${(borderWidth) ? borderWidth + 'px' : '1px'};
         border-color: ${Color[borderColor]};
         &:focus {
