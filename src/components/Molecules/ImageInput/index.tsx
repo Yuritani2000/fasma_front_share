@@ -1,6 +1,6 @@
 import React from 'react';
 import Image, { ImageSize } from '../../Atoms/Image/Image';
-import Input, { InputTypes } from './../../Atoms/Input/index';
+import Input from './../../Atoms/Input/index';
 import Button, {ButtonTypes} from '../../Atoms/Button';
 import { FontSize } from '../../../styles/Font';
 import Icon from '../../Atoms/Icon';
@@ -57,7 +57,7 @@ const ImageInput: React.FC<ImageInputProps> = (props) => {
                         <Icon type='MdAdd' size='H1'/>
                     </IconPosition>
                 </IconParent>
-                <Input accept='.jpg, .jpeg, .png' id='input-image' fileOnChange={onChangeImageInput} noDisplay={true} disabled={!isEditing} inputType={InputTypes.file} value='string'/>
+                <Input accept='.jpg, .jpeg, .png' id='input-image' fileOnChange={onChangeImageInput} noDisplay={true} disabled={!isEditing} inputType={"file"} value='string'/>
             </StyledLabel>
             <ButtonParent isEnabled={(isDeleteButtonVisible && imageUrl != '' )}>
                 <Button label='削除' fontSize={FontSize[deleteButtonSize]} rounded={false} buttonType={ButtonTypes.danger} handleClick={deleteUrl}/>

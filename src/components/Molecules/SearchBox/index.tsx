@@ -1,5 +1,5 @@
 import React from 'react';
-import Input, { InputTypes } from '../../Atoms/Input';
+import Input from '../../Atoms/Input';
 
 // Styled Components
 import {
@@ -19,7 +19,7 @@ const SearchBox: React.FC<Props> = (props) => {
   return (
     disable ? <></>
       : <Wrapper onSubmit={handleSubmit}>
-        <Input textOnChange={handleSearchValue} value={value} fontSize='Small' maxLength={60} backgroundColor='SerchBox' borderColor='Border' placeholder={placeholder} inputType={InputTypes.text}/>
+        <Input textOnChange={handleSearchValue} value={value} fontSize='Small' maxLength={60} backgroundColor='SerchBox' borderColor='Border' placeholder={placeholder} inputType={"text"}/>
       </Wrapper>
   );
 }

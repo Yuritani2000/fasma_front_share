@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useHistory } from 'react-router';
 import ImageInput from '../../Molecules/ImageInput';
 import Button, {ButtonShapes, ButtonTypes} from '../../Atoms/Button';
-import Input, { InputTypes } from '../../Atoms/Input';
+import Input from '../../Atoms/Input';
 import TextArea from '../../Atoms/TextArea/TextArea';
 import Text from '../../Atoms/Text';
 import DropDownList, { Items } from '../../Molecules/DropdownList';
@@ -76,7 +76,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
                         <Text size='Medium' textType='Danger' children='*必須項目です*'/>
                     </InputWarning>
                     <InputElement>
-                        <Input textOnChange={(value) => {setSkillName(value)}} value={skillName} maxLength={50} inputType={InputTypes.text}/>
+                        <Input textOnChange={(value) => {setSkillName(value)}} value={skillName} maxLength={50} inputType={"text"}/>
                     </InputElement>
                 </OneInputParent>
                 <OneInputParent verticalSize={1.5}>
@@ -109,7 +109,7 @@ const SkillPost: React.FC<SkillPostProps> = (props) => {
                         <Text size='Medium' textType='Danger' children='*必須項目です*'/>
                     </InputWarning>
                     <InputElement>
-                        <Input type='number' textOnChange={(value) => {if(parseInt(value) < 0 || value === '')return; setSkillPrice(parseInt(value));}} value={skillPrice.toString()} inputType={InputTypes.text}/>
+                        <Input type='number' textOnChange={(value) => {if(parseInt(value) < 0 || value === '')return; setSkillPrice(parseInt(value));}} value={skillPrice.toString()} inputType={"text"}/>
                     </InputElement>
                 </OneInputParent>
             </InputForm>

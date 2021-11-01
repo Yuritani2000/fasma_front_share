@@ -6,7 +6,7 @@ import Space from "../../../styles/Space";
 import { number } from '@storybook/addon-knobs';
 
 export type InputProps = {
-    inputType: InputTypes;
+    inputType: keyof typeof InputTypes;
     backgroundColor?: keyof typeof Color;
     borderColor?: keyof typeof Color;
     type?: string;
@@ -66,7 +66,7 @@ const Input: React.FC<InputProps> = (props) => {
         accept, id = 'file-input',
         noDisplay, disabled= false,
     } = props;
-    if(inputType===InputTypes.text){
+    if(inputType==="text"){
     return (
         <StyledInput
             type={type}
@@ -90,7 +90,7 @@ const Input: React.FC<InputProps> = (props) => {
             borderState={borderState}
             />
     );
-}else if(inputType===InputTypes.file){
+}else if(inputType==="file"){
     return(
             <StyledInput
             type={InputTypes.file}
@@ -115,7 +115,7 @@ Input.defaultProps = {
    
     backgroundColor: 'White',
     borderColor: 'LightGray',
-    type: InputTypes.text,
+    type: "text",
     name: '',
     fontSize: 'Medium',
     fontFamily: FontFamily.Roboto,

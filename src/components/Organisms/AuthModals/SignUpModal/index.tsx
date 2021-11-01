@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontSize } from '../../../../styles/Font';
 import {ModalBase} from '../../../Molecules/Modal/ModalBase';
-import Input, { InputTypes } from '../../../Atoms/Input/index';
+import Input from '../../../Atoms/Input/index';
 import  Button , {ButtonShapes, ButtonTypes} from '../../../Atoms/Button/index';
 import {TitleArea, FormArea, ButtonArea, LogoSpace, FormElement, ButtonElement} from '../StyledComponent';
 import Logomark from '../Logo_tmp/logomark.png';
@@ -33,10 +33,10 @@ const SignUp: React.FC = (props) => {
             </TitleArea>
             <FormArea height='25%'>
                 <FormElement marginBottom='10%' height='40%' width='100%'>
-                    <Input value={studentId} textOnChange={onChangeStudentId} type='number' placeholder='学籍番号' fontSize='Large' inputType={InputTypes.text}/>
+                    <Input value={studentId} textOnChange={onChangeStudentId} type='number' placeholder='学籍番号' fontSize='Large' inputType={"text"}/>
                 </FormElement>
                 <FormElement height='40%' width='100%'>
-                    <Input value={password} textOnChange={onChangePassword} type='password' placeholder='パスワード' fontSize='Large' inputType={InputTypes.text}/>
+                    <Input value={password} textOnChange={onChangePassword} type='password' placeholder='パスワード' fontSize='Large' inputType={"text"}/>
                 </FormElement>
             </FormArea>
             <ButtonArea height='33%'>
