@@ -20,7 +20,7 @@ const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
                 <Text omit={true} omittingLineNumber={1} size='Medium' textType='Default'>{label}</Text>
             </TextParent>
             <CircleParent isVisible={(notificationCount > 0) ? true : false}>
-                <Circle>
+                <Circle isWide={(100 <= notificationCount) ? true : false}>
                     <NumberOfNotification>{notificationCount >= 100 ? '99+' : notificationCount }</NumberOfNotification>
                 </Circle>
             </CircleParent>

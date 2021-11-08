@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 import Color from '../../../styles/Color';
 
-export const Circle = styled.div(()=> `
+export const Circle = styled.div<{isWide?: boolean}>((props)=> `
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: ${Color.Danger};
     color: ${Color.White};
-    width: 2.5em;
+    width: ${(props.isWide) ? '4em' : '2.5em'};
     height: 2.5em;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 2.5em;
 `);
 
 export const CircleParent = styled.div<{isVisible?: boolean}>((props)=> `
@@ -22,14 +22,14 @@ export const CircleParent = styled.div<{isVisible?: boolean}>((props)=> `
 `);
 
 export const NumberOfNotification = styled.div(()=>`
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-color: ${Color.White};
-background: transparent;
-font-weight: bold;
-font-size: 1.5em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: ${Color.White};
+    background: transparent;
+    font-weight: bold;
+    font-size: 1.5em;
 `);
 
 type ContainerProps = {
