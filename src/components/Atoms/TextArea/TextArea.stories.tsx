@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import TextArea, { TextAreaProps } from './TextArea';
+import { borderStateType} from "../../Atoms/Input";
 import { FontSize } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 
@@ -25,6 +26,12 @@ export default {
             control: {
                 type: 'select',
                 options: Object.keys(Color).filter(k => typeof Color[k as keyof typeof Color] === "string"),
+            },
+        },
+        borderState: {
+            control: {
+                type: 'select',
+                options:borderStateType
             },
         },
         width: {
