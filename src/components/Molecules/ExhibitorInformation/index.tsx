@@ -7,16 +7,16 @@ export type ExhibitorInformationProps = {
     hasGmailAddress: boolean;
     hasFunMailAddress: boolean;
     hasOtherMailAddress: boolean;
-    hasLineQrCord: boolean;
+    hasLineQrCode: boolean;
 }
 
 const ExhibitorInformation: React.FC<ExhibitorInformationProps> = (props) => {
     const {
-        exhibitorName, 
+        exhibitorName,
         hasGmailAddress,
         hasFunMailAddress,
         hasOtherMailAddress,
-        hasLineQrCord,
+        hasLineQrCode,
     } = props;
 
     return (
@@ -39,7 +39,7 @@ const ExhibitorInformation: React.FC<ExhibitorInformationProps> = (props) => {
                             <ContactItemStyle isVisible={hasOtherMailAddress}>
                                 <Text isBold={false} children='その他のメール' textType='Default' size='Small'/>
                             </ContactItemStyle>
-                            <ContactItemStyle isVisible={hasLineQrCord}>
+                            <ContactItemStyle isVisible={hasLineQrCode}>
                                 <Text isBold={false} children='LINE' textType='Default' size='Small'/>
                             </ContactItemStyle>
                         </FlexBox>

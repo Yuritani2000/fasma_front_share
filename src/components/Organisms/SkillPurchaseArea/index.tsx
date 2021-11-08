@@ -63,7 +63,7 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
         <Text isBold={false} children={"ホーム > プログラミング > " + skillName} textType='Default' size='Small' omit={true} omittingLineNumber={1} />
         <ThumbnailAndSellerProfile>
           <Image url={skillThumbnail} sizeTypes={"LARGE"} />
-          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAddress !== ''} hasGmailAddress={gmailAddress !== ''} hasLineQrCord={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAddress !== ''} />
+          <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAddress !== ''} hasGmailAddress={gmailAddress !== ''} hasLineQrCode={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAddress !== ''} />
         </ThumbnailAndSellerProfile>
         <SkillDescription>
           <Text isBold={false} children={skillDescription} textType='Default' size='Medium' />

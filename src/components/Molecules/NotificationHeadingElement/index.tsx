@@ -7,18 +7,19 @@ import { Container, TriangleParent, TrianglePosition, Content, PurchaseNotificat
 export type NotificationHeadingElementProps = {
   skillName: string;
   purchaser: string;
-  width?: number
+  width?: number;
+  handleClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 const NotificationHeadingElement: React.FC<NotificationHeadingElementProps> = (props) => {
-  const { skillName, purchaser, width } = props;
+  const { skillName, purchaser, width, handleClick } = props;
   let label = `出品した「${skillName}」が「${purchaser}」さんに購入されました。購入者へ連絡してください。`
 
   return (
-    <Container width={width}>
+    <Container width={width} onClick={handleClick}>
       <Content>
         <PurchaseNotificationText>
-          <Text children={label} textType="Default" size="Small" omit={true} omittingLineNumber={1} />
+          <Text children={label} textType="Default" size="Small" link={true} omit={true} omittingLineNumber={1} />
         </PurchaseNotificationText>
         <TriangleParent>
           <TrianglePosition>

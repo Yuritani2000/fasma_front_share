@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Input, { borderStateType, InputProps } from './index';
+import Input, { borderStateType, InputProps, InputTypes} from './index';
 import { FontSize } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 
@@ -9,6 +9,32 @@ export default {
     component: Input,
     decorators: [(Story) => <div style={{ width: '200px' }}><Story /></div>],
     argTypes: {
+        inputType:{
+        control:{
+            type:'select',
+            options: InputTypes,
+        },
+        },
+        accept: {
+            control: {
+                type: 'string',
+            },
+        },
+        id: {
+            control: {
+                type: 'string',
+            },
+        },
+        noDisplay: {
+            control: {
+                type: 'boolean',
+            },
+        },
+        disabled: {
+            control: {
+                type: 'boolean',
+            }
+        },
         fontSize: {
             control: {
                 type: 'select',
@@ -80,12 +106,20 @@ const Template: Story<InputProps> = (args) => {
     return <Input
         {...args}
         value={value}
-        onChange={(e: string) => setValue(e)} />
+        textOnChange={(e: string) => setValue(e)}
+        fileOnChange={(e: React.ChangeEvent<HTMLInputElement>) => {}}  
+        />
 };
 
 export const Inputs = Template.bind({});
 Inputs.args = {
+    inputType: InputTypes.text, 
     placeholder: 'test',
     fontSize: 'Medium',
     borderColor: 'LightGray',
+    
+    accept: '*',
+    id: 'test-file-input',
+    noDisplay: false,
+    disabled: false,
 };
