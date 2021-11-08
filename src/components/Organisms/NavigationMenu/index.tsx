@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import NavigationMenuAction from '../../../actions/NavigationMenu/Action';
-import { clickExhibitedSkillsTab, clickNoticeTab, clickProfileTab, clickPurchasedSkillsTab } from '../../../actions/NavigationMenu/ActionCreator';
+import { clickNavigationMenu } from '../../../actions/NavigationMenu/ActionCreator';
+import RootState from '../../../states';
+import { NavigationMenuContent } from '../../../states/NavigationMenu';
 import NavigationMenuElement from '../../Molecules/NavigationMenuElement';
 
 export type NavigationMenuData = {
   label: string,
+  enLabel: NavigationMenuContent,
   notificationCount: number
 }
 
@@ -15,22 +18,20 @@ export type NavigationMenuProps = {
 
 const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
   const { navigationMenuData } = props;
-  const [whichIsSelected, setWhichIsSelected] = useState<boolean[]>(new Array<boolean>(navigationMenuData.length).fill(false).map((item, index) => item = (index === 0) ? true : false));
-  const dispatch = useDispatch();
-  const navigationMenuActions: NavigationMenuAction[] = [clickProfileTab(), clickNoticeTab(), clickExhibitedSkillsTab(), clickPurchasedSkillsTab()]
+  const currentTab = useSelector<RootState, RootState['navigationMenu']>(state => state.navigationMenu);
 
-  const onClickElement = (_: React.MouseEvent<HTMLDivElement, MouseEvent>, indexArg: number) => {
-    const alteredArray = whichIsSelected.map((item, index) => item = (index === indexArg) ? true : false);
-    setWhichIsSelected(alteredArray);
-    dispatch(navigationMenuActions[indexArg])
+  const dispatch = useDispatch();
+
+  const onClickElement = (_: React.MouseEvent<HTMLDivElement, MouseEvent>, enLabel: NavigationMenuContent) => {
+    dispatch(clickNavigationMenu({ enLabel }))
   }
 
   return (
     <div>
       {navigationMenuData.map((menuData, index) => {
         return (
-          <div key={index + menuData.label} onClick={(e) => { onClickElement(e, index) }}>
-            <NavigationMenuElement label={menuData.label} isSelected={whichIsSelected[index]} notificationCount={menuData.notificationCount}/>
+          <div key={index + menuData.label} onClick={(e) => { onClickElement(e, menuData.enLabel) }}>
+            <NavigationMenuElement label={menuData.label} isSelected={menuData.enLabel === currentTab} notificationCount={menuData.notificationCount} />
           </div>
         )
       })}
