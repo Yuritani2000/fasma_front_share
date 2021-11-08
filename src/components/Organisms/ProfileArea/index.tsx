@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontSize } from "../../../styles/Font";
 import Button, { ButtonTypes } from "../../Atoms/Button";
 import Text from "../../Atoms/Text";
-import Input from "../../Atoms/Input";
+import Input, {borderStateType} from "../../Atoms/Input";
 import TextArea from "../../Atoms/TextArea/TextArea";
 import ImageInput from "../../Molecules/ImageInput";
 import { Container, FlexBox, MarginBox, FlexBoxChild } from './StyledComponents';
@@ -67,14 +67,14 @@ const ProfileArea: React.FC<ProfileAreaProps> = (props) => {
         <MarginBox width={450}>
           <FlexBox height={43} direction='row' isSpaceBetween={true}>
             <FlexBoxChild alignSelf='flex-end'>
-              <Input fontSize='Large' value={userNameState} textOnChange={onChangeUserName} width={297} height={35} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
+              <Input fontSize='Large' value={userNameState} textOnChange={onChangeUserName} width={297} height={35} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
             </FlexBoxChild>
             <FlexBoxChild alignSelf='flex-start'>
               <Button label={isEditing ? '完了' : '編集'} fontSize={FontSize.Medium} buttonType={isEditing ? ButtonTypes.secondary : ButtonTypes.info} rounded={false} width={89} handleClick={() => setIsEditing(!isEditing)} />
             </FlexBoxChild>
           </FlexBox>
           <MarginBox marginTop={24}>
-            <TextArea fontSize='Small' value={selfIntroductionState} onChange={onChangeSelfIntroduction} height={86} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} borderRadius={isEditing ? -1 : 4} />
+            <TextArea fontSize='Small' value={selfIntroductionState} onChange={onChangeSelfIntroduction} height={86} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} borderRadius={isEditing ? -1 : 4} />
           </MarginBox>
         </MarginBox>
       </FlexBox>
@@ -84,25 +84,25 @@ const ProfileArea: React.FC<ProfileAreaProps> = (props) => {
       <MarginBox height={24} width={421} marginBottom={11}>
         <FlexBox direction='row' isSpaceBetween={true}>
           <Text children='Gmail' size='Small' textType='Tag' />
-          <Input fontSize='Small' value={gmailAddressState} textOnChange={onChangeGmailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
+          <Input fontSize='Small' value={gmailAddressState} textOnChange={onChangeGmailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
         </FlexBox>
       </MarginBox>
       <MarginBox height={24} width={421} marginBottom={11}>
         <FlexBox direction='row' isSpaceBetween={true}>
           <Text children='学内メール' size='Small' textType='Tag' />
-          <Input fontSize='Small' value={funMailAddressState} textOnChange={onChangeFunMailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
+          <Input fontSize='Small' value={funMailAddressState} textOnChange={onChangeFunMailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
         </FlexBox>
       </MarginBox>
       <MarginBox height={24} width={421} marginBottom={11}>
         <FlexBox direction='row' isSpaceBetween={true}>
           <Text children='その他' size='Small' textType='Tag' />
-          <Input fontSize='Small' value={otherMailAddressState} textOnChange={onChangeOtherMailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
+          <Input fontSize='Small' value={otherMailAddressState} textOnChange={onChangeOtherMailAddress} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
         </FlexBox>
       </MarginBox>
       <MarginBox height={24} width={421} marginBottom={11}>
         <FlexBox direction='row' isSpaceBetween={true}>
           <Text children='LINE' size='Small' textType='Tag' />
-          <Input fontSize='Small' value={lineQrCordState} textOnChange={onChangeLineQrCord} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? 1 : 2} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
+          <Input fontSize='Small' value={lineQrCordState} textOnChange={onChangeLineQrCord} width={242} backgroundColor={isEditing ? 'WhiteSmoke' : 'White'} borderColor={isEditing ? 'Ashen' : 'Black'} isReadOnly={!isEditing} borderWidth={isEditing ? 2 : 1} borderState={isEditing ? borderStateType.under : borderStateType.none} customizedBorderRadius={isEditing ? -1 : 4} inputType={"text"}/>
         </FlexBox>
       </MarginBox>
       <FlexBox height={210} isSpaceBetween={true} direction='row' />

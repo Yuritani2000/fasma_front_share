@@ -15,7 +15,7 @@ export type TextAreaProps = {
     fontSize?: keyof typeof FontSize;
     isReadOnly?: boolean;
     borderRadius?: number;
-    borderState?: number|borderStateType;
+    borderState?: borderStateType;
     borderWidth?: number;
     borderColor?: keyof typeof Color;
 }
@@ -60,7 +60,7 @@ type StyledTextAreaProps = {
     shouldShowBorderBottom?: boolean;
     shouldShowBorderLeft?: boolean;
     borderRadius?: number;
-    borderState?: number|borderStateType;
+    borderState?: borderStateType;
     borderWidth?: number;
     borderColor?: keyof typeof Color;
 }

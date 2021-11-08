@@ -24,7 +24,7 @@ export type InputProps = {
     isReadOnly?: boolean;
     placeholder?: string;    
     borderWidth?: number;
-    borderState?: number|borderStateType;                  // 境界線の状態を決めるprops 0: すべての境界線を表示, 1: 下側の境界線のみ表示, 2: すべての境界線を非表示, それ以外: すべての境界線を表示
+    borderState?: borderStateType; 
     
     // input file props
     fileOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; 
@@ -144,7 +144,7 @@ type StyledInputProps = {
     rounded?: boolean;
     customizedBorderRadius?: number;
     borderWidth?: number;
-    borderState?: number|borderStateType;
+    borderState?: borderStateType;
 
     noDisplay?: boolean;
 }
