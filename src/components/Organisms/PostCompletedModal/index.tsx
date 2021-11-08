@@ -6,15 +6,16 @@ import Button, { ButtonShapes, ButtonTypes } from '../../Atoms/Button';
 import Modal from '../../Molecules/Modal';
 import Text from '../../Atoms/Text';
 import { useDispatch } from 'react-redux';
-import { clickExhibitedSkillsTab } from '../../../actions/NavigationMenu/ActionCreator';
+import { clickNavigationMenu } from '../../../actions/NavigationMenu/ActionCreator';
+import { NavigationMenuContent } from '../../../states/NavigationMenu';
 
 const PostCompletedModal: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const handleClickConfirmPostSkill = () => {
-    history.push('/config/ExhibitedSkills');
-    dispatch(clickExhibitedSkillsTab())
+    history.push(`/config?Page=${NavigationMenuContent.ExhibitedSkills}`);
+    dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.ExhibitedSkills }))
   }
 
   const handleClickTopPage = () => {

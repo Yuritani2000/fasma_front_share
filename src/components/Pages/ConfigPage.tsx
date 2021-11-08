@@ -1,29 +1,35 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import RootState from '../../states';
+import { NavigationMenuContent } from '../../states/NavigationMenu';
 import { NotificationHeadingElementProps } from '../Molecules/NotificationHeadingElement';
 import { SkillSummaryCardProps } from '../Molecules/SkillSummaryCard';
+import { NavigationMenuData } from '../Organisms/NavigationMenu';
 import ConfigTemplate from '../Templates/ConfigTemplate';
 
 // TODO: Propsをサーバから受け取ったデータに変更する
 const ConfigPage: React.FC = () => {
   const currentTab = useSelector<RootState, RootState['navigationMenu']>(state => state.navigationMenu);
 
-  const navigationMenuData = [
+  const navigationMenuData: NavigationMenuData[] = [
     {
       label: 'プロフィール',
+      enLabel: NavigationMenuContent.Profile,
       notificationCount: 0
     },
     {
       label: 'おしらせ',
+      enLabel: NavigationMenuContent.Notice,
       notificationCount: 5
     },
     {
       label: '出品したスキル',
+      enLabel: NavigationMenuContent.ExhibitedSkills,
       notificationCount: 0
     },
     {
       label: '購入したスキル',
+      enLabel: NavigationMenuContent.PurchasedSkills,
       notificationCount: 0
     },
   ];

@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import rootReducer from "../../../reducers";
 import { MemoryRouter } from "react-router-dom";
 import { NavigationMenuContent } from "../../../states/NavigationMenu";
+import { NavigationMenuData } from "../../Organisms/NavigationMenu";
 
 const store = createStore(rootReducer)
 
@@ -43,21 +44,25 @@ export default {
 
 const Template: Story<ConfigTemplateProps> = (args) => <ConfigTemplate {...args} />;
 
-const navigationMenuData = [
+const navigationMenuData: NavigationMenuData[] = [
   {
     label: 'プロフィール',
+    enLabel: NavigationMenuContent.Profile,
     notificationCount: 0
   },
   {
     label: 'おしらせ',
+    enLabel: NavigationMenuContent.Notice,
     notificationCount: 5
   },
   {
     label: '出品したスキル',
+    enLabel: NavigationMenuContent.ExhibitedSkills,
     notificationCount: 0
   },
   {
     label: '購入したスキル',
+    enLabel: NavigationMenuContent.PurchasedSkills,
     notificationCount: 0
   },
 ]
@@ -92,7 +97,7 @@ const skillSummariesData: SkillSummaryCardProps[] = [
 
 export const Profile = Template.bind({});
 Profile.args = {
-  currentTab: `config/${NavigationMenuContent.Profile}`,
+  currentTab: `config?Page=${NavigationMenuContent.Profile}`,
   navigationMenuData,
   userName: "山田太郎",
   selfIntroduction: "学部3年情シスです。プログラミング基礎はSで通過しました。デザイン系は全くわかりませんが、プログラミング系と数学系はそれなりに教えられると思います。",
@@ -105,7 +110,7 @@ Profile.args = {
 
 export const Notice = Template.bind({});
 Notice.args = {
-  currentTab: `config/${NavigationMenuContent.Notice}`,
+  currentTab: `config?Page=${NavigationMenuContent.Notice}`,
   navigationMenuData,
   skillNamesAndPurchasers: [
     {
@@ -129,14 +134,14 @@ Notice.args = {
 
 export const ExhibitedSkills = Template.bind({});
 ExhibitedSkills.args = {
-  currentTab: `config/${NavigationMenuContent.ExhibitedSkills}`,
+  currentTab: `config?Page=${NavigationMenuContent.ExhibitedSkills}`,
   navigationMenuData,
   exhibitedSkillSummariesData: skillSummariesData
 }
 
 export const PurchasedSkills = Template.bind({});
 PurchasedSkills.args = {
-  currentTab: `config/${NavigationMenuContent.PurchasedSkills}`,
+  currentTab: `config?Page=${NavigationMenuContent.PurchasedSkills}`,
   navigationMenuData,
   purchasedSkillSummariesData: skillSummariesData
 }

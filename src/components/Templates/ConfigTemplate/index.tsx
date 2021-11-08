@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
+import browserHistory from '../../../utils/history';
 // Molecules
 import { NotificationHeadingElementProps } from '../../Molecules/NotificationHeadingElement'
 import { SkillSummaryCardProps } from '../../Molecules/SkillSummaryCard'
@@ -44,15 +45,30 @@ const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
     purchasedSkillSummariesData
   } = props
 
-  const history = useHistory()
+  const history = useHistory();
+
   useEffect(() => {
-    history.push(`${currentTab}`)
+    history.push(`config?Page=${currentTab}`)
   }, [history, currentTab])
 
   const ProfileAreaComponent = <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />
   const NotificationHeadingListComponent = <NotificationHeadingList skillNamesAndPurchasers={skillNamesAndPurchasers} />
   const ExhibitedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={exhibitedSkillSummariesData} />
   const PurchasedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={purchasedSkillSummariesData} />
+
+  const to = {
+    pathname: '/config',
+    search: '?Page=Profile',
+    hash: '',
+    state: {}
+  };
+
+  const hoge = {
+    pathname: '/config',
+    search: '?Page=Notice',
+    hash: '',
+    state: {}
+  };
 
   return (
     <Container>
@@ -64,10 +80,10 @@ const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
       </StyledNavigationMenu>
       <MainArea>
         <Switch>
-          <Route path="/config/Profile" component={() => ProfileAreaComponent} />
-          <Route path="/config/Notice" component={() => NotificationHeadingListComponent} />
-          <Route path="/config/ExhibitedSkills" component={() => ExhibitedSkillSummaryCardsComponent} />
-          <Route path="/config/PurchasedSkills" component={() => PurchasedSkillSummaryCardsComponent} />
+          <Route location={to} component={() => ProfileAreaComponent} />
+          <Route location={hoge} component={() => NotificationHeadingListComponent} />
+          <Route path="/config?Page=ExhibitedSkills" component={() => ExhibitedSkillSummaryCardsComponent} />
+          <Route path="/config?Page=PurchasedSkills" component={() => PurchasedSkillSummaryCardsComponent} />
         </Switch>
       </MainArea>
     </Container>
