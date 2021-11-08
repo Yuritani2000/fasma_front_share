@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import {borderStateType} from "../../Atoms/Input";
 import React from 'react';
+import {borderStateType} from '../../Atoms/Input';
 import Color from '../../../styles/Color';
 import { FontSize } from '../../../styles/Font';
-
 
 export type TextAreaProps = {
     onChange: (value: string) => void;
@@ -15,7 +14,7 @@ export type TextAreaProps = {
     fontSize?: keyof typeof FontSize;
     isReadOnly?: boolean;
     borderRadius?: number;
-    borderState?: borderStateType;
+    borderState?: borderStateType;      
     borderWidth?: number;
     borderColor?: keyof typeof Color;
 }
