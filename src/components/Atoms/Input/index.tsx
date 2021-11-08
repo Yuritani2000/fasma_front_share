@@ -66,7 +66,7 @@ const Input: React.FC<InputProps> = (props) => {
         accept, id = 'file-input',
         noDisplay, disabled= false,
     } = props;
-    if(inputType==="text"){
+    if(inputType=== InputTypes.text){
     return (
         <StyledInput
             type={type}
@@ -90,7 +90,7 @@ const Input: React.FC<InputProps> = (props) => {
             borderState={borderState}
             />
     );
-}else if(inputType==="file"){
+}else if(inputType=== InputTypes.file){
     return(
             <StyledInput
             type={InputTypes.file}
