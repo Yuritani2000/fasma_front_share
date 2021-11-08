@@ -45,9 +45,9 @@ const DetailedSearchBox: React.FC<Props> = (props) => {
       <PriceWrapper>
         <Text textType={"Default"} size={"Medium"} children={"価格"} />
         <PriceInputWrapper>
-          <Input value={minPriceValue} placeholder={"min"}　width={120} onChange={setMinPriceValue} />
+          <Input type='number' value={minPriceValue} placeholder={"min"}　width={120} textOnChange={setMinPriceValue} inputType={"text"}/>
           <Text textType={"Default"} size={"Medium"} children={"〜"} />
-          <Input value={maxPriceValue} placeholder={"max"} width={120} onChange={setMaxPriceValue} />
+          <Input type='number' value={maxPriceValue} placeholder={"max"} width={120} textOnChange={setMaxPriceValue} inputType={"text"}/>
         </PriceInputWrapper>
       </PriceWrapper>
       <DaysWrapper>

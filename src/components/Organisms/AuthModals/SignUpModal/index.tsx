@@ -33,10 +33,10 @@ const SignUp: React.FC = (props) => {
             </TitleArea>
             <FormArea height='25%'>
                 <FormElement marginBottom='10%' height='40%' width='100%'>
-                    <Input value={studentId} onChange={onChangeStudentId} type='text' placeholder='学籍番号' fontSize='Large'/>
+                    <Input value={studentId} textOnChange={onChangeStudentId} type='number' placeholder='学籍番号' fontSize='Large' inputType={"text"}/>
                 </FormElement>
                 <FormElement height='40%' width='100%'>
-                    <Input value={password} onChange={onChangePassword} type='password' placeholder='パスワード' fontSize='Large'/>
+                    <Input value={password} textOnChange={onChangePassword} type='password' placeholder='パスワード' fontSize='Large' inputType={"text"}/>
                 </FormElement>
             </FormArea>
             <ButtonArea height='33%'>
