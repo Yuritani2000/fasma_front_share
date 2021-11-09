@@ -14,7 +14,7 @@ const PostCompletedModal: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleClickConfirmPostSkill = () => {
-    history.push(`/config?Page=${NavigationMenuContent.ExhibitedSkills}`);
+    history.push(`${NavigationMenuContent.ExhibitedSkills}`);
     dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.ExhibitedSkills }))
   }
 
