@@ -49,12 +49,12 @@ const Header: React.FC<Props> = (props) => {
   }
 
   const handleClickAccountIcon = () => {
-    history.push(`/config?Page=${NavigationMenuContent.Profile}`)
+    history.push(`/config/${NavigationMenuContent.Profile}`)
     dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.Profile }))
   }
 
   const handleClickNotificationIcon = () => {
-    history.push(`/config?Page=${NavigationMenuContent.Notice}`)
+    history.push(`/config/${NavigationMenuContent.Notice}`)
     dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.Notice }))
   }
 
