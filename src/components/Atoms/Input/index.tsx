@@ -24,7 +24,7 @@ export type InputProps = {
     isReadOnly?: boolean;
     placeholder?: string;    
     borderWidth?: number;
-    borderState: borderStateType;  
+    borderState?: borderStateType;  
     
     // input file props
     fileOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; 
