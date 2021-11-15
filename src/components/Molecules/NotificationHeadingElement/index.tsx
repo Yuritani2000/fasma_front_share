@@ -19,7 +19,7 @@ const NotificationHeadingElement: React.FC<NotificationHeadingElementProps> = (p
     <Container width={width} onClick={handleClick}>
       <Content>
         <PurchaseNotificationText>
-          <Text children={label} textType="Default" size="Small" link={true} omit={true} omittingLineNumber={1} />
+          <Text children={label} textType="Default" size="Small" link={true} maxLines={1} />
         </PurchaseNotificationText>
         <TriangleParent>
           <TrianglePosition>

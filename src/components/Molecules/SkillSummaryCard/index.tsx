@@ -25,10 +25,10 @@ const SkillSummaryCard: React.FC<SkillSummaryCardProps> = (props) => {
             <RowContainer>
                 <Image url={imageUrl} size={97} />
                 <AboutSkill>
-                    <Text textType={'Default'} size={'Medium'} omit={true} omittingLineNumber={1}>{skillName}</Text>
+                    <Text textType={'Default'} size={'Medium'} maxLines={1}>{skillName}</Text>
                     <TextParent>
                         <MultipleLines>
-                            <Text textType={'Default'} size={'Small'} omit={true} omittingLineNumber={3}>{skillDescription}</Text>
+                            <Text textType={'Default'} size={'Small'} maxLines={3}>{skillDescription}</Text>
                         </MultipleLines>
                     </TextParent>
                 </AboutSkill>

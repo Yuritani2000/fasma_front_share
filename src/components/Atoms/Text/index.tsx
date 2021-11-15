@@ -20,8 +20,8 @@ export type TextProps = {
     link?: boolean;
     textAlign?: "left" | "center" | "right";
     fontFamily?: keyof typeof FontFamily;
-    omit?: boolean;
-    omittingLineNumber?: number;
+    maxLines?: number;
+    isOmitted?: boolean;
     isBold?: boolean;
 };
 
@@ -42,17 +42,20 @@ const StyledText = styled.div<TextProps>(props => `
     cursor: not-allowed;
   }
 
+  height: max-content;
+  width: 100%;
+
   /* styles to omit sentences */
-  overflow: ${(props.omit) ? 'hidden' : 'visible'};
+  overflow: ${props.isOmitted ? 'hidden' : 'visible'};
 
   /* when omit into one line */
-  white-space: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber === 1) ? 'nowrap' : 'normal' : 'normal' : 'normal'};
-  text-overflow: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber === 1) ? 'ellipsis' : 'clip' : 'clip' : 'clip'};
+  white-space: ${(props.maxLines && props.maxLines === 1 && props.isOmitted) ? 'nowrap' : 'normal'};
+  text-overflow: ${(props.maxLines && props.maxLines === 1 && props.isOmitted) ? 'ellipsis' : 'clip'};
 
   /* when omit into multiple lines */
-  display: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? '-webkit-box' : 'block' : 'inline' : 'inline'};
-  -webkit-box-orient: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? 'vertical' : 'inline-axis' : 'inline-axis' : 'inline-axis'};
-  -webkit-line-clamp: ${(props.omit) ? (props.omittingLineNumber) ? (props.omittingLineNumber > 1) ? (props.omittingLineNumber) : 'none' : 'none' : 'none'};
+  display: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? '-webkit-box' : 'lock'};
+  -webkit-box-orient: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? 'vertical' : 'inline-axis'};
+  -webkit-line-clamp: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? (props.maxLines) : 'none'};
 
   /*set font-weight*/
   font-weight: ${(props.isBold) ? 'bold' : 'normal'};
@@ -68,8 +71,8 @@ const Text: React.FC<TextProps> = function (props) {
         disabled,
         link,
         textAlign,
-        omit,
-        omittingLineNumber = 1,
+        maxLines = 1,
+        isOmitted = true,
         isBold,
     } = props;
     return (
@@ -81,8 +84,8 @@ const Text: React.FC<TextProps> = function (props) {
             link={link}
             textAlign={textAlign}
             textType={textType}
-            omit={omit}
-            omittingLineNumber={omittingLineNumber}
+            maxLines={maxLines}
+            isOmitted={isOmitted}
             isBold={isBold}
         >
             {children}

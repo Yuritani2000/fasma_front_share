@@ -50,6 +50,5 @@ Texts.args = {
   size: 'Small',
   textType: 'Default',
   children: 'test',
-  omit: false,
   isBold: false,
 };
