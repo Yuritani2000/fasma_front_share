@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import rootReducer from "../../../reducers";
 import { MemoryRouter } from "react-router-dom";
 import { NavigationMenuContent } from "../../../states/NavigationMenu";
+import { NavigationMenuData } from "../../Organisms/NavigationMenu";
 
 const store = createStore(rootReducer)
 
@@ -43,21 +44,25 @@ export default {
 
 const Template: Story<ConfigTemplateProps> = (args) => <ConfigTemplate {...args} />;
 
-const navigationMenuData = [
+const navigationMenuData: NavigationMenuData[] = [
   {
     label: 'プロフィール',
+    enLabel: NavigationMenuContent.Profile,
     notificationCount: 0
   },
   {
     label: 'おしらせ',
+    enLabel: NavigationMenuContent.Notice,
     notificationCount: 5
   },
   {
     label: '出品したスキル',
+    enLabel: NavigationMenuContent.ExhibitedSkills,
     notificationCount: 0
   },
   {
     label: '購入したスキル',
+    enLabel: NavigationMenuContent.PurchasedSkills,
     notificationCount: 0
   },
 ]

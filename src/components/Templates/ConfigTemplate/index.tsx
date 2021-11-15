@@ -44,15 +44,17 @@ const ConfigTemplate: React.FC<ConfigTemplateProps> = (props) => {
     purchasedSkillSummariesData
   } = props
 
-  const history = useHistory()
+  const history = useHistory();
+
   useEffect(() => {
-    history.push(`${currentTab}`)
+    history.replace(`${currentTab}`);
   }, [history, currentTab])
 
   const ProfileAreaComponent = <ProfileArea userName={userName} selfIntroduction={selfIntroduction} gmailAddress={gmailAddress} funMailAddress={funMailAddress} lineQrCord={lineQrCodeUrl} otherMailAddress={otherMailAddress} imageUrl={profileThumbnail} />
   const NotificationHeadingListComponent = <NotificationHeadingList skillNamesAndPurchasers={skillNamesAndPurchasers} />
   const ExhibitedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={exhibitedSkillSummariesData} />
   const PurchasedSkillSummaryCardsComponent = <SkillSummaryCards skillSummariesData={purchasedSkillSummariesData} />
+
 
   return (
     <Container>

@@ -1,20 +1,28 @@
-import NavigationMenuAction from "../actions/NavigationMenu/Action"
-import NavigationMenuActionType from "../actions/NavigationMenu/ActionType"
-import NavigationMenuState, { NavigationMenuContent } from "../states/NavigationMenu"
+import NavigationMenuAction from '../actions/NavigationMenu/Action';
+import NavigationMenuActionType from '../actions/NavigationMenu/ActionType';
+import NavigationMenuState, { NavigationMenuContent } from '../states/NavigationMenu';
+import browserHistory from '../utils/history';
 
-const initialState: NavigationMenuState = NavigationMenuContent.Profile
+//現在のpathnameをNavigationMenuContentの型として取得
+const pathname = browserHistory.location.pathname as NavigationMenuContent;
+//NavigationMenuContentをstringのメンバから取得できるようにするためのMap型を生成
+const reverseMap = new Map<string, NavigationMenuContent>();
+Object.keys(NavigationMenuContent).forEach((s: string) => {
+  const e = NavigationMenuContent[s as keyof typeof NavigationMenuContent];
+  reverseMap.set(e.toString(), e);
+});
 
-export default (state: NavigationMenuState = initialState, action: NavigationMenuAction): NavigationMenuState => {
+const contents = reverseMap.get(pathname);
+const initialState = contents?contents:NavigationMenuContent.Profile;
+
+export default (
+  state: NavigationMenuState = initialState,
+  action: NavigationMenuAction
+): NavigationMenuState => {
   switch (action.type) {
-    case NavigationMenuActionType.CLICK_PROFILE_TAB:
-      return NavigationMenuContent.Profile
-    case NavigationMenuActionType.CLICK_NOTICE_TAB:
-      return NavigationMenuContent.Notice
-    case NavigationMenuActionType.CLICK_EXHIBITED_SKILLS_TAB:
-      return NavigationMenuContent.ExhibitedSkills
-    case NavigationMenuActionType.CLICK_PURCHASED_SKILLS_TAB:
-      return NavigationMenuContent.PurchasedSkills
+    case NavigationMenuActionType.CLICK_NAVIGATION_MENU:
+      return action.payload.enLabel;
     default:
-      return state
+      return state;
   }
-}
+};

@@ -15,8 +15,9 @@ import {
   AlertWrapper,
   RightWrapper,
 } from './styledComponents';
-import { clickNoticeTab, clickProfileTab } from '../../../actions/NavigationMenu/ActionCreator';
 import { useHistory } from 'react-router-dom';
+import { clickNavigationMenu } from '../../../actions/NavigationMenu/ActionCreator';
+import { NavigationMenuContent } from '../../../states/NavigationMenu';
 
 export type Props = {
   isSearchBox?: boolean;
@@ -48,13 +49,13 @@ const Header: React.FC<Props> = (props) => {
   }
 
   const handleClickAccountIcon = () => {
-    history.push('/config/Profile')
-    dispatch(clickProfileTab())
+    history.push(NavigationMenuContent.Profile)
+    dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.Profile }))
   }
 
   const handleClickNotificationIcon = () => {
-    history.push('/config/Notice')
-    dispatch(clickNoticeTab())
+    history.push(NavigationMenuContent.Notice)
+    dispatch(clickNavigationMenu({ enLabel: NavigationMenuContent.Notice }))
   }
 
   return (

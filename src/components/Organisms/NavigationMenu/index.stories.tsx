@@ -4,6 +4,7 @@ import NavigationMenu, { NavigationMenuProps } from './index';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from '../../../reducers';
+import { NavigationMenuContent } from '../../../states/NavigationMenu';
 
 const store = createStore(rootReducer)
 
@@ -22,18 +23,22 @@ _NavigationMenu.args = {
   navigationMenuData: [
     {
       label: 'プロフィール',
+      enLabel: NavigationMenuContent.Profile,
       notificationCount: 0
     },
     {
       label: 'おしらせ',
+      enLabel: NavigationMenuContent.Notice,
       notificationCount: 5
     },
     {
       label: '出品したスキル',
+      enLabel: NavigationMenuContent.ExhibitedSkills,
       notificationCount: 0
     },
     {
       label: '購入したスキル',
+      enLabel: NavigationMenuContent.PurchasedSkills,
       notificationCount: 0
     },
   ]
