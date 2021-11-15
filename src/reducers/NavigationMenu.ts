@@ -8,7 +8,7 @@ const pathname = browserHistory.location.pathname as NavigationMenuContent;
 //NavigationMenuContentをstringのメンバから取得できるようにするためのMap型を生成
 const reverseMap = new Map<string, NavigationMenuContent>();
 Object.keys(NavigationMenuContent).forEach((s: string) => {
-  const e = (<any>NavigationMenuContent)[s];
+  const e = NavigationMenuContent[s as keyof typeof NavigationMenuContent];
   reverseMap.set(e.toString(), e);
 });
 
