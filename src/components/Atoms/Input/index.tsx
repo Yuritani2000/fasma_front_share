@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontSize, FontFamily } from '../../../styles/Font';
 import Color from '../../../styles/Color';
 import Space from "../../../styles/Space";
+import { number } from '@storybook/addon-knobs';
 
 export type InputProps = {
     inputType: keyof typeof InputTypes;
