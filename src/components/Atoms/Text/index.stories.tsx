@@ -25,14 +25,14 @@ export default {
         type: 'number',
       },
     },
-    omit: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    omittingLineNumber: {
+    maxLines: {
       control: {
         type: 'number',
+      },
+    },
+    isOmitted: {
+      control: {
+        type: 'boolean',
       },
     },
     isBold: {

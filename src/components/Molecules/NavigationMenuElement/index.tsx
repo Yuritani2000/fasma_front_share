@@ -17,7 +17,7 @@ const NavigationMenuElement: React.FC<NavigationMenuElementProps> = (props) => {
     return (
         <Container width={width} height={height} isPushed={isSelected}>
             <TextParent>
-                <Text maxLines={1} size='Medium' textType='Default'>{label}</Text>
+                <Text size='Medium' textType='Default'>{label}</Text>
             </TextParent>
             <CircleParent isVisible={(notificationCount > 0) ? true : false}>
                 <Circle isWide={(100 <= notificationCount) ? true : false}>

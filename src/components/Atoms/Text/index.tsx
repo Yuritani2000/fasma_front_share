@@ -53,9 +53,9 @@ const StyledText = styled.div<TextProps>(props => `
   text-overflow: ${(props.maxLines && props.maxLines === 1 && props.isOmitted) ? 'ellipsis' : 'clip'};
 
   /* when omit into multiple lines */
-  display: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? '-webkit-box' : 'lock'};
+  display: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? '-webkit-box' : 'block'};
   -webkit-box-orient: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? 'vertical' : 'inline-axis'};
-  -webkit-line-clamp: ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? (props.maxLines) : 'none'};
+  ${(props.maxLines && props.maxLines > 1 && props.isOmitted) ? '-webkit-line-clamp: ' + (props.maxLines) + ';' : ''}
 
   /*set font-weight*/
   font-weight: ${(props.isBold) ? 'bold' : 'normal'};
