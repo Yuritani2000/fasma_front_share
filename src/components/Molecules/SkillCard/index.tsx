@@ -34,7 +34,7 @@ const SkillCard: React.FC<SkillCardProps> = (props) => {
         <Text children={skillName} textType="Default" size="Medium" />
         <Text children={skillCategory} textType="Default" size="Small" />
         <ListWrapper>{tags ? tagList(tags) : <div />}</ListWrapper>
-        <Text children={skillDescription} textType="Default" size="Small" />
+        <Text children={skillDescription} textType="Default" size="Small" maxLines={4} />
         <Text children={price + " Funny"} textType="Default" size="Small" textAlign="right" />
       </DescriptionBox>
       <Image url={imgUrl} size={180} />

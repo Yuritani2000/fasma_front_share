@@ -25,14 +25,14 @@ export default {
         type: 'number',
       },
     },
-    omit: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    omittingLineNumber: {
+    maxLines: {
       control: {
         type: 'number',
+      },
+    },
+    isOmitted: {
+      control: {
+        type: 'boolean',
       },
     },
     isBold: {
@@ -50,6 +50,5 @@ Texts.args = {
   size: 'Small',
   textType: 'Default',
   children: 'test',
-  omit: false,
   isBold: false,
 };

@@ -59,14 +59,14 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
       {isDisplayConfirmModal && <PurchaseConfirmModal skillPrice={skillPrice} isFunMailAddress={funMailAddress !== ''} isGmailAddress={gmailAddress !== ''} isLineQrCode={lineQrCodeUrl !== ''} isOtherMailAddress={otherMailAddress !== ''} handleClickCloseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} handleClickPurchaseButton={() => setIsDisplayConfirmModal(!isDisplayConfirmModal)} />}
       {isPurchased && <PurchaserOrExhibitorInformation isVisible={true} month={purchasedMonth} date={purchasedDate} notificationType="Sold" funMailAddress={funMailAddress} gmailAddress={gmailAddress} lineQrCodeUrl={lineQrCodeUrl} otherMailAddress={otherMailAddress} />}
       <SkillPurchaseCard isPurchased={isPurchased}>
-        <Text isBold={true} children={skillName} textType='Default' size='H2' omit={true} omittingLineNumber={1} />
-        <Text isBold={false} children={"ホーム > プログラミング > " + skillName} textType='Default' size='Small' omit={true} omittingLineNumber={1} />
+        <Text isBold={true} children={skillName} textType='Default' size='H2'/>
+        <Text isBold={false} children={"ホーム > プログラミング > " + skillName} textType='Default' size='Small'/>
         <ThumbnailAndSellerProfile>
           <Image url={skillThumbnail} sizeTypes={"LARGE"} />
           <ExhibitorInformation exhibitorName={sellerName} hasFunMailAddress={funMailAddress !== ''} hasGmailAddress={gmailAddress !== ''} hasLineQrCode={lineQrCodeUrl !== ''} hasOtherMailAddress={otherMailAddress !== ''} />
         </ThumbnailAndSellerProfile>
         <SkillDescription>
-          <Text isBold={false} children={skillDescription} textType='Default' size='Medium' />
+          <Text isBold={false} children={skillDescription} textType='Default' size='Medium' isOmitted={false}/>
         </SkillDescription>
         <SkillPrice>
           <Text isBold={true} children={skillPriceWithCommas} textType='Default' size='H2' />
