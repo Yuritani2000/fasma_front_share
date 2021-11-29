@@ -46,7 +46,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonPropsMap> = (args) => <Button {...args} />;
+const Template: Story<ButtonPropsMap> = (args) => (
+  <div style ={{ width: '200px' }}>
+    <Button {...args} />
+  </div>
+);
 
 export const Buttons = Template.bind({});
 Buttons.args = {
