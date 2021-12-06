@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-type Props = {
+export type Props = {
     children?: React.ReactNode,
     cardProps: StyledCardProps,
     rotation?: boolean // 横長指定にする場合trueを指定する
