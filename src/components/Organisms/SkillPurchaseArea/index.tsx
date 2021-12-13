@@ -40,7 +40,7 @@ const SkillPurchaseArea: React.FC<SkillPurchaseAreaProps> = (props) => {
     otherMailAddress = '',
     lineQrCodeUrl = '',
     skillDescription = '',
-    skillTags = [],
+    //skillTags = [],
     skillPrice,
     isPurchased,
     purchasedMonth = 0,
