@@ -6,7 +6,6 @@ import SkillPostPage from './Pages/SkillPostPage';
 import ConfigPage from './Pages/ConfigPage';
 import SkillListPage from './Pages/SkillListPage';
 import PurchasePage from './Pages/PurchasePage';
-import PurchaseCompletedPage from './Pages/PurchaseCompletedPage';
 import SkillPostCompletedPage from './Pages/SkillPostCompletedPage';
 import NotFoundPage from './Pages/NotFoundPage';
 
@@ -21,7 +20,6 @@ function App() {
       <Route path='/config' component={ConfigPage} />
       <Route path='/skillList' component={SkillListPage} />
       <Route path='/purchase' component={PurchasePage} />
-      <Route path='/purchaseCompleted' component={PurchaseCompletedPage} />
       <Route component={NotFoundPage}/>
     </Switch>
   );
