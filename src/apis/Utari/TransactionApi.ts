@@ -1,17 +1,17 @@
 import { utariAxios } from "../Axios"
 
-export type SignInApiParam = {
+export type PostTransactionParam = {
   id: string,
-  sendId: string,
+  destId: string,
   amount: number
 }
 
-export async function signInApi(params: SignInApiParam) {
+export async function signInApi(params: PostTransactionParam) {
   try {
     return await utariAxios.post('/api/v2/transaction', {
       params: {
         id: params.id,
-        send_id: params.sendId,
+        dest_id: params.destId,
         amount: params.amount
       }
     })

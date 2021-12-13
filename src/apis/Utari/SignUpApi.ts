@@ -1,11 +1,11 @@
 import { utariAxios } from "../Axios"
 
-export type SignUpApiParam = {
+export type PostSignUpParam = {
   id: string,
   password: string
 }
 
-export async function signUpApi(params: SignUpApiParam) {
+export async function signUpApi(params: PostSignUpParam) {
   try {
     return await utariAxios.post('/api/v1/signup', {
       params: {
