@@ -25,21 +25,21 @@ export type Props = {
 
 const Header: React.FC<Props> = (props) => {
   const { isSearchBox = true } = props;
-
+  const history = useHistory();
   //TODO: あんまいいやり方じゃないのでようcheck
   let query: string | null = '';
-  if (browserHistory.location.pathname === "/skillList") {
-    let params = new URLSearchParams(browserHistory.location.search);
-    query = params.get("search_query") ? params.get("search_query") : '';
+
+  if (history.location.pathname === '/skillList') {
+    let params = new URLSearchParams(history.location.search);
+    query = params.get('search_query') ? params.get('search_query') : '';
   }
 
-  const history = useHistory()
   const [searchValue, setSearchValue] = useState<string>(query ? query : '');
   const dispatch = useDispatch();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    browserHistory.push(`/skillList?search_query=${searchValue}`);
+    history.push(`/skillList?search_query=${searchValue}`);
     //TODO: ここのリクエストの仕方は変える?
     dispatch(getSkills.request({ tag: searchValue, token: "hoge" }));
   }
