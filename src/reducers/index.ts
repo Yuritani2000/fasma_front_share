@@ -4,13 +4,15 @@ import otherUser from './OtherUser';
 import skills from './Skills';
 import topPageSkills from './TopPageSkills'
 import navigationMenu from './NavigationMenu'
+import utari from "./Utari";
 
 const rootReducer = combineReducers({
   ownUser,
   otherUser,
   skills,
   topPageSkills,
-  navigationMenu
+  navigationMenu,
+  utari
 });
 
 export default rootReducer;
