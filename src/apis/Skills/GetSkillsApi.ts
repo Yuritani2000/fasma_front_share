@@ -25,6 +25,6 @@ export async function getSkillsApi(params: GetSkillsParam) {
       }
     })
   } catch (e) {
-    throw (e) 
+    throw new Error(e) 
   }
 };
