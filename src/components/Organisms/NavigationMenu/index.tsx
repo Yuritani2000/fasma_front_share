@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import NavigationMenuAction from '../../../actions/NavigationMenu/Action';
 import { clickNavigationMenu } from '../../../actions/NavigationMenu/ActionCreator';
 import RootState from '../../../states';
 import { NavigationMenuContent } from '../../../states/NavigationMenu';

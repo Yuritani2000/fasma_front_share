@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import browserHistory from '../../../utils/history';
 import { useDispatch } from "react-redux";
 // Atoms
 import Icon from '../../Atoms/Icon';
