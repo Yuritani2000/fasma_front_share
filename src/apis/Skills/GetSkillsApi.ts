@@ -12,7 +12,7 @@ export type GetSkillsParam = {
 
 export async function getSkillsApi(params: GetSkillsParam) {
   try {
-    return await Axios.get<SkillModel[]>('/skill', {
+    return await Axios.get<SkillModel[]>('/skills', {
       headers: {
         authorization: params.token
       },
