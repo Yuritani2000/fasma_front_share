@@ -6,5 +6,5 @@ export default axios.create({
 })
 
 export const utariAxios = axios.create({
-  baseURL: process.env.UTARI_API_SERVER
+  baseURL: process.env.REACT_APP_UTARI_API_SERVER
 })

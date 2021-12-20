@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import history from '../../../utils/history';
+import { useHistory } from 'react-router-dom';
 // Atoms
 import Text from '../../Atoms/Text';
 // Moloecules
@@ -13,7 +13,7 @@ export type Props = {
 }
 
 const SkillListResultSetting: React.FC<Props> = (props) => {
-  //TODO: あんまいいやり方じゃないのでようcheck
+  const history = useHistory();
   let query: string | null = '';
   if (history.location.pathname === "/skillList") {
     let params = new URLSearchParams(history.location.search);

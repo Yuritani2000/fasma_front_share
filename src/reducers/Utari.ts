@@ -12,7 +12,6 @@ const initialState: UtariState = {
 export default (state: UtariState = initialState, action: UtariAction): UtariState => {
   switch (action.type) {
     case UtariActionType.POST_UTARI_SIGN_IN_SUCCESS:
-      action.type
       return {
         ...state,
         token: action.payload.token
