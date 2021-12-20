@@ -14,6 +14,7 @@ export default (state: UtariState = initialState, action: UtariAction): UtariSta
     case UtariActionType.POST_UTARI_SIGN_IN_SUCCESS:
       return {
         ...state,
+        id: action.payload.id,
         token: action.payload.token
       }
     case UtariActionType.POST_UTARI_BALANCE_SUCCESS:
