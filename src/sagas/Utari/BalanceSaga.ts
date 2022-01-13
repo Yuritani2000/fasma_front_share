@@ -9,7 +9,7 @@ export function* postBalanceSaga(action: ReturnType<typeof postBalance.request>)
         balanceApi,
         action.payload
     );
-    if (response.status === 200 && response.data) {
+    if (response.status === 202 && response.data) {
       yield put(postBalance.success(response.data));
     } else {
       yield put(postBalance.failure(new Error('fail get Balance')))
