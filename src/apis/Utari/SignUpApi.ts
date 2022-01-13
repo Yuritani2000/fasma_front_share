@@ -8,10 +8,8 @@ export type PostSignUpParam = {
 export async function signUpApi(params: PostSignUpParam) {
   try {
     return await utariAxios.post('/api/v1/signup', {
-      params: {
         id: params.id,
         password: params.password
-      }
     })
   } catch (e) {
     throw new Error()
