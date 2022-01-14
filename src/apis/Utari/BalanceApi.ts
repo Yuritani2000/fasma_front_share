@@ -8,13 +8,11 @@ export type PostBalanceParam = {
 
 export async function balanceApi(params: PostBalanceParam) {
   try {
-    return await utariAxios.post<BalanceModel>('/api/v2/balance', {
+    return await utariAxios.post<BalanceModel>('/api/v2/balance', {id: params.id}, {
       headers: {
         authorization: params.token
       },
-      params: {
-        id: params.id
-      }
+
     })
   } catch (e) {
     throw new Error()
