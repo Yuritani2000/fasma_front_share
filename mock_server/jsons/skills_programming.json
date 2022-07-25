@@ -6,9 +6,7 @@
     "description": "課題なら教えられます。",
     "price": 100,
     "category": "programming",
-    "tags": [
-      "C"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -19,9 +17,7 @@
     "description": "課題なら教えられます。",
     "price": 400,
     "category": "programming",
-    "tags": [
-      "Java"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -32,9 +28,7 @@
     "description": "アルバイトで書いているので、それなりに教えられると思います。",
     "price": 1000,
     "category": "programming",
-    "tags": [
-      "JavaScript"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -45,9 +39,7 @@
     "description": "研究関連で使用しています。",
     "price": 800,
     "category": "programming",
-    "tags": [
-      "Python"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -58,9 +50,7 @@
     "description": "インターン先で使用していました。",
     "price": 2000,
     "category": "programming",
-    "tags": [
-      "Go"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -71,9 +61,7 @@
     "description": "大学のアルバイトにて使用しています",
     "price": 500,
     "category": "programming",
-    "tags": [
-      "PHP"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   }

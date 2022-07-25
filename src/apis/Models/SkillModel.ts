@@ -5,7 +5,7 @@ type SkillModel = {
   description: string,
   price: number,
   category: string,
-  tags: string[]
+  status: number,
 }
 
 export default SkillModel

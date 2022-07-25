@@ -28,9 +28,7 @@ const mockSkills: Skill[] = [
     "description": "課題なら教えられます。",
     "price": 100,
     "category": "programming",
-    "tags": [
-      "C"
-    ]
+    "status": 2,
   },
   {
     "id": 2,
@@ -39,9 +37,7 @@ const mockSkills: Skill[] = [
     "description": "課題なら教えられます。",
     "price": 400,
     "category": "programming",
-    "tags": [
-      "Java"
-    ]
+    "status": 2,
   },
   {
     "id": 3,
@@ -50,9 +46,7 @@ const mockSkills: Skill[] = [
     "description": "アルバイトで書いているので、それなりに教えられると思います。",
     "price": 1000,
     "category": "programming",
-    "tags": [
-      "JavaScript"
-    ]
+    "status": 2,
   },
   {
     "id": 4,
@@ -61,9 +55,7 @@ const mockSkills: Skill[] = [
     "description": "研究関連で使用しています。",
     "price": 800,
     "category": "programming",
-    "tags": [
-      "Python"
-    ]
+    "status": 2,
   },
   {
     "id": 5,
@@ -72,9 +64,7 @@ const mockSkills: Skill[] = [
     "description": "インターン先で使用していました。",
     "price": 2000,
     "category": "programming",
-    "tags": [
-      "Go"
-    ]
+    "status": 2,
   },
   {
     "id": 6,
@@ -83,9 +73,7 @@ const mockSkills: Skill[] = [
     "description": "大学のアルバイトにて使用しています",
     "price": 500,
     "category": "programming",
-    "tags": [
-      "PHP"
-    ]
+    "status": 2,
   }
 ]
 

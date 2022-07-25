@@ -31,7 +31,7 @@ _SkillCardList.args = {
       id: 1,
       name: "Proccesing",
       category: "Programing",
-      tags: ["programing", "proccessing", "1st grade"],
+      status: 2,
       description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
       thumbnail: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
@@ -40,7 +40,7 @@ _SkillCardList.args = {
       id: 2,
       name: "Proccesing",
       category: "Programing",
-      tags: ["programing", "proccessing", "1st grade"],
+      status: 2,
       description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
       thumbnail: "https://pbs.twimg.com/media/Edo3SPCUcAEY7Z6?format=jpg&name=small"

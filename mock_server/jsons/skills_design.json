@@ -6,9 +6,7 @@
     "description": "Twitterとかのアイコン描きます！",
     "price": 300,
     "category": "design",
-    "tags": [
-      "アイコン"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -19,9 +17,7 @@
     "description": "ポスターのデザイン提案とか",
     "price": 400,
     "category": "design",
-    "tags": [
-      "ポスター"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -32,9 +28,7 @@
     "description": "Webサイトのデザイン提案とか",
     "price": 1000,
     "category": "design",
-    "tags": [
-      "Web"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -45,10 +39,7 @@
     "description": "AndroidのアプリUIとかの提案とか",
     "price": 800,
     "category": "design",
-    "tags": [
-      "Android",
-      "UI"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -59,10 +50,7 @@
     "description": "IOSアプリのUIとか",
     "price": 2000,
     "category": "design",
-    "tags": [
-      "IOS",
-      "UI"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   },
@@ -73,9 +61,7 @@
     "description": "小さい頃から似顔絵をよく書いていました！",
     "price": 2000,
     "category": "design",
-    "tags": [
-      "イラスト"
-    ],
+    "status": 2,
     "created_at": "2020-05-10/04:45:50",
     "updated_at": "2020-05-10/04:45:50"
   }

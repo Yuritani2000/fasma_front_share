@@ -5,7 +5,7 @@ export type Skill = {
   description: string,
   price: number,
   category: string,
-  tags: string[]
+  status: number,
 }
 
 export type SkillsState = Skill[]
