@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_HEROKU_MOCK_SERVER
+  baseURL: process.env.REACT_APP_LOCAL_MOCK_SERVER
 })
 
 export const utariAxios = axios.create({

@@ -11,7 +11,7 @@ const initialState: TopPageSkillsState = {
 export default (state: TopPageSkillsState = initialState, action: SkillsAction): TopPageSkillsState => {
   switch (action.type) {
     case SkillsActionType.GET_TOP_PAGE_SKILLS_SUCCESS:
-      switch (action.payload[0].category) {
+      switch (action.payload[0].categories_name) {
         case "programming":
           return {
             programming: [

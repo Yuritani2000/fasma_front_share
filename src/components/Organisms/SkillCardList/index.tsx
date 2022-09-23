@@ -23,13 +23,13 @@ const SkillCardList: React.FC<SkillCardListProps> = (props) => {
 
   const skillCardList = (skillDatas: SkillsState) => {
     return skillDatas.map((skillData: Skill) => {
-      const { id, name, thumbnail, description, price, category } = skillData;
+      const { id, name, thumbnail, description, price, categories_name } = skillData;
       return skillData ? (
         <span onClick={onClickSkillCard} key={id}>
           <SkillCard
             id={id}
             skillName={name}
-            skillCategory={category}
+            skillCategory={categories_name}
             skillDescription={description}
             price={price}
             imgUrl={thumbnail}
