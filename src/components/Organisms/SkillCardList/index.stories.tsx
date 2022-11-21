@@ -12,7 +12,7 @@ export default {
     skillData: [
       {
         name: {},
-        category: {},
+        categories_name: {},
         tags: [],
         description: {},
         thumbnail: {},
@@ -30,20 +30,30 @@ _SkillCardList.args = {
     {
       id: 1,
       name: "Proccesing",
-      category: "Programing",
-      tags: ["programing", "proccessing", "1st grade"],
+      thumbnail: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small",
       description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
-      thumbnail: "https://pbs.twimg.com/media/EFEV9KxVAAANguo?format=jpg&name=small"
+      categories_name: "Programing",
+      "status": 0,
+      "seller_name": "カメックス",
+      "seller_school_mail": "b1001013@fun.ac.jp",
+      "buyer_name": "トランセル",
+      "buyer_school_mail": "b1002014@fun.ac.jp",
+      "transaction_update_at": 1660897573356
     },
     {
       id: 2,
       name: "Proccesing",
-      category: "Programing",
-      tags: ["programing", "proccessing", "1st grade"],
+      thumbnail: "https://pbs.twimg.com/media/Edo3SPCUcAEY7Z6?format=jpg&name=small",
       description: "一学年のProccessingはSで通過しました。Javaの知識もあるので弾幕ゲームを作る際に必要なクラスについても教えることができます。",
       price: 10,
-      thumbnail: "https://pbs.twimg.com/media/Edo3SPCUcAEY7Z6?format=jpg&name=small"
+      categories_name: "Programing",
+      "status": 0,
+      "seller_name": "メガカメックス",
+      "seller_school_mail": "b1001015@fun.ac.jp",
+      "buyer_name": "バタフリー",
+      "buyer_school_mail": "b1002016@fun.ac.jp",
+      "transaction_update_at": 1660897629131
     }
   ]
 };
