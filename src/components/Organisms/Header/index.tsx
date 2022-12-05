@@ -40,7 +40,7 @@ const Header: React.FC<Props> = (props) => {
     e.preventDefault();
     history.push(`/skillList?search_query=${searchValue}`);
     //TODO: ここのリクエストの仕方は変える?
-    dispatch(getSkills.request({ tag: searchValue, token: "hoge" }));
+    dispatch(getSkills.request({ category: 1, offset: 0, limit: 5 }));
   }
 
   const handleClickLogo = () => {
