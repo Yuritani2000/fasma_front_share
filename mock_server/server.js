@@ -20,16 +20,14 @@ app.get('/user', (_, res) => {
   res.status(200).json(user)
 });
 
-app.get('/skills', (req, res) => {
+app.get('/skill', (req, res) => {
   const category = req.query.category
-  if (category == "programming") {
+  if (category == 1) {
     res.status(200).json(skills_programming)
-  } else if (category == "design") {
+  } else if (category == 2) {
     res.status(200).json(skills_design)
-  } else if (category == "math") {
+  } else if (category == 3) {
     res.status(200).json(skills_math)
-  } else if (category == "search") {
-    res.status(200).json(skills_programming)
   } else {
     res.status(200).json(skills_programming)
   }

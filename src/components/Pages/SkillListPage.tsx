@@ -11,7 +11,7 @@ import Category from '../../utils/Other/Json/Category';
 const SkillListPage: React.FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getSkills.request({ category: "programming", number: 1, quantity: 5, sort: "new", token: "hoge" }));
+    dispatch(getSkills.request({ category: 1, offset: 0, limit: 5 }));
   }, [dispatch]);
   const skills = useSelector<RootState, RootState['skills']>(state => state.skills);
   return (

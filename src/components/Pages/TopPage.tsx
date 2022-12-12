@@ -9,9 +9,9 @@ import TopTemplate from '../Templates/TopTemplate'
 const TopPage: React.FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getTopPageSkills.request({ category: "programming", number: 1, quantity: 5, sort: "new", token: "hoge" }));
-    dispatch(getTopPageSkills.request({ category: "design", number: 1, quantity: 5, sort: "new", token: "hoge" }));
-    dispatch(getTopPageSkills.request({ category: "math", number: 1, quantity: 5, sort: "new", token: "hoge" }));
+    dispatch(getTopPageSkills.request({ category: 1, offset: 0, limit: 5 }));
+    dispatch(getTopPageSkills.request({ category: 2, offset: 0, limit: 5 }));
+    dispatch(getTopPageSkills.request({ category: 3, offset: 0, limit: 5 }));
     dispatch(postSignIn.request({id: "test",password: "test"}))
   }, [dispatch])
   const topPageSkills = useSelector<RootState, RootState['topPageSkills']>(state => state.topPageSkills);
